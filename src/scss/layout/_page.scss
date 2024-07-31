@@ -78,17 +78,6 @@
       text-decoration: underline;
     }
   }
-
-  .btn,
-  a {
-    border-right: 2px solid $color-border;
-    padding-right: 20px;
-
-    &:last-child {
-      border: 0;
-      padding-right: 0;
-    }
-  }
 }
 
 .text-danger {

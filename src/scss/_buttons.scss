@@ -41,6 +41,26 @@ a[class^='btn-'],
   }
 }
 
+.btn-ghost {
+  background: transparent;
+  text-align: left;
+  min-width: auto;
+  color: $color-primary;
+  padding: 0;
+
+  &.btn {
+    &:hover {
+      @include outline($color-primary);
+
+      background-color: $color-white;
+    }
+
+    &:focus-visible {
+      @include outline($color-primary);
+    }
+  }
+}
+
 .btn-neutral {
   @include color-scheme($scheme-btn-neutral...);
 
@@ -92,17 +112,12 @@ a[class^='btn-'],
 .btn-link {
   color: $color-link;
   font-size: inherit;
-  text-decoration: underline;
 }
 
 .btn-link,
 .btn-secondary {
   min-width: auto;
   padding: 12px;
-
-  &:focus {
-    @include outline($color-primary);
-  }
 
   &:focus-visible {
     @include outline($color-primary);
@@ -115,6 +130,10 @@ a[class^='btn-'],
 }
 
 .btn-close {
+  &:focus {
+    @include outline($color-primary);
+  }
+
   &:hover {
     color: $color-secondary;
   }
