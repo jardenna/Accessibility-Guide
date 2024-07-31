@@ -1,7 +1,6 @@
 import { FC, MutableRefObject, ReactNode } from 'react';
 import { SizeVariant } from '../../types/enums';
 import { CommonText } from '../../types/lang';
-import Portal from '../Portal';
 import './_dialog.scss';
 import DialogFooter from './DialogFooter';
 import DialogHeader from './DialogHeader';
@@ -37,46 +36,44 @@ const Dialog: FC<DialogProps> = ({
   onCallback,
   className = '',
 }) => (
-  <Portal portalId="dialog">
-    <section
-      aria-labelledby="dialog-title"
-      aria-describedby="dialog-description"
-      className=""
+  <section
+    aria-labelledby="dialog-title"
+    aria-describedby="dialog-description"
+    className=""
+  >
+    <dialog
+      ref={dialogRef}
+      className={`dialog dialog-${variant} ${className}`}
+      id="dialog-description"
     >
-      <dialog
-        ref={dialogRef}
-        className={`dialog dialog-${variant} ${className}`}
-        id="dialog-description"
-      >
-        <DialogHeader
-          dialogHeadertext={dialogHeadertext}
-          onCloseDialog={onToggleDialog}
-          showCloseIcon={showCloseIcon}
-        />
-        {primaryActionBtn?.buttonType !== 'submit' ? (
-          <>
-            <div className="dialog-body">{children}</div>
-            <DialogFooter
-              onCallback={onCallback}
-              onCloseDialog={onToggleDialog}
-              primaryActionBtn={primaryActionBtn}
-              secondaryActionText={secondaryActionText}
-            />
-          </>
-        ) : (
-          <form method="dialog">
-            <div className="dialog-body">{children}</div>
-            <DialogFooter
-              onCallback={onCallback}
-              onCloseDialog={onToggleDialog}
-              primaryActionBtn={primaryActionBtn}
-              secondaryActionText={secondaryActionText}
-            />
-          </form>
-        )}
-      </dialog>
-    </section>
-  </Portal>
+      <DialogHeader
+        dialogHeadertext={dialogHeadertext}
+        onCloseDialog={onToggleDialog}
+        showCloseIcon={showCloseIcon}
+      />
+      {primaryActionBtn?.buttonType !== 'submit' ? (
+        <>
+          <div className="dialog-body">{children}</div>
+          <DialogFooter
+            onCallback={onCallback}
+            onCloseDialog={onToggleDialog}
+            primaryActionBtn={primaryActionBtn}
+            secondaryActionText={secondaryActionText}
+          />
+        </>
+      ) : (
+        <form method="dialog">
+          <div className="dialog-body">{children}</div>
+          <DialogFooter
+            onCallback={onCallback}
+            onCloseDialog={onToggleDialog}
+            primaryActionBtn={primaryActionBtn}
+            secondaryActionText={secondaryActionText}
+          />
+        </form>
+      )}
+    </dialog>
+  </section>
 );
 
 export default Dialog;
