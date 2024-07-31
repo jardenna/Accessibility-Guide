@@ -1,0 +1,121 @@
+a {
+  &.btn {
+    text-decoration: none;
+  }
+}
+
+a[class^='btn-'],
+.btn {
+  border: 0;
+  position: relative;
+  padding: 8px 20px;
+  font-weight: normal;
+  min-width: rem(90px);
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-secondary;
+  }
+
+  @include transition;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -18%;
+    width: 130%;
+    height: 193%;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: $color-gray-light;
+    color: $color-blue3;
+    border-color: $color-gray-light;
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    svg {
+      fill: $color-blue3;
+    }
+  }
+}
+
+.btn-neutral {
+  @include color-scheme($scheme-btn-neutral...);
+
+  border: 1px solid $color-secondary-dark;
+
+  &:focus-visible {
+    @include outline($color-secondary);
+
+    border-color: $color-white;
+  }
+
+  &.btn {
+    &:hover {
+      background-color: $color-secondary;
+      color: $color-gray-light;
+    }
+  }
+}
+
+.btn-primary {
+  @include color-scheme($scheme-btn-dark...);
+
+  border: 1px solid $color-secondary-dark;
+
+  &:focus-visible {
+    @include outline($color-secondary);
+
+    border-color: $color-white;
+  }
+}
+
+.btn-secondary {
+  @include color-scheme($scheme-btn-light...);
+
+  &:focus-visible {
+    @include outline($color-secondary);
+
+    border-color: $color-white;
+  }
+
+  &.btn {
+    &:hover {
+      background-color: $color-primary;
+      color: $color-gray-light;
+    }
+  }
+}
+
+.btn-link {
+  color: $color-link;
+  font-size: inherit;
+  text-decoration: underline;
+}
+
+.btn-link,
+.btn-secondary {
+  min-width: auto;
+  padding: 12px;
+
+  &:focus {
+    @include outline($color-primary);
+  }
+
+  &:focus-visible {
+    @include outline($color-primary);
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  svg {
+    max-width: 12px;
+  }
+}
+
+.btn-close {
+  &:hover {
+    color: $color-secondary;
+  }
+}

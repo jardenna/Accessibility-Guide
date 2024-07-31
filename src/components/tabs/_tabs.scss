@@ -1,0 +1,32 @@
+@import '../../scss/colors';
+
+.tab-navigation-list {
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.tab-navigation {
+  display: flex;
+  gap: 4px;
+  overflow: auto;
+
+  .tab {
+    &.btn {
+      border-bottom: 4px solid $color-white;
+      overflow: hidden;
+      white-space: nowrap;
+
+      &:focus-visible {
+        border-bottom: 4px solid $color-secondary;
+        outline: transparent;
+      }
+    }
+
+    &.active {
+      background-color: $color-primary;
+      color: $color-gray-light;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+@import '../../scss/colors';
+@import '../../scss/fonts';
+@import '../../scss/functions';
+@import '../../scss/mixins';
+
+.accordion {
+  margin: 0;
+  padding: 0;
+
+  .accordion-item {
+    border-bottom: 1px solid $color-border;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .accordion-indicator {
+    width: 16px;
+    height: 16px;
+    display: flex;
+  }
+
+  .accordion-label {
+    font-family: $font-primary-bold;
+  }
+
+  .accordion-open-btn {
+    outline: transparent;
+    display: flex;
+    gap: 8px;
+
+    &.btn {
+      padding: 12px 20px;
+      font-size: rem(14px);
+      width: 100%;
+
+      &::after {
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+
+  .accordion-panel {
+    font-size: rem(14px);
+    line-height: rem(21px);
+    display: grid;
+    grid-template-rows: 0fr;
+
+    @include transition($what: grid-template-rows);
+
+    .accordion-body {
+      overflow: hidden;
+    }
+
+    &.visible {
+      grid-template-rows: 1fr;
+      padding: 4px 20px;
+      padding-bottom: 8px;
+    }
+  }
+
+  .chevron {
+    @include chevron($dir: down);
+
+    position: absolute;
+    right: 20px;
+    transition: all 0.3s;
+
+    &.up {
+      @include rotate(-133deg);
+    }
+  }
+}

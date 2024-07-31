@@ -1,0 +1,44 @@
+@import '../../scss/colors';
+@import '../../scss/functions';
+@import '../../scss/mixins';
+
+.grid {
+  @include grid($gap: 16px);
+
+  .grid-col-2 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-col-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .col {
+    border-right: 1px solid $color-gray-dark;
+    padding-right: 12px;
+
+    &:last-child {
+      border: 0;
+      padding-right: 0;
+    }
+  }
+
+  .col-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-gray-subtle;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    padding: 12px;
+  }
+
+  .col-title {
+    font-size: rem(24px);
+    letter-spacing: rem(2px);
+  }
+
+  .col-sub-title {
+    font-size: rem(14px);
+    margin: 0;
+  }
+}

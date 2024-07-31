@@ -1,0 +1,17 @@
+@import '../../scss/colors';
+@import '../../scss/functions';
+
+.main-footer {
+  justify-content: flex-end;
+
+  &.container {
+    padding-top: 20px;
+    padding-bottom: 14px;
+  }
+
+  .copyright {
+    border-bottom: 1px solid $color-hilight;
+    padding-bottom: 8px;
+    font-size: rem(14px);
+  }
+}

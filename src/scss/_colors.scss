@@ -1,0 +1,54 @@
+$color-white: #fff;
+$color-black: #000;
+$color-primary: #414b52;
+$color-primary-dark: #121212;
+
+// $color-secondary
+$color-secondary: #009688;
+$color-secondary-dark: #156060;
+$color-secondary-light: #17bab2;
+
+// Maybe for dark theme links
+// $color-secondary-light: #03dac6;
+
+// Gray
+$color-gray-dark: #c0bcbc;
+$color-gray-medium: #d2d0d0;
+$color-gray-subtle: #f4f6f7;
+$color-gray-light: #f8f8f8;
+
+// Blue
+$color-blue-dark: #617886;
+$color-blue: #475c6a;
+$color-blue1: #556c7b;
+$color-blue2: #617c8d;
+$color-blue3: #bcc9d1;
+
+// $color-mics
+$color-hilight: #d96500;
+$color-link: #922f55;
+
+// Toast colors
+$color-success: #32618a;
+$color-success-light: #8fb3d2;
+$color-danger: #bd393a;
+$color-danger-light: #f3a4a4;
+$color-info: #429444;
+$color-info-light: #a4daa6;
+$color-warning: #eab947;
+$color-warning-light: #fae5a6;
+
+// Scheme colors
+$scheme-dark: $color-primary, $color-gray-light;
+$scheme-medium: $color-gray-light, $color-primary;
+$scheme-light: $color-gray-subtle, $color-primary;
+
+// Scheme Btn colors
+$scheme-btn-neutral: $color-gray-light, $color-secondary-dark;
+$scheme-btn-dark: $color-secondary-dark, $color-gray-light;
+$scheme-btn-light: $color-gray-light, $color-primary;
+
+// Border
+$color-border: $color-gray-dark;
+$color-border-medium: $color-gray-medium;
+$color-border-light: $color-gray-light;

@@ -1,0 +1,69 @@
+@import '../../scss/colors';
+@import '../../scss/functions';
+@import '../../scss/mixins';
+@import '../../scss/variables';
+@import '../../scss/mq-size';
+
+dialog::backdrop {
+  background-color: rgba($color-black, 60%);
+}
+
+dialog[open] {
+  @include animation(slide-in-top-center);
+}
+
+dialog {
+  @include animation(slide-out-top-center);
+}
+
+.dialog {
+  border: 0;
+  overflow-x: hidden;
+
+  @include mq-size($large) {
+    min-width: 90%;
+  }
+
+  border-radius: 4px;
+  min-width: rem(300px);
+
+  &.dialog-sm {
+    width: 24%;
+  }
+
+  &.dialog-md {
+    width: 36%;
+  }
+
+  &.dialog-lg {
+    width: 70%;
+  }
+
+  .dialog-header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $color-border;
+  }
+
+  .dialog-title {
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  .dialog-body {
+    padding: 20px 16px;
+    font-size: rem(14px);
+    line-height: rem(21px);
+  }
+
+  .dialog-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 16px;
+    gap: 12px;
+
+    // border-top: 1px solid $color-border;
+  }
+}

@@ -1,0 +1,39 @@
+@import '../../scss/colors';
+@import '../../scss/functions';
+@import '../../scss/mixins';
+@import '../../scss/mq-size';
+
+.quote-container {
+  display: flex;
+  justify-content: center;
+
+  .block-quote {
+    padding-bottom: 16px;
+  }
+}
+
+.quote-content {
+  display: flex;
+  gap: 40px;
+  padding: 30px 0;
+  margin-bottom: 30px;
+  max-width: rem(700px);
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+
+  @include mq-size($medium) {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .quote-icon {
+    width: 100%;
+    max-width: rem(50px);
+    color: $color-hilight;
+  }
+
+  .quote-cite {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

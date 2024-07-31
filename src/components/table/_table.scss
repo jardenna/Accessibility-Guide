@@ -1,0 +1,60 @@
+/* stylelint-disable no-descending-specificity */
+@import '../../scss/colors';
+
+.table-container {
+  position: relative;
+  z-index: 1;
+  overflow: auto;
+  width: 300px;
+  min-width: 100%;
+  border: 1px solid $color-border-light;
+}
+
+table {
+  width: 100%;
+  min-width: 380px;
+  border-spacing: 0;
+
+  th,
+  td {
+    white-space: nowrap;
+    padding: 5px 10px;
+    text-align: left;
+  }
+
+  th {
+    &:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 2;
+      background: $color-white;
+    }
+  }
+
+  thead {
+    th {
+      background-color: $color-gray-subtle;
+      position: sticky;
+      top: 0;
+
+      &:first-child {
+        z-index: 5;
+        border-right: 1px solid $color-border-medium;
+        background-color: $color-gray-subtle;
+      }
+    }
+  }
+
+  tbody {
+    th {
+      border-right: 1px solid $color-border-medium;
+    }
+
+    tr:nth-child(even) {
+      th,
+      td {
+        background-color: $color-gray-light;
+      }
+    }
+  }
+}

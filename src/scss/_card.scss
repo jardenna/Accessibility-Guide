@@ -1,0 +1,66 @@
+@import '../scss/colors';
+@import '../scss/mixins';
+
+.card {
+  display: flex;
+  font-size: rem(14px);
+  line-height: rem(24px);
+
+  @include mq-size($medium) {
+    flex-direction: column;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    @include color-scheme($scheme-dark...);
+  }
+
+  .card-info {
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    flex: 2;
+
+    @include color-scheme($scheme-light...);
+
+    @include mq-size($medium) {
+      padding: 20px;
+    }
+  }
+
+  .card-info-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card-link {
+    display: flex;
+    justify-content: flex-end;
+
+    &:focus-visible {
+      outline: 2px solid $color-secondary-light;
+    }
+  }
+}
+
+.card-img {
+  padding: 40px;
+  font-size: rem(12px);
+  line-height: rem(18px);
+  flex: 1;
+
+  @include color-scheme($scheme-dark...);
+
+  a {
+    color: currentcolor;
+    font-size: rem(14px);
+  }
+
+  img {
+    min-width: rem(300px);
+    margin-bottom: 4px;
+  }
+}

@@ -1,0 +1,13 @@
+@import '../../scss/colors';
+@import '../../scss/mixins';
+
+.banner {
+  padding: 20px;
+  margin-bottom: 30px;
+
+  @include color-scheme($scheme-medium...);
+
+  .banner-content {
+    margin: 0;
+  }
+}

@@ -1,0 +1,65 @@
+@mixin mq-size($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin color-scheme($bg, $text) {
+  color: $text;
+  background-color: $bg;
+}
+
+@mixin rotate($deg: 45deg) {
+  transform: rotate($deg);
+}
+
+@mixin grid($amount: 2, $gap: 12px) {
+  display: grid;
+  grid-template-columns: repeat($amount, 1fr);
+  gap: $gap;
+}
+
+@mixin chevron($size: 7px, $weight: 2px, $color: $color-primary, $dir: up) {
+  width: $size;
+  height: $size;
+  border: $weight solid $color;
+  display: flex;
+
+  @include rotate;
+
+  transform-origin: 70%;
+
+  @if $dir == right {
+    border-bottom: transparent;
+    border-left: transparent;
+  } @else if $dir == down {
+    border-top: transparent;
+    border-left: transparent;
+  } @else if $dir == up {
+    border-bottom: transparent;
+    border-right: transparent;
+  } @else if $dir == left {
+    border-top: transparent;
+    border-right: transparent;
+  }
+}
+
+@mixin transition($what: all, $time: 0.3s, $how: ease-in-out) {
+  transition: $what $time $how;
+
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
+}
+
+@mixin outline($color: $color-hilight) {
+  outline: 2px solid $color;
+}
+
+@mixin animation($name, $duration: $animation-duration, $timing: ease-in-out) {
+  animation: $name $duration $timing forwards;
+
+  @media (prefers-reduced-motion) {
+    animation-name: none;
+  }
+}

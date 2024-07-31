@@ -1,0 +1,32 @@
+@import '../../scss/colors';
+@import '../../scss/mixins';
+
+.breadcrumbs {
+  padding: 4px 20px;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 14px;
+  list-style: none;
+
+  @include color-scheme($scheme-dark...);
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .chevron {
+    @include chevron($color: $color-gray-light, $dir: right);
+  }
+
+  a {
+    color: $color-gray-light;
+    font-weight: normal;
+    text-decoration: none;
+
+    &:focus-visible {
+      @include outline($color-gray-light);
+    }
+  }
+}

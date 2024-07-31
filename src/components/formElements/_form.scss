@@ -1,0 +1,119 @@
+@import '../../scss/functions';
+@import '../../scss/colors';
+@import '../../scss/mixins';
+
+// Remove autofill
+:-webkit-autofill,
+:-webkit-autofill:hover,
+:-webkit-autofill:focus {
+  box-shadow:
+    0 0 0 1000px rgb(255 255 255 / 50%) inset,
+    0 0 0 1000px #fff inset;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  appearance: textfield;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  &:has(input[type='radio']) {
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 0;
+    margin-bottom: 0;
+
+    &:focus-within {
+      outline: 2px solid rgba($color-blue-dark, 70%);
+    }
+  }
+
+  .form-label {
+    margin-bottom: 4px;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    background-color: $color-white;
+    color: $color-primary;
+    position: relative;
+    border: 1px solid $color-border;
+    font-size: rem(14px);
+    padding: 12px;
+    border-radius: 4px;
+    outline: transparent;
+
+    &:focus-visible {
+      background: linear-gradient($color-blue-dark, $color-blue2) bottom -12px left
+        0 / 100% 3px content-box padding-box repeat-x;
+    }
+  }
+
+  input[type='radio'] {
+    appearance: none;
+    margin-right: 10px;
+    background-color: #fff;
+    color: currentcolor;
+    width: rem(10px);
+    height: rem(10px);
+    border: 2px solid $color-blue-dark;
+    border-radius: 50%;
+    transform: translateY(-1.2px);
+    display: grid;
+    place-content: center;
+    padding: 8px;
+
+    &::before {
+      content: '';
+      width: rem(9px);
+      height: rem(9px);
+      border-radius: 50%;
+      transform: scale(0);
+
+      @include transition($time: 0.12s);
+
+      box-shadow: inset 16px 0 $color-blue-dark;
+    }
+  }
+
+  input[type='radio']:checked {
+    border-color: $color-blue-dark;
+    outline: transparent;
+
+    &::before {
+      transform: scale(1);
+    }
+  }
+
+  // input[type='radio']:checked::before {
+  //   transform: scale(1);
+  // }
+}
+
+fieldset {
+  border: 0;
+  margin: 10px 0;
+  position: relative;
+  padding: 0;
+  padding-top: 50px;
+}
+
+legend {
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  left: 0;
+}

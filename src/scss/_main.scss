@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+  font-family: $font-primary;
+  overscroll-behavior: contain;
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: $color-gray-light;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $color-gray-medium;
+    border-radius: 2px;
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    scrollbar-width: thin;
+    scrollbar-color: $color-gray-medium $color-gray-light;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  line-height: rem(21px);
+  color: $color-primary;
+  font-size: rem(14px);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color-scheme: dark;
+    background-color: #121212;
+    color: $color-gray-light;
+  }
+}
+
+h1 {
+  font-size: rem(16px);
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: rem(14px);
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  color: $color-link;
+
+  &:focus-visible {
+    @include outline;
+
+    border: 0;
+  }
+}
+
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+[target='_blank']::before {
+  content: '(opens in a new window)';
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+svg {
+  fill: currentcolor;
+}
+
+figure {
+  margin: 0;
+}
+
+blockquote {
+  margin: 0;
+}

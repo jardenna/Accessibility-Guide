@@ -1,0 +1,37 @@
+@import '../../scss/colors';
+@import '../../scss/mixins';
+@import '../../scss/mq-size';
+@import '../../scss/variables';
+
+.skip-link {
+  position: fixed;
+  z-index: 10000;
+  padding: 10px 20px;
+  opacity: 0;
+
+  @include color-scheme($scheme-dark...);
+
+  @include mq-size($medium) {
+    display: none;
+  }
+
+  a {
+    color: $color-gray-light;
+    font-size: rem(20px);
+    text-decoration: none;
+
+    &:focus-visible {
+      outline: transparent;
+    }
+  }
+
+  p {
+    margin: 4px;
+  }
+
+  &:has(a:focus-visible) {
+    opacity: 1;
+
+    @include animation(slide-in-top-center);
+  }
+}

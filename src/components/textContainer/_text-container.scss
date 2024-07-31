@@ -1,0 +1,32 @@
+@import '../../scss/colors';
+@import '../../scss/mixins';
+@import '../../scss/mq-size';
+
+.text-container {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 30px;
+
+  @include mq-size($large) {
+    flex-direction: column;
+  }
+
+  .text-content {
+    flex: 4;
+    padding-bottom: 10px;
+    border-bottom: 2px solid $color-border;
+
+    .text-info {
+      font-style: italic;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $color-border;
+      margin: 0;
+    }
+  }
+
+  .text-title {
+    flex: 1;
+    margin-top: 0;
+  }
+}

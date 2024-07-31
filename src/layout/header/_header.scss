@@ -1,0 +1,46 @@
+@import '../../scss/colors';
+@import '../../scss/mixins';
+@import '../../scss/mq-size';
+
+.main-header {
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: $color-white;
+
+  .logo {
+    margin-bottom: 20px;
+
+    @include mq-size($medium) {
+      padding-bottom: 0;
+    }
+  }
+
+  svg {
+    min-width: rem(400px);
+
+    @include mq-size($medium) {
+      min-width: rem(260px);
+    }
+  }
+
+  &.container {
+    padding-top: 20px;
+    flex-direction: row;
+
+    @include mq-size($medium) {
+      align-items: flex-start;
+    }
+  }
+
+  @include mq-size($medium) {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+
+  .main-nav {
+    @include mq-size($medium) {
+      display: none;
+    }
+  }
+}

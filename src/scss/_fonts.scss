@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'inter_regular';
+  src:
+    url('/fonts/inter-regular.woff2') format('woff2'),
+    url('/fonts/inter-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'intersemi_bold';
+  src:
+    url('/fonts/inter-semibold.woff2') format('woff2'),
+    url('/fonts/inter-semibold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font-primary: inter_regular, sans-serif;
+$font-primary-bold: intersemi_bold, sans-serif;

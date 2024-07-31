@@ -1,0 +1,19 @@
+{
+  "accessibilityGuidelines": [
+    {
+      "title": "A",
+      "subtitle": "Must have",
+      "content": "The success criteria at Level A are designed to be the easiest to meet, without much impact on the website design or structure. Level A is the most essential that must be met."
+    },
+    {
+      "title": "AA",
+      "subtitle": "Need to have",
+      "content": "In many countries, this level is a legal requirement for certain websites and app-based digital products. Public bodies must comply with WCAG 2.1 Level AA to meet the legislation."
+    },
+    {
+      "title": "AAA",
+      "subtitle": "Nice to have",
+      "content": "The AAA level includes the most stringent requirements. According to W3C, it is not recommended to mandate Level AAA conformance as a general policy for entire sites."
+    }
+  ]
+}
