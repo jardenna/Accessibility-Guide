@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import PageTitle from '../../components/PageTitle';
-import TestComp from '../../components/TestComp';
 import ImageAsLink from '../../components/imageGrids/ImageAsLink';
 import StockPhoto from '../../components/imageGrids/StockPhoto';
 import SufficientAdjacentText from '../../components/imageGrids/SufficientAdjacentText';
@@ -21,13 +20,8 @@ const tabsConfig: TabItem[] = [
   },
   {
     id: 3,
-    label: 'Video',
+    label: 'Image 2',
     content: <StockPhoto />,
-  },
-  {
-    id: 4,
-    label: 'Links',
-    content: <TestComp name="steen" />,
   },
 ];
 

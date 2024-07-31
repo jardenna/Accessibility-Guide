@@ -25,25 +25,10 @@ const leftNavItemsList: NavListItem[] = [
       },
     ],
   },
-  {
-    path: LeftNavPath.Videos,
-    title: Title.Videos,
-  },
-  {
-    path: LeftNavPath.Buttons,
-    title: Title.Buttons,
-  },
+
   {
     path: LeftNavPath.FormElements,
     title: Title.FormElements,
-  },
-  {
-    path: LeftNavPath.Navigation,
-    title: Title.Navigation,
-  },
-  {
-    path: LeftNavPath.Headings,
-    title: Title.Headings,
   },
 
   {

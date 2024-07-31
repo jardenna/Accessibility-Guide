@@ -1,12 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import Headings from '../components/Headings';
-import Video from '../components/Video';
 import Layout from '../layout/Layout';
 import AccessibilityGuidelines from '../pages/AccessibilityGuidelines';
 import AccessibilityMyths from '../pages/AccessibilityMyths';
 import Aria from '../pages/aria/Aria';
-import Buttons from '../pages/Buttons';
 import Contact from '../pages/commonPages/Contact';
 import Home from '../pages/commonPages/Home';
 import ErrorPage from '../pages/errorPage/ErrorPage';
@@ -53,14 +51,7 @@ const routeConfig = createBrowserRouter([
         path: LeftNavPath.AltText,
         element: <AltText />,
       },
-      {
-        path: LeftNavPath.Videos,
-        element: <Video />,
-      },
-      {
-        path: LeftNavPath.Buttons,
-        element: <Buttons />,
-      },
+
       {
         path: LeftNavPath.FormElements,
         element: <FormElements />,

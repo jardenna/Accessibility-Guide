@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BlurEventType, ChangeEventType, FormEventType } from '../types/types';
 
-type ValidationErrors = {
+export type ValidationErrors = {
   [key: string]: string;
 };
 

@@ -1,11 +1,11 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
-import Checkbox from '../components/formElements/Checkbox';
 import { radioButtonGenderList } from '../components/formElements/formLists/formList';
 import Input from '../components/formElements/Input';
 import { phoneMask } from '../components/formElements/masks';
 import NumberStep from '../components/formElements/numberStep/NumberStep';
 import RadioButton from '../components/formElements/RadioButton';
+import validatePrice from '../components/formElements/validation/priceValidation';
 import PageTitle from '../components/PageTitle';
 import useFormValidation from '../hooks/useFormValidation';
 import { Title } from '../types/lang';
@@ -33,24 +33,15 @@ const FormElements: FC = () => {
     allToppings,
   };
 
-  const { onChange, onSubmit, values, handleClick } = useFormValidation({
-    callback: (values) => {
-      console.log('Form submitted with values', values);
+  const { onChange, onSubmit, values, handleClick, errors } = useFormValidation(
+    {
+      callback: (values) => {
+        console.log('Form submitted with values', values);
+      },
+      initialState: initialFormValues,
+      validate: validatePrice,
     },
-    initialState: initialFormValues,
-  });
-
-  const [toppings, setToppings] = useState(allToppings);
-
-  const updateCheckStatus = (index: number) => {
-    setToppings(
-      toppings.map((topping, currentIndex: number) =>
-        currentIndex === index
-          ? { ...topping, checked: !topping.checked }
-          : topping,
-      ),
-    );
-  };
+  );
 
   return (
     <>
@@ -59,16 +50,6 @@ const FormElements: FC = () => {
       <form onSubmit={onSubmit}>
         <fieldset>
           <legend>Legend</legend>
-
-          {toppings.map((topping, index: number) => (
-            <Checkbox
-              key={topping.name}
-              isChecked={topping.checked}
-              checkHandler={() => updateCheckStatus(index)}
-              labelText={topping.name}
-              index={index}
-            />
-          ))}
 
           <NumberStep
             onChange={onChange}
@@ -87,6 +68,7 @@ const FormElements: FC = () => {
             onChange={onChange}
             formInfoText="Understanding the gender distribution of our users, helps us to promote diversity and ensure that no group is left out. All data collected is used in accordance with our Privacy Policy."
           />
+
           <Input
             value={values.price}
             onChange={onChange}
@@ -94,7 +76,9 @@ const FormElements: FC = () => {
             name="price"
             labelText="Price"
             required
+            errorText={errors.price}
           />
+
           <Input
             value={values.phone}
             onChange={(event) => onChange(phoneMask(event))}

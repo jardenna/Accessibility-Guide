@@ -11,14 +11,6 @@ const navItemsList: NavListItem[] = [
     path: MainPath.Contact,
     title: Title.Contact,
   },
-  {
-    path: MainPath.Links,
-    title: Title.Links,
-  },
-  {
-    path: MainPath.Thanks,
-    title: Title.Thanks,
-  },
 ];
 
 export default navItemsList;
