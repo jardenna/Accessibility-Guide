@@ -33,7 +33,8 @@ const NumberStep: FC<NumberStepProps> = ({
     <label htmlFor={id}>{labelText}</label>
     <div className="number-step-container">
       <Button
-        id={id}
+        id="add"
+        name={id}
         ariaLabel={`Subtract ${initCount} `}
         disabled={value === Number(min)}
         onClick={(event?: ButtonEventType) =>
@@ -59,7 +60,8 @@ const NumberStep: FC<NumberStepProps> = ({
         }
         ariaLabel={`Add ${initCount} `}
         disabled={value === Number(max)}
-        id={id}
+        id="subtract"
+        name={id}
       >
         <Icon name={IconName.Add} title="Add" />
       </Button>

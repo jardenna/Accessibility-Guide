@@ -15,6 +15,7 @@ interface ButtonProps {
   className?: string;
   disabled?: boolean;
   id?: string;
+  name?: string;
   onClick?: (event?: ButtonEventType) => void;
   role?: string;
   tabIndex?: 0 | -1;
@@ -38,6 +39,7 @@ const Button: FC<ButtonProps> = ({
   className = '',
   autoFocus,
   disabled,
+  name,
 }) => (
   <button
     id={id}
@@ -54,6 +56,7 @@ const Button: FC<ButtonProps> = ({
     aria-disabled={disabled || undefined}
     className={`btn btn-${variant} ${className}`}
     disabled={disabled}
+    name={name}
   >
     {children}
   </button>

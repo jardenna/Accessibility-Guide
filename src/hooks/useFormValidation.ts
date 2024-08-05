@@ -93,11 +93,11 @@ function useFormValidation<T extends FormValues>({
 
   // Special case for number step
   const handleClick = (event: ButtonEventType, amount: number) => {
-    const { id } = event.currentTarget;
+    const { name } = event.currentTarget;
 
     setValues({
       ...values,
-      [id]: (values[id] as number) + amount,
+      [name]: (values[name] as number) + amount,
     });
   };
 
