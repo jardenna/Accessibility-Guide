@@ -8,11 +8,12 @@ import './_toast.scss';
 export interface TriggerToastProps {
   children: ReactNode;
   message: string;
-  onCallback: () => void;
+  btnType?: any;
   btnVariant?: BtnVariant;
+  onCallback?: () => void;
   position?: string;
   toastSize?: SizeVariant;
-  type?: ToastType;
+  toastType?: ToastType;
 }
 
 const TriggerToast: FC<TriggerToastProps> = ({
@@ -21,8 +22,9 @@ const TriggerToast: FC<TriggerToastProps> = ({
   onCallback,
   btnVariant = BtnVariant.Primary,
   position = 'top-right',
-  type = ToastType.Success,
+  toastType = ToastType.Success,
   toastSize,
+  btnType,
 }) => {
   const { handleShowToast, handleDismissToast, sortedToasts } =
     useToast(onCallback);
@@ -30,8 +32,9 @@ const TriggerToast: FC<TriggerToastProps> = ({
   return (
     <section>
       <Button
+        type={btnType}
         variant={btnVariant}
-        onClick={() => handleShowToast(type, message)}
+        onClick={() => handleShowToast(toastType, message)}
       >
         {children}
       </Button>
