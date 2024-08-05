@@ -1,5 +1,9 @@
 import { FC } from 'react';
-import { radioButtonGenderList } from '../components/formElements/formLists/formList';
+import Checkbox from '../components/formElements/Checkbox';
+import {
+  radioButtonGenderList,
+  selectedItems,
+} from '../components/formElements/formLists/formList';
 import Input from '../components/formElements/Input';
 import { phoneMask } from '../components/formElements/masks';
 import NumberStep from '../components/formElements/numberStep/NumberStep';
@@ -8,24 +12,13 @@ import PageTitle from '../components/PageTitle';
 import useFormValidation from '../hooks/useFormValidation';
 import { Title } from '../types/lang';
 
-interface SelectedItems {
-  label: string;
-}
-const selectedItems: SelectedItems[] = [
-  { label: 'Option 1' },
-  { label: 'Option 2' },
-  { label: 'Option 3' },
-  { label: 'Option 4' },
-  { label: 'Option 5' },
-];
-
 const FormElements: FC = () => {
   const initialFormValues = {
     price: '',
     phone: '',
     genderOption: 'woman',
     tickets: 1,
-    selectedItems: [],
+    selectedItems: ['Option 1', 'Option 3'],
   };
 
   const { onChange, onSubmit, values, handleClick } = useFormValidation({
@@ -42,22 +35,11 @@ const FormElements: FC = () => {
       <form onSubmit={onSubmit}>
         <fieldset>
           <legend>Legend</legend>
-
-          {selectedItems.map((checkbox) => (
-            <div key={checkbox.label}>
-              <input
-                type="checkbox"
-                name="selectedItems"
-                value={checkbox.label}
-                onChange={onChange}
-                checked={(values.selectedItems as string[]).includes(
-                  checkbox.label,
-                )}
-                id={checkbox.label}
-              />
-              <label htmlFor={checkbox.label}>{checkbox.label}</label>
-            </div>
-          ))}
+          <Checkbox
+            onChange={onChange}
+            values={values.selectedItems}
+            checkBoxList={selectedItems}
+          />
 
           <NumberStep
             onChange={onChange}

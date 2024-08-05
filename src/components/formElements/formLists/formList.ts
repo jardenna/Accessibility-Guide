@@ -3,12 +3,6 @@ export interface RadioListItem {
   labelText: string;
 }
 
-export interface ToppingListItem {
-  id: string;
-  labelText: string;
-  name: string;
-  checked?: boolean;
-}
 export const radioButtonGenderList: RadioListItem[] = [
   {
     id: 'woman',
@@ -32,20 +26,14 @@ export const radioButtonGenderList: RadioListItem[] = [
   },
 ];
 
-export const toppings: ToppingListItem[] = [
-  {
-    id: 'capsicum',
-    name: 'capsicum',
-    labelText: 'Capsicum',
-  },
-  {
-    name: 'paneer',
-    id: 'paneer',
-    labelText: 'Paneer',
-  },
+export interface SelectedItems {
+  label: string;
+}
 
-  { name: 'tomato', id: 'tomato', labelText: 'Tomato' },
-  { name: 'mushroom', id: 'mushroom', labelText: 'Mushroom' },
-  { name: 'onion', id: 'onion', labelText: 'Onion' },
-  { name: 'blackOlives', id: 'blackOlives', labelText: 'Black Olives' },
+export const selectedItems: SelectedItems[] = [
+  { label: 'Option 1' },
+  { label: 'Option 2' },
+  { label: 'Option 3' },
+  { label: 'Option 4' },
+  { label: 'Option 5' },
 ];
