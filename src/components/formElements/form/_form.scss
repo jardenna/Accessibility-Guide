@@ -23,20 +23,6 @@ input[type='number'] {
   appearance: textfield;
 }
 
-.checkbox-radio-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-
-  &:focus-within {
-    outline: 2px solid rgba($color-blue-dark, 70%);
-  }
-
-  .form-label {
-    order: 2;
-  }
-}
-
 .input-container {
   display: flex;
   flex-direction: column;
@@ -63,6 +49,42 @@ input[type='number'] {
       background: linear-gradient($color-blue-dark, $color-blue2) bottom -12px left
         0 / 100% 3px content-box padding-box repeat-x;
     }
+  }
+}
+
+.checkbox-radio-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  input {
+    appearance: none;
+    margin-right: 10px;
+    background-color: $color-white;
+    color: currentcolor;
+    width: rem(24px);
+    height: rem(24px);
+    border: 2px solid $color-blue-dark;
+    transform: translateY(-1.2px);
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    @include transition($time: 0.22s);
+
+    &:focus-visible {
+      outline: transparent;
+    }
+  }
+
+  &:focus-within {
+    outline: 2px solid rgba($color-blue-dark, 70%);
+  }
+
+  .form-label {
+    order: 2;
   }
 }
 

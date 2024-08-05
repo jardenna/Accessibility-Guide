@@ -3,19 +3,7 @@
 @import '../../../scss/mixins';
 
 input[type='radio'] {
-  appearance: none;
-  margin-right: 10px;
-  background-color: $color-white;
-  color: currentcolor;
-  width: rem(25px);
-  height: rem(25px);
-  border: 2px solid $color-blue-dark;
   border-radius: 50%;
-  transform: translateY(-1.2px);
-  display: grid;
-  place-content: center;
-  padding: 8px;
-  position: relative;
 
   &::before {
     content: '';

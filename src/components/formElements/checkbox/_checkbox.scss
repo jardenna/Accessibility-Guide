@@ -3,38 +3,13 @@
 @import '../../../scss/mixins';
 
 input[type='checkbox'] {
-  appearance: none;
-  margin-right: 10px;
-  background-color: $color-white;
-  color: currentcolor;
-  width: rem(25px);
-  height: rem(25px);
-  border: 2px solid $color-blue-dark;
-  transform: translateY(-1.2px);
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-
-  @include transition($time: 0.22s);
-
-  &:focus-visible {
-    outline: transparent;
-  }
-
-  &::before {
-    content: '';
-    transform: scale(0);
-
-    @include transition($time: 0.12s);
-  }
-
   &:checked {
     outline: transparent;
     border-color: $color-blue-dark;
     background-color: $color-blue-dark;
 
     &::before {
+      content: '';
       position: relative;
       top: -2px;
       transform: rotate(45deg);
