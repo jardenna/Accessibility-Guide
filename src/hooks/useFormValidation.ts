@@ -11,7 +11,7 @@ export type ValidationErrors = {
 };
 
 export type FormValues = {
-  [key: string]: any;
+  [key: string]: string | number | string[];
 };
 
 interface UseFormValidationProps<T extends FormValues> {
@@ -22,7 +22,7 @@ interface UseFormValidationProps<T extends FormValues> {
 
 interface UseFormValidationReturn<T extends FormValues> {
   errors: ValidationErrors;
-  handleClick: (event: any, id: number) => void;
+  handleClick: (event: ButtonEventType, id: number) => void;
   onBlur: (event: BlurEventType) => void;
   onChange: (event: ChangeInputType) => void;
   onClearAll: () => void;
@@ -66,8 +66,8 @@ function useFormValidation<T extends FormValues>({
     }
   }, [touched, values, validate]);
 
-  function onChange(event: any) {
-    const { name, value, type, checked } = event.target;
+  function onChange(event: ChangeInputType) {
+    const { name, value, type } = event.target;
 
     if (type === 'number') {
       setValues({
@@ -78,7 +78,7 @@ function useFormValidation<T extends FormValues>({
 
     setValues({
       ...values,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: value,
     });
   }
 
@@ -86,10 +86,10 @@ function useFormValidation<T extends FormValues>({
   const handleClick = (event: ButtonEventType, amount: number) => {
     const { id } = event.currentTarget;
 
-    setValues((prevValues) => ({
-      ...prevValues,
-      [id]: (prevValues[id] as number) + amount,
-    }));
+    setValues({
+      ...values,
+      [id]: (values[id] as number) + amount,
+    });
   };
 
   const onClearAll = () => {

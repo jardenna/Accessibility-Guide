@@ -1,6 +1,4 @@
-import { FC, useState } from 'react';
-
-import Checkbox from '../components/formElements/Checkbox';
+import { FC } from 'react';
 import { radioButtonGenderList } from '../components/formElements/formLists/formList';
 import Input from '../components/formElements/Input';
 import { phoneMask } from '../components/formElements/masks';
@@ -10,19 +8,13 @@ import PageTitle from '../components/PageTitle';
 import useFormValidation from '../hooks/useFormValidation';
 import { Title } from '../types/lang';
 
-interface AllToppings {
-  checked: boolean;
-  name: string;
-}
-
-const allToppings: AllToppings[] = [
-  { name: 'Golden Corn', checked: true },
-  { name: 'Paneer', checked: false },
-  { name: 'Tomato', checked: false },
-  { name: 'Mushroom', checked: false },
-  { name: 'Onion', checked: false },
-  { name: 'Black Olives', checked: false },
-];
+// const initValues = [
+//   { label: 'Option 1' },
+//   { label: 'Option 2' },
+//   { label: 'Option 3' },
+//   { label: 'Option 4' },
+//   { label: 'Option 5' },
+// ];
 
 const FormElements: FC = () => {
   const initialFormValues = {
@@ -30,7 +22,6 @@ const FormElements: FC = () => {
     phone: '',
     genderOption: 'woman',
     tickets: 1,
-    allToppings,
   };
 
   const { onChange, onSubmit, values, handleClick } = useFormValidation({
@@ -40,18 +31,6 @@ const FormElements: FC = () => {
     initialState: initialFormValues,
   });
 
-  const [toppings, setToppings] = useState(allToppings);
-
-  const updateCheckStatus = (index: number) => {
-    setToppings(
-      toppings.map((topping, currentIndex: number) =>
-        currentIndex === index
-          ? { ...topping, checked: !topping.checked }
-          : topping,
-      ),
-    );
-  };
-
   return (
     <>
       <PageTitle title={Title.FormElements} />
@@ -59,16 +38,6 @@ const FormElements: FC = () => {
       <form onSubmit={onSubmit}>
         <fieldset>
           <legend>Legend</legend>
-
-          {toppings.map((topping, index: number) => (
-            <Checkbox
-              key={topping.name}
-              isChecked={topping.checked}
-              checkHandler={() => updateCheckStatus(index)}
-              labelText={topping.name}
-              index={index}
-            />
-          ))}
 
           <NumberStep
             onChange={onChange}
