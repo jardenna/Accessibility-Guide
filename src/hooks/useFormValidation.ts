@@ -69,31 +69,24 @@ function useFormValidation<T extends FormValues>({
   function onChange(event: ChangeInputType) {
     const { name, value, type, checked } = event.target;
 
-    if (type === 'number') {
-      setValues({
-        ...values,
-        [name]: Number(value),
-      });
-    }
+    setValues({
+      ...values,
+      [name]: type === 'number' ? Number(value) : value,
+    });
 
     if (type === 'checkbox') {
-      setValues((prevValues) => {
-        const currentValues = prevValues[name] as string[];
+      setValues(() => {
+        const currentValues = values[name] as string[];
         if (checked) {
           return {
-            ...prevValues,
+            ...values,
             [name]: [...currentValues, value],
           };
         }
         return {
-          ...prevValues,
+          ...values,
           [name]: currentValues.filter((item) => item !== value),
         };
-      });
-    } else {
-      setValues({
-        ...values,
-        [name]: value,
       });
     }
   }
