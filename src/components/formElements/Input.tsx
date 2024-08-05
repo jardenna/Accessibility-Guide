@@ -10,6 +10,8 @@ export interface InputProps {
   onChange: (e?: any) => void;
   value: string | number;
   ariaErrormessage?: string;
+  checked?: boolean;
+  className?: string;
   errorText?: string;
   inputHasNoLabel?: boolean;
   max?: string;
@@ -28,6 +30,8 @@ const Input: FC<InputProps> = ({
   name,
   value,
   inputHasNoLabel,
+  checked,
+  className,
   errorText,
   onChange,
   onBlur,
@@ -35,27 +39,34 @@ const Input: FC<InputProps> = ({
   max,
   ariaErrormessage,
   placeholder,
-}) => (
-  <div className="input-container">
-    {!inputHasNoLabel && (
-      <FormLabel required={required} inputLabel={labelText} id={id} />
-    )}
-    <input
-      type={type || 'text'}
-      name={name}
-      onChange={onChange}
-      value={value}
-      id={id}
-      aria-invalid={errorText ? true : undefined}
-      aria-required={required || undefined}
-      aria-errormessage={ariaErrormessage || undefined}
-      aria-label={inputHasNoLabel ? labelText : undefined}
-      onBlur={onBlur}
-      placeholder={placeholder}
-      min={min}
-      max={max}
-    />
-    {errorText && <FormError errorText={errorText} ariaErrorId={id} />}
-  </div>
-);
+}) => {
+  const inputClassName = `${type === 'checkbox' || type === 'radio' ? 'checkbox-radio-container' : 'input-container'}`;
+
+  return (
+    <div className={inputClassName}>
+      {!inputHasNoLabel && (
+        <FormLabel required={required} inputLabel={labelText} id={id} />
+      )}
+      <input
+        type={type || 'text'}
+        name={name}
+        checked={checked}
+        onChange={onChange}
+        className={className}
+        value={value}
+        id={id}
+        aria-invalid={errorText ? true : undefined}
+        aria-required={required || undefined}
+        aria-errormessage={ariaErrormessage || undefined}
+        aria-label={inputHasNoLabel ? labelText : undefined}
+        onBlur={onBlur}
+        placeholder={placeholder}
+        min={min}
+        max={max}
+      />
+      {errorText && <FormError errorText={errorText} ariaErrorId={id} />}
+    </div>
+  );
+};
+
 export default Input;

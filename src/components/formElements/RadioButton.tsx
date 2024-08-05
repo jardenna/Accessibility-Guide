@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { ChangeInputType } from '../../types/types';
 import './_form.scss';
 import { RadioListItem } from './formLists/formList';
+import Input from './Input';
 
 interface RadioButtonProps {
   initialChecked: string;
@@ -21,7 +22,7 @@ const RadioButton: FC<RadioButtonProps> = ({
   <div>
     {radioButtonList.map((radio) => (
       <div key={radio.id} className="input-container">
-        <input
+        <Input
           type="radio"
           key={radio.id}
           id={radio.id}
@@ -29,9 +30,9 @@ const RadioButton: FC<RadioButtonProps> = ({
           value={radio.id}
           checked={initialChecked === radio.id}
           onChange={onChange}
+          labelText={radio.labelText}
           className="visibility-hidden"
         />
-        <label htmlFor={radio.id}>{radio.labelText}</label>
       </div>
     ))}
 

@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import Checkbox from '../components/formElements/Checkbox';
+import Form from '../components/formElements/Form';
 import {
   radioButtonGenderList,
   selectedItems,
@@ -32,7 +33,7 @@ const FormElements: FC = () => {
     <>
       <PageTitle title={Title.FormElements} />
 
-      <form onSubmit={onSubmit}>
+      <Form onSubmit={onSubmit} labelText="Submit form">
         <fieldset>
           <legend>Legend</legend>
           <Checkbox
@@ -75,8 +76,7 @@ const FormElements: FC = () => {
             placeholder="(--)--- ---"
           />
         </fieldset>
-        <button type="submit">hhh</button>
-      </form>
+      </Form>
 
       {/* <TriggerDialog
         dialogHeaderText="Header"

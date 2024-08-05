@@ -23,21 +23,33 @@ input[type='number'] {
   appearance: textfield;
 }
 
+.checkbox-radio-container {
+  display: flex;
+
+  &:focus-within {
+    outline: 2px solid rgba($color-blue-dark, 70%);
+  }
+
+  .form-label {
+    order: 2;
+  }
+}
+
 .input-container {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
 
-  &:has(input[type='radio']) {
-    flex-direction: row;
-    align-items: center;
-    padding: 8px 0;
-    margin-bottom: 0;
+  // &:has(input[type='radio']) {
+  //   flex-direction: row;
+  //   align-items: center;
+  //   padding: 8px 0;
+  //   margin-bottom: 0;
 
-    &:focus-within {
-      outline: 2px solid rgba($color-blue-dark, 70%);
-    }
-  }
+  //   &:focus-within {
+  //     outline: 2px solid rgba($color-blue-dark, 70%);
+  //   }
+  // }
 
   .form-label {
     margin-bottom: 4px;
