@@ -1,9 +1,9 @@
 /* eslint-disable no-param-reassign */
-import { ChangeEventType } from '../../types/types';
+import { ChangeInputType } from '../../types/types';
 
 type Language = 'dk' | 'uk';
 
-export function formatCurrency(event: ChangeEventType) {
+export function formatCurrency(event: ChangeInputType) {
   // Remove all non-digit characters
   let { value } = event.target;
   value = value.replace(/\D/g, '');
@@ -26,7 +26,7 @@ export function formatCurrency(event: ChangeEventType) {
   return event;
 }
 
-export const currencyMask = (event: ChangeEventType) => {
+export const currencyMask = (event: ChangeInputType) => {
   let { value } = event.target;
   value = value.replace(/\D/g, '');
   value = value.replace(/(\d)(\d{2})$/, '$1.$2');
@@ -35,7 +35,7 @@ export const currencyMask = (event: ChangeEventType) => {
   return event;
 };
 
-export const phoneMask = (event: ChangeEventType) => {
+export const phoneMask = (event: ChangeInputType) => {
   let { value } = event.target;
   value = value.replace(/\D/g, '');
   value = value.replace(/^(\d{2})(\d)/g, '($1)$2');
@@ -44,7 +44,7 @@ export const phoneMask = (event: ChangeEventType) => {
   return event;
 };
 
-export const idMask = (event: ChangeEventType) => {
+export const idMask = (event: ChangeInputType) => {
   event.target.maxLength = 9;
   let { value } = event.target;
   value = value.replace(/\D/g, '');

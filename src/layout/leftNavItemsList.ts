@@ -25,7 +25,10 @@ const leftNavItemsList: NavListItem[] = [
       },
     ],
   },
-
+  {
+    path: LeftNavPath.Buttons,
+    title: Title.Buttons,
+  },
   {
     path: LeftNavPath.FormElements,
     title: Title.FormElements,

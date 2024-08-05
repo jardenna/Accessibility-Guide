@@ -1,12 +1,12 @@
 import { FC } from 'react';
-import { ChangeEventType } from '../../types/types';
+import { ChangeInputType } from '../../types/types';
 import './_form.scss';
 import { RadioListItem } from './formLists/formList';
 
 interface RadioButtonProps {
   initialChecked: string;
   name: string;
-  onChange: (event: ChangeEventType) => void;
+  onChange: (event: ChangeInputType) => void;
   radioButtonList: RadioListItem[];
   formInfoText?: string;
 }

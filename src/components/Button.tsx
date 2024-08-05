@@ -2,6 +2,7 @@
 
 import { FC, ReactNode } from 'react';
 import { BtnVariant } from '../types/enums';
+import { ButtonEventType } from '../types/types';
 
 interface ButtonProps {
   children: ReactNode;
@@ -14,7 +15,7 @@ interface ButtonProps {
   className?: string;
   disabled?: boolean;
   id?: string;
-  onClick?: () => void;
+  onClick?: (event?: ButtonEventType) => void;
   role?: string;
   tabIndex?: 0 | -1;
   type?: 'submit' | 'reset' | 'button' | undefined;

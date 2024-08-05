@@ -7,7 +7,7 @@ interface BtnCloseProps {
   ariaLabel: string;
   autoFocus?: boolean;
   className?: string;
-  onClick?: (id?: string) => void;
+  onClick?: () => void;
 }
 
 const BtnClose: FC<BtnCloseProps> = ({

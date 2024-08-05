@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { IconName } from '../../../types/enums';
-import { ChangeEventType } from '../../../types/types';
+import { ButtonEventType } from '../../../types/types';
 import Button from '../../Button';
 import Icon from '../../Icon';
 import Input from '../Input';
@@ -36,7 +36,7 @@ const NumberStep: FC<NumberStepProps> = ({
         id={id}
         ariaLabel={`Subtract ${initCount} `}
         disabled={value === Number(min)}
-        onClick={(event?: ChangeEventType) =>
+        onClick={(event?: ButtonEventType) =>
           handleClick(event, value !== Number(min) ? -initCount : 0)
         }
       >
@@ -54,7 +54,7 @@ const NumberStep: FC<NumberStepProps> = ({
         max={max}
       />
       <Button
-        onClick={(event?: ChangeEventType) =>
+        onClick={(event?: ButtonEventType) =>
           handleClick(event, value !== Number(max) ? initCount : 0)
         }
         ariaLabel={`Add ${initCount} `}

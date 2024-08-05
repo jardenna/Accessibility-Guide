@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react';
-import { BlurEventType, ChangeEventType, FormEventType } from '../types/types';
+import {
+  BlurEventType,
+  ButtonEventType,
+  ChangeInputType,
+  FormEventType,
+} from '../types/types';
 
 export type ValidationErrors = {
   [key: string]: string;
@@ -19,7 +24,7 @@ interface UseFormValidationReturn<T extends FormValues> {
   errors: ValidationErrors;
   handleClick: (event: any, id: number) => void;
   onBlur: (event: BlurEventType) => void;
-  onChange: (event: ChangeEventType) => void;
+  onChange: (event: ChangeInputType) => void;
   onClearAll: () => void;
   onSubmit: (event: FormEventType) => void;
   values: T;
@@ -78,7 +83,7 @@ function useFormValidation<T extends FormValues>({
   }
 
   // Special case for number step
-  const handleClick = (event: ChangeEventType, amount: number) => {
+  const handleClick = (event: ButtonEventType, amount: number) => {
     const { id } = event.currentTarget;
 
     setValues((prevValues) => ({

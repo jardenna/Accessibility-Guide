@@ -5,6 +5,7 @@ import Layout from '../layout/Layout';
 import AccessibilityGuidelines from '../pages/AccessibilityGuidelines';
 import AccessibilityMyths from '../pages/AccessibilityMyths';
 import Aria from '../pages/aria/Aria';
+import Buttons from '../pages/Buttons';
 import Contact from '../pages/commonPages/Contact';
 import Home from '../pages/commonPages/Home';
 import ErrorPage from '../pages/errorPage/ErrorPage';
@@ -55,6 +56,10 @@ const routeConfig = createBrowserRouter([
       {
         path: LeftNavPath.FormElements,
         element: <FormElements />,
+      },
+      {
+        path: LeftNavPath.Buttons,
+        element: <Buttons />,
       },
       {
         path: LeftNavPath.Navigation,

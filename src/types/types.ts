@@ -1,9 +1,6 @@
-import { ChangeEvent, FormEvent } from 'react';
+import { ChangeEvent, FormEvent, MouseEvent } from 'react';
 
-export type ChangeEventType = ChangeEvent<
-  HTMLInputElement | HTMLTextAreaElement
->;
-
+export type ButtonEventType = MouseEvent<HTMLButtonElement>;
 export type ChangeInputType = ChangeEvent<HTMLInputElement>;
 
 export type BlurEventType = { target: { name: string } };
