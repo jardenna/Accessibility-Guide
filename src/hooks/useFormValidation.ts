@@ -67,7 +67,7 @@ function useFormValidation<T extends FormValues>({
   }, [touched, values, validate]);
 
   function onChange(event: ChangeInputType) {
-    const { name, value, type } = event.target;
+    const { name, value, type, checked } = event.target;
 
     if (type === 'number') {
       setValues({
@@ -76,10 +76,26 @@ function useFormValidation<T extends FormValues>({
       });
     }
 
-    setValues({
-      ...values,
-      [name]: value,
-    });
+    if (type === 'checkbox') {
+      setValues((prevValues) => {
+        const currentValues = prevValues[name] as string[];
+        if (checked) {
+          return {
+            ...prevValues,
+            [name]: [...currentValues, value],
+          };
+        }
+        return {
+          ...prevValues,
+          [name]: currentValues.filter((item) => item !== value),
+        };
+      });
+    } else {
+      setValues({
+        ...values,
+        [name]: value,
+      });
+    }
   }
 
   // Special case for number step

@@ -1,7 +1,20 @@
-import { FC, useState } from 'react';
-import { ChangeInputType } from '../types/types';
+import { FC } from 'react';
+import useFormValidation, { FormValues } from '../hooks/useFormValidation';
 
 const Buttons: FC = () => {
+  const initialState: FormValues = {
+    selectedItems: [],
+  };
+
+  const callback = (values: FormValues) => {
+    console.log(values);
+  };
+
+  const { values, onChange, onSubmit } = useFormValidation({
+    initialState,
+    callback,
+  });
+
   const initValues = [
     { label: 'Option 1' },
     { label: 'Option 2' },
@@ -9,29 +22,6 @@ const Buttons: FC = () => {
     { label: 'Option 4' },
     { label: 'Option 5' },
   ];
-  const [selectedItem, setSelectedItem] = useState<any>([]);
-
-  // const { onChange, values } = useFormValidation({
-  //   callback: (values) => {
-  //     console.log('Form submitted with values', values);
-  //   },
-  //   initialState: initValues,
-  // });
-
-  const handleCheckboxChange = (event: ChangeInputType) => {
-    const { value, checked } = event.target;
-
-    if (checked) {
-      setSelectedItem([...selectedItem, value]);
-    } else {
-      setSelectedItem(selectedItem.filter((a: any) => a !== value));
-    }
-  };
-
-  const onSubmit = (e: any) => {
-    e.preventDefault();
-    console.log(selectedItem);
-  };
 
   return (
     <article>
@@ -42,8 +32,12 @@ const Buttons: FC = () => {
           <div key={checkbox.label}>
             <input
               type="checkbox"
+              name="selectedItems"
               value={checkbox.label}
-              onChange={handleCheckboxChange}
+              onChange={onChange}
+              checked={(values.selectedItems as string[]).includes(
+                checkbox.label,
+              )}
               id={checkbox.label}
             />
             <label htmlFor={checkbox.label}>{checkbox.label}</label>
