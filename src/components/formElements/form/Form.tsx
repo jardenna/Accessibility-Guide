@@ -1,6 +1,7 @@
 import { FC, ReactNode } from 'react';
-import { FormEventType } from '../../types/types';
-import Button from '../Button';
+import { FormEventType } from '../../../types/types';
+import Button from '../../Button';
+import './_form.scss';
 
 interface FormProps {
   children: ReactNode;

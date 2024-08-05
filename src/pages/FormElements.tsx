@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import Checkbox from '../components/formElements/Checkbox';
-import Form from '../components/formElements/Form';
+import Checkbox from '../components/formElements/checkbox/Checkbox';
+import Form from '../components/formElements/form/Form';
 import {
   radioButtonGenderList,
   selectedItems,
@@ -8,7 +8,7 @@ import {
 import Input from '../components/formElements/Input';
 import { phoneMask } from '../components/formElements/masks';
 import NumberStep from '../components/formElements/numberStep/NumberStep';
-import RadioButton from '../components/formElements/RadioButton';
+import RadioButton from '../components/formElements/radioButton/RadioButton';
 import PageTitle from '../components/PageTitle';
 import useFormValidation from '../hooks/useFormValidation';
 import { Title } from '../types/lang';
@@ -34,31 +34,33 @@ const FormElements: FC = () => {
       <PageTitle title={Title.FormElements} />
 
       <Form onSubmit={onSubmit} labelText="Submit form">
+        <Checkbox
+          legendText="Chose options"
+          onChange={onChange}
+          values={values.selectedItems}
+          checkBoxList={selectedItems}
+        />
+
+        <NumberStep
+          onChange={onChange}
+          handleClick={handleClick}
+          value={values.tickets}
+          min="1"
+          labelText="Buy Tickets"
+          id="tickets"
+          name="tickets"
+        />
+
+        <RadioButton
+          legendText="Gender identity"
+          radioButtonList={radioButtonGenderList}
+          name="genderOption"
+          initialChecked={values.genderOption}
+          onChange={onChange}
+          formInfoText="Understanding the gender distribution of our users, helps us to promote diversity and ensure that no group is left out. All data collected is used in accordance with our Privacy Policy."
+        />
         <fieldset>
           <legend>Legend</legend>
-          <Checkbox
-            onChange={onChange}
-            values={values.selectedItems}
-            checkBoxList={selectedItems}
-          />
-
-          <NumberStep
-            onChange={onChange}
-            handleClick={handleClick}
-            value={values.tickets}
-            min="1"
-            labelText="Buy Tickets"
-            id="tickets"
-            name="tickets"
-          />
-
-          <RadioButton
-            radioButtonList={radioButtonGenderList}
-            name="genderOption"
-            initialChecked={values.genderOption}
-            onChange={onChange}
-            formInfoText="Understanding the gender distribution of our users, helps us to promote diversity and ensure that no group is left out. All data collected is used in accordance with our Privacy Policy."
-          />
           <Input
             value={values.price}
             onChange={onChange}

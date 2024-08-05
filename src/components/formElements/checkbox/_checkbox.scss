@@ -1,0 +1,48 @@
+@import '../../../scss/functions';
+@import '../../../scss/colors';
+@import '../../../scss/mixins';
+
+input[type='checkbox'] {
+  appearance: none;
+  margin-right: 10px;
+  background-color: $color-white;
+  color: currentcolor;
+  width: rem(10px);
+  height: rem(10px);
+  border: 2px solid $color-blue-dark;
+  transform: translateY(-1.2px);
+  display: grid;
+  place-content: center;
+  padding: 8px;
+  position: relative;
+
+  &:focus-visible {
+    outline: transparent;
+  }
+
+  &::before {
+    content: '';
+    width: rem(9px);
+    height: rem(9px);
+    transform: scale(0);
+    background-color: white;
+
+    @include transition($time: 0.12s);
+  }
+
+  &:checked {
+    outline: transparent;
+    border-color: $color-blue-dark;
+
+    &::before {
+      transform: scale(1);
+      content: '\2713';
+      display: inline-block;
+      color: $color-white;
+      padding: 0 6px 0 0;
+      padding: 0 8px 18px 0;
+      background: $color-blue-dark;
+      font-size: 20px;
+    }
+  }
+}
