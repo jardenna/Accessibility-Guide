@@ -25,6 +25,8 @@ input[type='number'] {
 
 .checkbox-radio-container {
   display: flex;
+  align-items: center;
+  margin-bottom: 8px;
 
   &:focus-within {
     outline: 2px solid rgba($color-blue-dark, 70%);
@@ -39,17 +41,6 @@ input[type='number'] {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-
-  // &:has(input[type='radio']) {
-  //   flex-direction: row;
-  //   align-items: center;
-  //   padding: 8px 0;
-  //   margin-bottom: 0;
-
-  //   &:focus-within {
-  //     outline: 2px solid rgba($color-blue-dark, 70%);
-  //   }
-  // }
 
   .form-label {
     margin-bottom: 4px;
