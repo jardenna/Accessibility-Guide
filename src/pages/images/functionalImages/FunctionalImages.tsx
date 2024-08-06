@@ -20,10 +20,18 @@ const FunctionalImages: FC = () => (
     </PageBanner>
     <article>
       <Figure>
-        <img
-          src="img/risks_light.jpg"
-          alt="Bar graph of financial risks of failing to implement accessibility with text description below."
-        />
+        <picture>
+          <source
+            srcSet="img/risks_dark.jpg"
+            media="(prefers-color-scheme: dark)"
+          />
+
+          <img
+            src="img/risks_light.jpg"
+            alt="Bar graph of financial risks of failing to implement accessibility with text description below."
+          />
+        </picture>
+
         <Figcaption>
           <SourceLinks />
           <BottomLinks
@@ -31,6 +39,7 @@ const FunctionalImages: FC = () => (
             textVersionContent={<Accordion accordionList={accordionList} />}
             mobileImageUrl="img/mobile/risks_light.jpg"
             mainImageUrl="img/risks_light.jpg"
+            mainImageUrlDark="img/risks_dark.jpg"
             altText="Bar graph of financial risks of failing to implement accessibility with text description below."
           />
         </Figcaption>

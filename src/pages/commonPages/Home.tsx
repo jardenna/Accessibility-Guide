@@ -76,6 +76,7 @@ const Home: FC = () => {
               textVersionContent={
                 <Table caption="Kind of Disabilities" data={data} />
               }
+              mainImageUrlDark="img/inclusive_activity_cards_dark.jpg"
             />
           </Figcaption>
         </Figure>

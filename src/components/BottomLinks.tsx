@@ -8,6 +8,7 @@ interface BottomLinksProps {
   altText: string;
   dialogHeaderText: string;
   mainImageUrl: string;
+  mainImageUrlDark: string;
   mobileImageUrl: string;
   textVersionContent: ReactNode;
 }
@@ -18,9 +19,10 @@ const BottomLinks: FC<BottomLinksProps> = ({
   textVersionContent,
   mobileImageUrl,
   mainImageUrl,
+  mainImageUrlDark,
 }) => {
-  const { small } = variables;
-  const mediumWidth = `(max-width:${small})`;
+  const { medium } = variables;
+  const mediumWidth = `(max-width:${medium})`;
   return (
     <div className="bottom-links">
       <TriggerDialog
@@ -42,6 +44,10 @@ const BottomLinks: FC<BottomLinksProps> = ({
       >
         <picture>
           <source media={mediumWidth} srcSet={mobileImageUrl} />
+          <source
+            srcSet={mainImageUrlDark}
+            media="(prefers-color-scheme: dark)"
+          />
           <img src={mainImageUrl} alt={altText} />
         </picture>
       </TriggerDialog>
