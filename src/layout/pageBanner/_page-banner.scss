@@ -7,6 +7,13 @@
 
   @include color-scheme($scheme-medium...);
 
+  @media (prefers-color-scheme: dark) {
+    background-color: rgb(17 53 75 / 50%);
+    color: #f8f8f8;
+
+    // @include color-scheme($scheme-dark...);
+  }
+
   .banner-content {
     margin: 0;
   }

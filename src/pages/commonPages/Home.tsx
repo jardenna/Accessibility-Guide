@@ -56,11 +56,17 @@ const Home: FC = () => {
               media={mediumWidth}
               srcSet="img/mobile/inclusive_activity_cards_light.jpg"
             />
+            <source
+              srcSet="img/inclusive_activity_cards_dark.jpg"
+              media="(prefers-color-scheme: dark)"
+            />
+
             <img
               src="img/inclusive_activity_cards_light.jpg"
               alt="A chart of permanent, temporary, situational impairments and disabilities for touch, see, hear, speak, and cognitive  with text description below."
             />
           </picture>
+
           <Figcaption>
             <BottomLinks
               dialogHeaderText="Kind of Disabilities"

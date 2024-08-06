@@ -5,7 +5,6 @@
 .main-header {
   justify-content: space-between;
   align-items: flex-end;
-  background-color: $color-white;
 
   .logo {
     margin-bottom: 20px;
@@ -17,6 +16,12 @@
 
   svg {
     min-width: rem(400px);
+
+    @media (prefers-color-scheme: dark) {
+      path {
+        fill: $color-gray-light;
+      }
+    }
 
     @include mq-size($medium) {
       min-width: rem(260px);
