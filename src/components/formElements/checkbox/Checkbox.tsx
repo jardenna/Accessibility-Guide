@@ -6,19 +6,18 @@ import './_checkbox.scss';
 
 interface CheckboxProps {
   checkBoxList: SelectedItems[];
-  legendText: string;
   onChange: (event: ChangeInputType) => void;
   values: string[];
+  formInfoText?: string;
 }
 
 const Checkbox: FC<CheckboxProps> = ({
   checkBoxList,
   onChange,
   values,
-  legendText,
+  formInfoText,
 }) => (
-  <fieldset>
-    <legend>{legendText}:</legend>
+  <>
     {checkBoxList.map((checkbox) => (
       <Input
         key={checkbox.label}
@@ -32,7 +31,8 @@ const Checkbox: FC<CheckboxProps> = ({
         className="visibility-hidden"
       />
     ))}
-  </fieldset>
+    {formInfoText && <section className="form-info">{formInfoText}</section>}
+  </>
 );
 
 export default Checkbox;

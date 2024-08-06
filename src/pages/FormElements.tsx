@@ -17,6 +17,8 @@ const FormElements: FC = () => {
   const initialFormValues = {
     price: '',
     phone: '',
+    fullName: '',
+    age: '',
     genderOption: 'woman',
     tickets: 1,
     selectedItems: ['Option 1', 'Option 3'],
@@ -34,8 +36,37 @@ const FormElements: FC = () => {
       <PageTitle title={Title.FormElements} />
 
       <Form onSubmit={onSubmit} labelText="Submit form">
+        <fieldset>
+          <legend>Personal information</legend>
+          <Input
+            value={values.fullName}
+            onChange={onChange}
+            id="fullName"
+            name="fullName"
+            labelText="Full name"
+            required
+          />
+          <Input
+            value={values.age}
+            onChange={onChange}
+            id="age"
+            name="age"
+            labelText="Age"
+            type="number"
+          />
+        </fieldset>
+        <fieldset>
+          <legend>Gender identity</legend>
+          <RadioButton
+            radioButtonList={radioButtonGenderList}
+            name="genderOption"
+            initialChecked={values.genderOption}
+            onChange={onChange}
+            formInfoText="Understanding the gender distribution of our users, helps us to promote diversity and ensure that no group is left out. All data collected is used in accordance with our Privacy Policy."
+          />
+        </fieldset>
+
         <Checkbox
-          legendText="Chose options"
           onChange={onChange}
           values={values.selectedItems}
           checkBoxList={selectedItems}
@@ -51,14 +82,6 @@ const FormElements: FC = () => {
           name="tickets"
         />
 
-        <RadioButton
-          legendText="Gender identity"
-          radioButtonList={radioButtonGenderList}
-          name="genderOption"
-          initialChecked={values.genderOption}
-          onChange={onChange}
-          formInfoText="Understanding the gender distribution of our users, helps us to promote diversity and ensure that no group is left out. All data collected is used in accordance with our Privacy Policy."
-        />
         <fieldset>
           <legend>Legend</legend>
           <Input
@@ -79,30 +102,6 @@ const FormElements: FC = () => {
           />
         </fieldset>
       </Form>
-
-      {/* <TriggerDialog
-        dialogHeaderText="Header"
-        openDialogBtnLabel="Open"
-        openDialogBtnVariant={BtnVariant.Neutral}
-        showCloseIcon
-        primaryActionBtn={{
-          label: 'Submit',
-          // eslint-disable-next-line no-console
-          onClick: () => console.log(412),
-          buttonType: 'submit',
-        }}
-      >
-        Missed market opportunities and estimated loss of potential revenue by
-        not catering to the market of people with disabilities.
-      </TriggerDialog>
-
-      <TriggerToast
-        onCallback={() => console.log(12)}
-        type={ToastType.Success}
-        message="Toast message"
-      >
-        Submit
-      </TriggerToast> */}
     </>
   );
 };

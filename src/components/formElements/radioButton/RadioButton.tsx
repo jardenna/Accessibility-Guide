@@ -6,7 +6,6 @@ import './_radio-button.scss';
 
 interface RadioButtonProps {
   initialChecked: string;
-  legendText: string;
   name: string;
   onChange: (event: ChangeInputType) => void;
   radioButtonList: RadioListItem[];
@@ -15,14 +14,13 @@ interface RadioButtonProps {
 
 const RadioButton: FC<RadioButtonProps> = ({
   initialChecked,
-  legendText,
+
   radioButtonList,
   onChange,
   name,
   formInfoText,
 }) => (
-  <fieldset>
-    <legend>{legendText}:</legend>
+  <>
     {radioButtonList.map((radio) => (
       <Input
         type="radio"
@@ -38,7 +36,7 @@ const RadioButton: FC<RadioButtonProps> = ({
     ))}
 
     {formInfoText && <section className="form-info">{formInfoText}</section>}
-  </fieldset>
+  </>
 );
 
 export default RadioButton;
