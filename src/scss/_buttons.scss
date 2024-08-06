@@ -42,11 +42,12 @@ a[class^='btn-'],
 }
 
 .btn-ghost {
-  background: transparent;
+  background-color: transparent;
   text-align: left;
   min-width: auto;
   color: $color-primary;
   padding: 0;
+  font-size: inherit;
 
   &.btn {
     &:hover {
@@ -61,8 +62,8 @@ a[class^='btn-'],
   }
 }
 
-.btn-neutral {
-  @include color-scheme($scheme-btn-neutral...);
+.btn-secondary {
+  @include color-scheme($scheme-btn-secondary...);
 
   border: 1px solid $color-secondary-dark;
 
@@ -92,41 +93,11 @@ a[class^='btn-'],
   }
 }
 
-.btn-secondary {
-  @include color-scheme($scheme-btn-light...);
-
-  &:focus-visible {
-    @include outline($color-secondary);
-
-    border-color: $color-white;
-  }
-
-  &.btn {
-    &:hover {
-      background-color: $color-primary;
-      color: $color-gray-light;
-    }
-  }
-}
-
 .btn-link {
   color: $color-link;
   font-size: inherit;
-}
-
-.btn-link,
-.btn-secondary {
-  min-width: auto;
-  padding: 12px;
-
-  &:focus-visible {
-    @include outline($color-primary);
-  }
-
-  /* stylelint-disable-next-line no-descending-specificity */
-  svg {
-    max-width: 12px;
-  }
+  padding: 0;
+  background-color: transparent;
 }
 
 .btn-close {

@@ -26,7 +26,7 @@ const BottomLinks: FC<BottomLinksProps> = ({
       <TriggerDialog
         dialogHeaderText={dialogHeaderText}
         openDialogBtnLabel="View text version"
-        openDialogBtnVariant={BtnVariant.Link}
+        openDialogBtnVariant={BtnVariant.Secondary}
         dialogVariant={SizeVariant.Md}
         secondaryActionText={CommonText.Close}
       >
@@ -35,7 +35,7 @@ const BottomLinks: FC<BottomLinksProps> = ({
       <TriggerDialog
         dialogHeaderText={dialogHeaderText}
         openDialogBtnLabel="View large image"
-        openDialogBtnVariant={BtnVariant.Link}
+        openDialogBtnVariant={BtnVariant.Secondary}
         dialogVariant={SizeVariant.Lg}
         secondaryActionText={CommonText.Close}
         showCloseIcon

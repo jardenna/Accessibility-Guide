@@ -22,7 +22,7 @@ const DialogFooter: FC<DialogFooterProps> = ({
         {primaryActionBtn.label}
       </Button>
     )}
-    <Button onClick={onCloseDialog} variant={BtnVariant.Neutral}>
+    <Button onClick={onCloseDialog} variant={BtnVariant.Secondary}>
       {secondaryActionText}
     </Button>
   </footer>
