@@ -44,12 +44,24 @@ const Home: FC = () => (
     </PageBanner>
     <picture>
       <source
-        media="(min-width:900px)"
-        srcSet="img/light/horrizontal_inclusive_activity_cards_big.jpg"
+        media="(min-width: 900px) and (prefers-color-scheme: light)"
+        srcSet="img/light/horizontal_inclusive_activity_cards_big.jpg"
       />
       <source
-        media="(min-width:600px)"
+        media="(min-width: 900px) and (prefers-color-scheme: dark)"
+        srcSet="img/dark/horizontal_inclusive_activity_cards_big.jpg"
+      />
+      <source
+        media="(min-width:600px) and (prefers-color-scheme: light)"
         srcSet="img/light/horizontal_inclusive_activity_cards.jpg"
+      />
+      <source
+        media="(min-width:600px) and (prefers-color-scheme: dark)"
+        srcSet="img/dark/horizontal_inclusive_activity_cards.jpg"
+      />
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcSet="img/dark/mobile/vertical_inclusive_activity_cards.jpg"
       />
       <img
         src="img/light/mobile/vertical_inclusive_activity_cards.jpg"
@@ -60,13 +72,26 @@ const Home: FC = () => (
     {/* POPUP */}
     <picture>
       <source
-        media="(min-width:900px)"
+        media="(min-width: 900px) and (prefers-color-scheme: light)"
         srcSet="img/light/vertical_inclusive_activity_cards_big.jpg"
       />
       <source
-        media="(min-width:600px)"
+        media="(min-width: 900px) and (prefers-color-scheme: dark)"
+        srcSet="img/dark/vertical_inclusive_activity_cards_big.jpg"
+      />
+      <source
+        media="(min-width: 600px) and (prefers-color-scheme: light)"
         srcSet="img/light/horizontal_inclusive_activity_cards.jpg"
       />
+      <source
+        media="(min-width: 600px) and (prefers-color-scheme: dark)"
+        srcSet="img/dark/horizontal_inclusive_activity_cards.jpg"
+      />
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcSet="img/dark/mobile/vertical_inclusive_activity_cards.jpg"
+      />
+
       <img
         src="img/light/mobile/vertical_inclusive_activity_cards.jpg"
         alt="A chart of permanent, temporary, situational impairments and disabilities for touch, see, hear, speak, and cognitive  with text description below."
