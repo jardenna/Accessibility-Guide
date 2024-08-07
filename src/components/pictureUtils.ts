@@ -2,7 +2,7 @@ export const inclusiveActivityImages = {
   lightImages: {
     imgBig: 'horizontal_inclusive_activity_cards_big.jpg',
     imgMedium: 'horizontal_inclusive_activity_cards.jpg',
-    imgSmall: 'mobile/vertical_inclusive_activity_cards.png',
+    imgSmall: 'mobile/vertical_inclusive_activity_cards.jpg',
   },
 
   darkImages: {
@@ -14,9 +14,9 @@ export const inclusiveActivityImages = {
 
 export const inclusiveActivityImagesDialog = {
   lightImages: {
-    imgBig: 'vertical_inclusive_activity_cards_big.png',
+    imgBig: 'vertical_inclusive_activity_cards_big.jpg',
     imgMedium: 'horizontal_inclusive_activity_cards.jpg',
-    imgSmall: 'mobile/vertical_inclusive_activity_cards.png',
+    imgSmall: 'mobile/vertical_inclusive_activity_cards.jpg',
   },
 
   darkImages: {
