@@ -9,7 +9,7 @@ interface SourceProps {
 const Source: FC<SourceProps> = ({ minWidth, colorScheme, imgName }) => (
   <source
     media={`(min-width: ${minWidth}px) and (prefers-color-scheme: ${colorScheme})`}
-    srcSet={`img/${imgName}`}
+    srcSet={`images/${imgName}`}
   />
 );
 

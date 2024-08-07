@@ -11,18 +11,6 @@ export interface PictureProps {
   lightImages: any;
 }
 
-// const lightImages = {
-//   imgBig: 'horizontal_inclusive_activity_cards_big.jpg',
-//   imgMedium: 'horizontal_inclusive_activity_cards.jpg',
-//   imgSmall: 'mobile/vertical_inclusive_activity_cards.jpg',
-// };
-
-// const darkImages = {
-//   imgBig: 'horizontal_inclusive_activity_cards_big.jpg',
-//   imgMedium: 'horizontal_inclusive_activity_cards.jpg',
-//   imgSmall: 'mobile/vertical_inclusive_activity_cards.jpg',
-// };
-
 const Picture: FC<PictureProps> = ({ altText, lightImages, darkImages }) => (
   <picture>
     <Source
@@ -48,10 +36,10 @@ const Picture: FC<PictureProps> = ({ altText, lightImages, darkImages }) => (
 
     <source
       media="(prefers-color-scheme: dark)"
-      srcSet={`img/dark/${darkImages.imgSmall}`}
+      srcSet={`images/dark/${darkImages.imgSmall}`}
     />
 
-    <img src={`img/light/${lightImages.imgSmall}`} alt={altText} />
+    <img src={`images/light/${lightImages.imgSmall}`} alt={altText} />
   </picture>
 );
 
