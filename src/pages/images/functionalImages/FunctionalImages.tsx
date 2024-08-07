@@ -1,10 +1,17 @@
 import { FC } from 'react';
+import Accordion from '../../../components/accordion/Accordion';
+import BottomLinks from '../../../components/BottomLinks';
 import Figcaption from '../../../components/figure/Figcaption';
 import Figure from '../../../components/figure/Figure';
 import PageTitle from '../../../components/PageTitle';
-import Picture from '../../../components/Picture1';
+import Picture from '../../../components/Picture';
+import {
+  finacialRisksImages,
+  finacialRisksImagesDialog,
+} from '../../../components/pictureUtils';
 import PageBanner from '../../../layout/pageBanner/PageBanner';
 import { CommonText, Title } from '../../../types/lang';
+import accordionList from './accordionList';
 import SourceLinks from './SourceLinks';
 
 const FunctionalImages: FC = () => (
@@ -19,21 +26,24 @@ const FunctionalImages: FC = () => (
     <article>
       <Figure>
         <Picture
-          altText={CommonText.FinancialRiskAltText}
-          mainImageUrl="risks_light.jpg"
-          mainImageUrlDark="risks_dark.jpg"
-          mobileImageUrl="mobile/risks_light.jpg"
+          altText={CommonText.InclusiveActivityAltText}
+          lightImages={finacialRisksImages.lightImages}
+          darkImages={finacialRisksImages.darkImages}
         />
+
         <Figcaption>
           <SourceLinks />
-          {/* <BottomLinks
+          <BottomLinks
             dialogHeaderText="Financial risks"
             textVersionContent={<Accordion accordionList={accordionList} />}
-            mobileImageUrl="mobile/risks_light.jpg"
-            mainImageUrl="risks_light.jpg"
-            mainImageUrlDark="risks_dark.jpg"
-            altText={CommonText.FinancialRiskAltText}
-          /> */}
+            picture={
+              <Picture
+                altText={CommonText.InclusiveActivityAltText}
+                lightImages={finacialRisksImagesDialog.lightImages}
+                darkImages={finacialRisksImagesDialog.darkImages}
+              />
+            }
+          />
         </Figcaption>
       </Figure>
     </article>

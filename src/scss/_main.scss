@@ -40,6 +40,10 @@ body {
   line-height: rem(21px);
   color: $color-primary;
   font-size: rem(14px);
+
+  @include mq-size($medium) {
+    height: auto;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
