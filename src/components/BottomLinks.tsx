@@ -19,7 +19,7 @@ const BottomLinks: FC<BottomLinksProps> = ({
       dialogHeaderText={dialogHeaderText}
       openDialogBtnLabel="View text version"
       openDialogBtnVariant={BtnVariant.Secondary}
-      dialogVariant={SizeVariant.Md}
+      dialogVariant={SizeVariant.Lg}
       secondaryActionText={CommonText.Close}
     >
       {textVersionContent}
@@ -28,7 +28,7 @@ const BottomLinks: FC<BottomLinksProps> = ({
       dialogHeaderText={dialogHeaderText}
       openDialogBtnLabel="View large image"
       openDialogBtnVariant={BtnVariant.Secondary}
-      dialogVariant={SizeVariant.Md}
+      dialogVariant={SizeVariant.Lg}
       secondaryActionText={CommonText.Close}
       showCloseIcon
     >
