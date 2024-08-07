@@ -2,27 +2,27 @@ export const inclusiveActivityImages = {
   lightImages: {
     imgBig: 'horizontal_inclusive_activity_cards_big.jpg',
     imgMedium: 'horizontal_inclusive_activity_cards.jpg',
-    imgSmall: 'mobile/vertical_inclusive_activity_cards.jpg',
+    imgSmall: 'mobile/vertical_inclusive_activity_cards.png',
   },
 
   darkImages: {
     imgBig: 'horizontal_inclusive_activity_cards_big.jpg',
     imgMedium: 'horizontal_inclusive_activity_cards.jpg',
-    imgSmall: 'mobile/vertical_inclusive_activity_cards.jpg',
+    imgSmall: 'mobile/vertical_inclusive_activity_cards.png',
   },
 };
 
 export const inclusiveActivityImagesDialog = {
   lightImages: {
-    imgBig: 'vertical_inclusive_activity_cards_big.jpg',
+    imgBig: 'vertical_inclusive_activity_cards_big.png',
     imgMedium: 'horizontal_inclusive_activity_cards.jpg',
-    imgSmall: 'mobile/vertical_inclusive_activity_cards.jpg',
+    imgSmall: 'mobile/vertical_inclusive_activity_cards.png',
   },
 
   darkImages: {
-    imgBig: 'vertical_inclusive_activity_cards_big.jpg',
+    imgBig: 'vertical_inclusive_activity_cards_big.png',
     imgMedium: 'horizontal_inclusive_activity_cards.jpg',
-    imgSmall: 'mobile/vertical_inclusive_activity_cards.jpg',
+    imgSmall: 'mobile/vertical_inclusive_activity_cards.png',
   },
 };
 
