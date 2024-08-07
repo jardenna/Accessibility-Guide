@@ -43,13 +43,13 @@ export const finacialRisksImages = {
 export const finacialRisksImagesDialog = {
   lightImages: {
     imgBig: 'risks_big.jpg',
-    imgMedium: 'risks_medium.jpg',
-    imgSmall: 'mobile/risks.jpg',
+    imgMedium: 'risks.jpg',
+    imgSmall: 'risks_medium.jpg',
   },
 
   darkImages: {
     imgBig: 'risks_big.jpg',
-    imgMedium: 'risks_medium.jpg',
-    imgSmall: 'mobile/risks.jpg',
+    imgMedium: 'risks.jpg',
+    imgSmall: 'risks_medium.jpg',
   },
 };
