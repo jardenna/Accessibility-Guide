@@ -32,7 +32,7 @@ dialog {
   }
 
   &.dialog-md {
-    width: 36%;
+    width: 50%;
   }
 
   &.dialog-lg {
@@ -55,6 +55,8 @@ dialog {
     padding: 20px 16px;
     font-size: rem(14px);
     line-height: rem(21px);
+    display: flex;
+    justify-content: center;
   }
 
   .dialog-footer {
