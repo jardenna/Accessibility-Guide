@@ -28,6 +28,8 @@ export enum CommonText {
   Close = 'Close',
   CloseDialog = 'Close Dialog',
   CloseToast = 'Close Toast',
+  FinancialRiskAltText = 'Bar graph of financial risks of failing to implement accessibility with text description below.',
+  InclusiveActivityAltText = 'A chart of permanent, temporary, situational impairments and disabilities for touch, see, hear, speak, and cognitive  with text description below.',
   LegalCosts = 'Legal Costs',
   LegalCostsContent = 'Additional costs related to legal fees, fines, and settlements due to non-compliance with accessibility laws.',
   LostRevenue = 'Lost Revenue',

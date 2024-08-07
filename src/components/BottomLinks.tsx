@@ -2,20 +2,17 @@ import { FC, ReactNode } from 'react';
 import { BtnVariant, SizeVariant } from '../types/enums';
 import { CommonText } from '../types/lang';
 import TriggerDialog from './dialog/TriggerDialog';
-import Picture, { PictureProps } from './Picture';
 
-interface BottomLinksProps extends PictureProps {
+interface BottomLinksProps {
   dialogHeaderText: string;
+  picture: ReactNode;
   textVersionContent: ReactNode;
 }
 
 const BottomLinks: FC<BottomLinksProps> = ({
-  altText,
   dialogHeaderText,
   textVersionContent,
-  mobileImageUrl,
-  mainImageUrl,
-  mainImageUrlDark,
+  picture,
 }) => (
   <div className="bottom-links">
     <TriggerDialog
@@ -35,12 +32,7 @@ const BottomLinks: FC<BottomLinksProps> = ({
       secondaryActionText={CommonText.Close}
       showCloseIcon
     >
-      <Picture
-        altText={altText}
-        mainImageUrl={mainImageUrl}
-        mainImageUrlDark={mainImageUrlDark}
-        mobileImageUrl={mobileImageUrl}
-      />
+      {picture}
     </TriggerDialog>
   </div>
 );

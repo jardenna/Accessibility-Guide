@@ -1,13 +1,10 @@
 import { FC } from 'react';
-import Accordion from '../../../components/accordion/Accordion';
-import BottomLinks from '../../../components/BottomLinks';
 import Figcaption from '../../../components/figure/Figcaption';
 import Figure from '../../../components/figure/Figure';
 import PageTitle from '../../../components/PageTitle';
-import Picture from '../../../components/Picture';
+import Picture from '../../../components/Picture1';
 import PageBanner from '../../../layout/pageBanner/PageBanner';
-import { Title } from '../../../types/lang';
-import accordionList from './accordionList';
+import { CommonText, Title } from '../../../types/lang';
 import SourceLinks from './SourceLinks';
 
 const FunctionalImages: FC = () => (
@@ -22,21 +19,21 @@ const FunctionalImages: FC = () => (
     <article>
       <Figure>
         <Picture
-          altText="Bar graph of financial risks of failing to implement accessibility with text description below."
+          altText={CommonText.FinancialRiskAltText}
           mainImageUrl="risks_light.jpg"
           mainImageUrlDark="risks_dark.jpg"
           mobileImageUrl="mobile/risks_light.jpg"
         />
         <Figcaption>
           <SourceLinks />
-          <BottomLinks
+          {/* <BottomLinks
             dialogHeaderText="Financial risks"
             textVersionContent={<Accordion accordionList={accordionList} />}
             mobileImageUrl="mobile/risks_light.jpg"
             mainImageUrl="risks_light.jpg"
             mainImageUrlDark="risks_dark.jpg"
-            altText="Bar graph of financial risks of failing to implement accessibility with text description below."
-          />
+            altText={CommonText.FinancialRiskAltText}
+          /> */}
         </Figcaption>
       </Figure>
     </article>

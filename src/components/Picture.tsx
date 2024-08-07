@@ -1,31 +1,58 @@
 import { FC } from 'react';
-import variables from '../scss/variables.module.scss';
+import Source from './Source';
 
+// interface ImageSrc {
+//   colorScheme: 'light' | 'dark';
+//   imgName: string;
+// }
 export interface PictureProps {
   altText: string;
-  mainImageUrl: string;
-  mainImageUrlDark: string;
-  mobileImageUrl: string;
+  darkImages: any;
+  lightImages: any;
 }
 
-const Picture: FC<PictureProps> = ({
-  altText,
-  mobileImageUrl,
-  mainImageUrl,
-  mainImageUrlDark,
-}) => {
-  const { small } = variables;
-  const smallWidth = `(max-width:${small})`;
-  return (
-    <picture>
-      <source media={smallWidth} srcSet={`img/${mobileImageUrl}`} />
-      <source
-        srcSet={`img/${mainImageUrlDark}`}
-        media="(prefers-color-scheme: dark)"
-      />
-      <img src={`img/${mainImageUrl}`} alt={altText} />
-    </picture>
-  );
-};
+// const lightImages = {
+//   imgBig: 'horizontal_inclusive_activity_cards_big.jpg',
+//   imgMedium: 'horizontal_inclusive_activity_cards.jpg',
+//   imgSmall: 'mobile/vertical_inclusive_activity_cards.jpg',
+// };
+
+// const darkImages = {
+//   imgBig: 'horizontal_inclusive_activity_cards_big.jpg',
+//   imgMedium: 'horizontal_inclusive_activity_cards.jpg',
+//   imgSmall: 'mobile/vertical_inclusive_activity_cards.jpg',
+// };
+
+const Picture: FC<PictureProps> = ({ altText, lightImages, darkImages }) => (
+  <picture>
+    <Source
+      colorScheme="light"
+      minWidth={900}
+      imgName={`light/${lightImages.imgBig}`}
+    />
+    <Source
+      colorScheme="dark"
+      minWidth={900}
+      imgName={`dark/${darkImages.imgBig}`}
+    />
+    <Source
+      colorScheme="light"
+      minWidth={600}
+      imgName={`light/${lightImages.imgMedium}`}
+    />
+    <Source
+      colorScheme="dark"
+      minWidth={600}
+      imgName={`dark/${darkImages.imgMedium}`}
+    />
+
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcSet={`img/dark/${darkImages.imgSmall}`}
+    />
+
+    <img src={`img/light/${lightImages.imgSmall}`} alt={altText} />
+  </picture>
+);
 
 export default Picture;
