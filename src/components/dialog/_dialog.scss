@@ -10,10 +10,18 @@ dialog::backdrop {
 
 dialog[open] {
   @include animation(slide-in-top-center);
+
+  @include mq-size($medium) {
+    @include animation(slide-in-right);
+  }
 }
 
 dialog {
   @include animation(slide-out-top-center);
+
+  @include mq-size($medium) {
+    @include animation(slide-out-right);
+  }
 }
 
 .dialog {
