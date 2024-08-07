@@ -14,11 +14,11 @@ const Picture: FC<PictureProps> = ({
   mainImageUrl,
   mainImageUrlDark,
 }) => {
-  const { medium } = variables;
-  const mediumWidth = `(max-width:${medium})`;
+  const { small } = variables;
+  const smallWidth = `(max-width:${small})`;
   return (
     <picture>
-      <source media={mediumWidth} srcSet={`img/${mobileImageUrl}`} />
+      <source media={smallWidth} srcSet={`img/${mobileImageUrl}`} />
       <source
         srcSet={`img/${mainImageUrlDark}`}
         media="(prefers-color-scheme: dark)"
