@@ -19,7 +19,7 @@ const altTextList: TextInfoList[] = [
   {
     strongText: 'Skip Unnecessary Phrases',
     description:
-      'Avoid "image of..." or "graphic of..." as assistive technology already indicates the presence of an image.',
+      'Avoid "image of..." or "graphic of..." as assistive technology already indicates the presence of an image',
   },
   {
     strongText: 'Describe Concisely',
@@ -39,7 +39,7 @@ const altTextList: TextInfoList[] = [
   {
     strongText: 'No Extra Details',
     description:
-      'Don’t add unnecessary details that don’t contribute to the understanding of the image.',
+      'Don’t add unnecessary details that don’t contribute to the understanding of the image',
   },
   {
     strongText: 'Ensure Accurate Representation',
