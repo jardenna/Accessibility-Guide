@@ -65,6 +65,7 @@ export enum SizeVariant {
 
 export enum BtnVariant {
   Ghost = 'ghost',
+  Link = 'link',
   Primary = 'primary',
   Secondary = 'secondary',
 }

@@ -11,6 +11,7 @@ a[class^='btn-'],
   padding: 8px 20px;
   font-weight: normal;
   min-width: rem(90px);
+  font-size: rem(14px);
   cursor: pointer;
 
   &:hover {
@@ -94,10 +95,20 @@ a[class^='btn-'],
 }
 
 .btn-link {
-  color: $color-link;
-  font-size: inherit;
-  padding: 0;
   background-color: transparent;
+  border: 0;
+  color: $color-link;
+  text-decoration: underline;
+  padding: 0;
+
+  &:hover {
+    text-decoration: none;
+    background-color: transparent;
+  }
+
+  &:focus-visible {
+    @include outline($color-link);
+  }
 }
 
 .btn-close {

@@ -70,23 +70,10 @@
 .bottom-links {
   display: flex;
   align-items: baseline;
-  gap: 20px;
+  gap: 12px;
   margin-bottom: 30px;
-
-  a {
-    &.btn {
-      text-decoration: underline;
-    }
-  }
 }
 
 .text-danger {
   color: $color-danger;
-}
-
-.form-info {
-  font-style: italic;
-  font-size: rem(12px);
-  line-height: rem(18px);
-  margin: 12px 0;
 }
