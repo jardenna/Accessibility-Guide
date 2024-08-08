@@ -2,8 +2,10 @@ import { FC } from 'react';
 import { IconName } from '../types/enums';
 import { IconDefaultProps } from '../types/interfaces';
 import AddIcon from './icons/AddIcon';
+import AddInfoIcon from './icons/AddInfoIcon';
 import CiteIcon from './icons/CiteIcon';
 import CloseIcon from './icons/CloseIcon';
+import DictionaryIcon from './icons/DictionaryIcon';
 import ErrorIcon from './icons/ErrorIcon';
 import InfoIcon from './icons/InfoIcon';
 import LogoIcon from './icons/LogoIcon';
@@ -20,6 +22,8 @@ interface IconProps extends IconDefaultProps {
 
 const iconMapping = {
   add: AddIcon,
+  addInfo: AddInfoIcon,
+  book: DictionaryIcon,
   cite: CiteIcon,
   close: CloseIcon,
   error: ErrorIcon,

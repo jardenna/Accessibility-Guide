@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { IconDefaultProps } from '../../types/interfaces';
 
-const CiteIcon: FC<IconDefaultProps> = ({ title, className }) => (
+const CiteIcon: FC<IconDefaultProps> = ({ title, className, size }) => (
   <svg
     viewBox="0 0 341 351"
     xmlns="http://www.w3.org/2000/svg"
@@ -11,6 +11,8 @@ const CiteIcon: FC<IconDefaultProps> = ({ title, className }) => (
     clipRule="evenodd"
     strokeLinejoin="round"
     strokeMiterlimit="2"
+    width={size}
+    height={size}
   >
     <title>{title}</title>
     <path

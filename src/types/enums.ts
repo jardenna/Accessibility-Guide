@@ -44,6 +44,8 @@ export enum KeyCode {
 
 export enum IconName {
   Add = 'add',
+  AddInfo = 'addInfo',
+  Book = 'book',
   Cite = 'cite',
   Close = 'close',
   Error = 'error',

@@ -23,6 +23,7 @@ const FunctionalImages: FC = () => (
       indicate actions, or provide essential content that users need to
       understand or interact with the website effectively.
     </PageBanner>
+
     <article>
       <Figure>
         <Picture
@@ -32,7 +33,6 @@ const FunctionalImages: FC = () => (
         />
 
         <Figcaption>
-          <SourceLinks />
           <BottomLinks
             dialogHeaderText="Financial risks"
             textVersionContent={<Accordion accordionList={accordionList} />}
@@ -44,6 +44,7 @@ const FunctionalImages: FC = () => (
               />
             }
           />
+          <SourceLinks />
         </Figcaption>
       </Figure>
     </article>
