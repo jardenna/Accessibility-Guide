@@ -1,5 +1,6 @@
-@import '../../../scss/functions';
 @import '../../../scss/colors';
+@import '../../../scss/fonts';
+@import '../../../scss/functions';
 @import '../../../scss/mixins';
 
 // Remove autofill
@@ -97,7 +98,7 @@ fieldset {
 }
 
 legend {
-  font-weight: bold;
+  font-family: $font-primary-bold;
   position: absolute;
   top: 20px;
   left: 0;

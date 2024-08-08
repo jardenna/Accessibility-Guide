@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { IconDefaultProps } from '../../types/interfaces';
 
-const MailIcon: FC<IconDefaultProps> = ({ size, title, className = '' }) => (
+const MailIcon: FC<IconDefaultProps> = ({ size, title, className }) => (
   <svg
     role="img"
     width={size}

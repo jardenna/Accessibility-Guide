@@ -10,17 +10,18 @@ interface PageBannerProps {
 
 const PageBanner: FC<PageBannerProps> = ({ children, title }) => (
   <section className="banner" aria-label="Page banner">
-    <div>
-      <h1>{title}</h1>
-      <div>
-        <Icon name={IconName.Book} title="Dictionary" size="30" />
+    <header className="banner-header" aria-label="banner">
+      <h1 className="banner-title">{title}</h1>
+      <span className="banner-icon-container">
+        <Icon name={IconName.Book} title="Dictionary" size="30" height="auto" />
         <Icon
           name={IconName.AddInfo}
           title="Additional information"
-          size="50"
+          size="40"
+          height="auto"
         />
-      </div>
-    </div>
+      </span>
+    </header>
     <p className="banner-content">{children}</p>
   </section>
 );

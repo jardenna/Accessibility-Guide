@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { IconDefaultProps } from '../../types/interfaces';
 
-const PhoneIcon: FC<IconDefaultProps> = ({ size, title, className = '' }) => (
+const PhoneIcon: FC<IconDefaultProps> = ({ size, title, className }) => (
   <svg
     role="img"
     width={size}

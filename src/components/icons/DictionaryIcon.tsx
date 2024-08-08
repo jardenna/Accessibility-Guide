@@ -1,12 +1,17 @@
 import { FC } from 'react';
 import { IconDefaultProps } from '../../types/interfaces';
 
-const DictionaryIcon: FC<IconDefaultProps> = ({ size, title, className }) => (
+const DictionaryIcon: FC<IconDefaultProps> = ({
+  size,
+  title,
+  height,
+  className,
+}) => (
   <svg
     role="img"
     xmlns="http://www.w3.org/2000/svg"
     width={size}
-    height={size}
+    height={height}
     className={className}
     viewBox="0 0 24 24"
   >

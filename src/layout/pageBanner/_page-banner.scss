@@ -2,7 +2,7 @@
 @import '../../scss/mixins';
 
 .banner {
-  padding: 20px;
+  padding: 30px 40px;
   margin-bottom: 30px;
 
   @include color-scheme($scheme-medium...);
@@ -12,6 +12,26 @@
     color: #f8f8f8;
 
     // @include color-scheme($scheme-dark...);
+  }
+
+  .banner-header {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+    align-items: center;
+
+    .banner-icon-container {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      position: relative;
+      top: -22px;
+      right: -24px;
+    }
+
+    .banner-title {
+      flex-grow: 1;
+    }
   }
 
   .banner-content {
