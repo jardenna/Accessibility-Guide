@@ -44,9 +44,12 @@ const Input: FC<InputProps> = ({
 
   return (
     <div className={inputClassName}>
-      {!inputHasNoLabel && (
-        <FormLabel required={required} inputLabel={labelText} id={id} />
-      )}
+      <span className="form-label-container">
+        {!inputHasNoLabel && (
+          <FormLabel required={required} inputLabel={labelText} id={id} />
+        )}
+        {errorText && <FormError errorText={errorText} ariaErrorId={id} />}
+      </span>
       <input
         type={type || 'text'}
         name={name}
@@ -64,7 +67,6 @@ const Input: FC<InputProps> = ({
         min={min}
         max={max}
       />
-      {errorText && <FormError errorText={errorText} ariaErrorId={id} />}
     </div>
   );
 };

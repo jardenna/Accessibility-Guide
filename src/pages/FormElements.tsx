@@ -40,6 +40,19 @@ const FormElements: FC = () => {
     <>
       <PageTitle title={Title.FormElements} />
 
+      <details className="govuk-details">
+        <summary className="govuk-details__summary">
+          <span className="govuk-details__summary-text">
+            Help with nationality
+          </span>
+        </summary>
+        <div className="govuk-details__text">
+          We need to know your nationality so we can work out which elections
+          you’re entitled to vote in. If you cannot provide your nationality,
+          you’ll have to send copies of identity documents through the post.
+        </div>
+      </details>
+
       <Form onSubmit={onSubmit} labelText="Submit form" errors={errors}>
         <fieldset>
           <legend>Personal information</legend>
@@ -50,6 +63,8 @@ const FormElements: FC = () => {
             name="fullName"
             labelText="Full name"
             required
+            errorText={errors.fullName}
+            onBlur={onBlur}
           />
           <Input
             value={values.age}
@@ -80,6 +95,8 @@ const FormElements: FC = () => {
             labelText="Email"
             type="email"
             required
+            errorText={errors.email}
+            onBlur={onBlur}
           />
           <Input
             value={values.address}
@@ -87,7 +104,6 @@ const FormElements: FC = () => {
             id="address"
             name="address"
             labelText="Address"
-            required
           />
           <Input
             value={values.phone}
@@ -97,6 +113,8 @@ const FormElements: FC = () => {
             name="phone"
             placeholder="(--)--- ---"
             required
+            errorText={errors.phone}
+            onBlur={onBlur}
           />
         </fieldset>
         <fieldset>
@@ -117,20 +135,6 @@ const FormElements: FC = () => {
           id="tickets"
           name="tickets"
         />
-
-        <fieldset>
-          <legend>Legend</legend>
-          <Input
-            value={values.price}
-            onChange={onChange}
-            id="price"
-            name="price"
-            labelText="Price"
-            required
-            errorText={errors.price}
-            onBlur={onBlur}
-          />
-        </fieldset>
       </Form>
     </>
   );

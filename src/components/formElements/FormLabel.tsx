@@ -5,6 +5,7 @@ interface FormLabelProps {
   inputLabel: string;
   required?: boolean;
 }
+
 const FormLabel: FC<FormLabelProps> = ({ inputLabel, id, required }) => (
   <label className="form-label" htmlFor={id}>
     {inputLabel}
@@ -15,4 +16,5 @@ const FormLabel: FC<FormLabelProps> = ({ inputLabel, id, required }) => (
     )}
   </label>
 );
+
 export default FormLabel;

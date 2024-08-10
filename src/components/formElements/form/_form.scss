@@ -56,6 +56,14 @@ input[type='number'] {
         0 / 100% 3px content-box padding-box repeat-x;
     }
   }
+
+  .text-danger {
+    font-family: $font-primary-bold;
+  }
+
+  input[aria-invalid='true'] {
+    @include outline($color-danger);
+  }
 }
 
 .checkbox-radio-container {
@@ -114,4 +122,9 @@ legend {
   font-size: rem(12px);
   line-height: rem(18px);
   margin: 12px 0;
+}
+
+.form-label-container {
+  display: flex;
+  gap: 12px;
 }
