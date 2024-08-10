@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { ChangeInputType } from '../../../types/types';
-import { SelectedItems } from '../formLists/formList';
+import { CheckboxItems } from '../formLists/formList';
 import Input from '../Input';
 import './_checkbox.scss';
 
 interface CheckboxProps {
-  checkBoxList: SelectedItems[];
+  checkBoxList: CheckboxItems[];
   onChange: (event: ChangeInputType) => void;
   values: string[];
   formInfoText?: string;

@@ -2,8 +2,8 @@ import { FC } from 'react';
 import Checkbox from '../components/formElements/checkbox/Checkbox';
 import Form from '../components/formElements/form/Form';
 import {
+  checkboxItems,
   radioButtonGenderList,
-  selectedItems,
 } from '../components/formElements/formLists/formList';
 import Input from '../components/formElements/Input';
 import { phoneMask } from '../components/formElements/masks';
@@ -44,6 +44,7 @@ const FormElements: FC = () => {
             id="fullName"
             name="fullName"
             labelText="Full name"
+            placeholder="Full name"
             required
           />
           <Input
@@ -53,6 +54,7 @@ const FormElements: FC = () => {
             name="age"
             labelText="Age"
             type="number"
+            placeholder="Age"
           />
         </fieldset>
         <fieldset>
@@ -70,7 +72,7 @@ const FormElements: FC = () => {
           <Checkbox
             onChange={onChange}
             values={values.selectedItems}
-            checkBoxList={selectedItems}
+            checkBoxList={checkboxItems}
           />
         </fieldset>
 
@@ -92,6 +94,7 @@ const FormElements: FC = () => {
             id="price"
             name="price"
             labelText="Price"
+            placeholder="Price"
             required
           />
           <Input

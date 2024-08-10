@@ -24,6 +24,11 @@ input[type='number'] {
   appearance: textfield;
 }
 
+::placeholder {
+  color: $color-primary-medium;
+  opacity: 1;
+}
+
 .input-container {
   display: flex;
   flex-direction: column;

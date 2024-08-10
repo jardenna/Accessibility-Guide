@@ -26,11 +26,11 @@ export const radioButtonGenderList: RadioListItem[] = [
   },
 ];
 
-export interface SelectedItems {
+export interface CheckboxItems {
   label: string;
 }
 
-export const selectedItems: SelectedItems[] = [
+export const checkboxItems: CheckboxItems[] = [
   { label: 'Option 1' },
   { label: 'Option 2' },
   { label: 'Option 3' },
