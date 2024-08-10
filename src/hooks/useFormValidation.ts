@@ -23,11 +23,11 @@ interface UseFormValidationProps<T extends FormValues> {
 interface UseFormValidationReturn<T extends FormValues> {
   errors: ValidationErrors;
   handleClick: (event: ButtonEventType, id: number) => void;
-  onBlur: (event: BlurEventType) => void;
   onChange: (event: ChangeInputType) => void;
   onClearAll: () => void;
   onSubmit: (event: FormEventType) => void;
   values: T;
+  onBlur?: (event?: any) => void;
 }
 
 function useFormValidation<T extends FormValues>({

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { InputType } from '../../types/types';
+import { BlurEventType, InputType } from '../../types/types';
 import FormError from './FormError';
 import FormLabel from './FormLabel';
 
@@ -16,7 +16,7 @@ export interface InputProps {
   inputHasNoLabel?: boolean;
   max?: string;
   min?: string;
-  onBlur?: () => void;
+  onBlur?: (event?: BlurEventType) => void;
   placeholder?: string;
   required?: boolean;
   type?: InputType;

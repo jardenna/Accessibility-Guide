@@ -9,6 +9,7 @@ import Input from '../components/formElements/Input';
 import { phoneMask } from '../components/formElements/masks';
 import NumberStep from '../components/formElements/numberStep/NumberStep';
 import RadioButton from '../components/formElements/radioButton/RadioButton';
+import validatePrice from '../components/formElements/validation/priceValidation';
 import PageTitle from '../components/PageTitle';
 import useFormValidation from '../hooks/useFormValidation';
 import { Title } from '../types/lang';
@@ -22,20 +23,24 @@ const FormElements: FC = () => {
     genderOption: 'woman',
     tickets: 1,
     selectedItems: ['Option 1', 'Option 3'],
+    email: '',
+    address: '',
   };
 
-  const { onChange, onSubmit, values, handleClick } = useFormValidation({
-    callback: (values) => {
-      console.log('Form submitted with values', values);
-    },
-    initialState: initialFormValues,
-  });
+  const { onChange, onSubmit, values, handleClick, errors, onBlur } =
+    useFormValidation({
+      callback: (values) => {
+        console.log('Form submitted with values', values);
+      },
+      initialState: initialFormValues,
+      validate: validatePrice,
+    });
 
   return (
     <>
       <PageTitle title={Title.FormElements} />
 
-      <Form onSubmit={onSubmit} labelText="Submit form">
+      <Form onSubmit={onSubmit} labelText="Submit form" errors={errors}>
         <fieldset>
           <legend>Personal information</legend>
           <Input
@@ -44,7 +49,6 @@ const FormElements: FC = () => {
             id="fullName"
             name="fullName"
             labelText="Full name"
-            placeholder="Full name"
             required
           />
           <Input
@@ -54,7 +58,6 @@ const FormElements: FC = () => {
             name="age"
             labelText="Age"
             type="number"
-            placeholder="Age"
           />
         </fieldset>
         <fieldset>
@@ -65,6 +68,35 @@ const FormElements: FC = () => {
             initialChecked={values.genderOption}
             onChange={onChange}
             formInfoText="Understanding the gender distribution of our users, helps us to promote diversity and ensure that no group is left out. All data collected is used in accordance with our Privacy Policy."
+          />
+        </fieldset>
+        <fieldset>
+          <legend>Contact information</legend>
+          <Input
+            value={values.email}
+            onChange={onChange}
+            id="email"
+            name="email"
+            labelText="Email"
+            type="email"
+            required
+          />
+          <Input
+            value={values.address}
+            onChange={onChange}
+            id="address"
+            name="address"
+            labelText="Address"
+            required
+          />
+          <Input
+            value={values.phone}
+            onChange={(event) => onChange(phoneMask(event))}
+            labelText="Phone"
+            id="phone"
+            name="phone"
+            placeholder="(--)--- ---"
+            required
           />
         </fieldset>
         <fieldset>
@@ -94,16 +126,9 @@ const FormElements: FC = () => {
             id="price"
             name="price"
             labelText="Price"
-            placeholder="Price"
             required
-          />
-          <Input
-            value={values.phone}
-            onChange={(event) => onChange(phoneMask(event))}
-            labelText="Phone"
-            id="phone"
-            name="phone"
-            placeholder="(--)--- ---"
+            errorText={errors.price}
+            onBlur={onBlur}
           />
         </fieldset>
       </Form>
