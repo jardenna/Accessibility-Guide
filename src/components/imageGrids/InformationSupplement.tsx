@@ -3,13 +3,12 @@ import Figcaption from '../figure/Figcaption';
 import ImageGridLeftContent from './ImageGridLeftContent';
 import ImageGridRightContent from './ImageGridRightContent';
 
-interface InformationSupplementProps {}
-
-const InformationSupplement: FC<InformationSupplementProps> = () => (
+const InformationSupplement: FC = () => (
   <>
     <ImageGridLeftContent
-      src="/images/annie_easley.jpg"
-      alt="Annie Easley working in front of a computer."
+      src="web/annie_easley1.jpg"
+      mobileSrc="small/annie_easley1.jpg"
+      alt="Annie Easley sitting behind her desk."
     >
       <Figcaption>
         <h2>Annie Easley</h2>

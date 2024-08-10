@@ -3,6 +3,7 @@ import FigureContent from './FigureContent';
 
 export interface ImageGridLeftContentProps {
   alt: string;
+  mobileSrc: string;
   src: string;
   children?: ReactNode;
   href?: string;
@@ -11,6 +12,7 @@ export interface ImageGridLeftContentProps {
 
 const ImageGridLeftContent: FC<ImageGridLeftContentProps> = ({
   src,
+  mobileSrc,
   alt,
   title,
   children,
@@ -19,15 +21,26 @@ const ImageGridLeftContent: FC<ImageGridLeftContentProps> = ({
   <section className="card-img">
     {href ? (
       <a href={href}>
-        <FigureContent src={src} alt={alt} title={title}>
+        <FigureContent title={title}>
+          <img
+            src={`images/${src}`}
+            srcSet={`images/${src} 1x, images/${mobileSrc} 2x,`}
+            alt={alt}
+          />
           {children}
         </FigureContent>
       </a>
     ) : (
-      <FigureContent src={src} alt={alt} title={title}>
+      <FigureContent title={title}>
+        <img
+          src={`images/${src}`}
+          srcSet={`images/${src} 1x, images/${mobileSrc} 2x,`}
+          alt={alt}
+        />
         {children}
       </FigureContent>
     )}
   </section>
 );
+
 export default ImageGridLeftContent;

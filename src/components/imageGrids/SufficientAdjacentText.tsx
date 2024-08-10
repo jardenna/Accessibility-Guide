@@ -6,8 +6,9 @@ import ImageGridRightContent from './ImageGridRightContent';
 const SufficientAdjacentText: FC = () => (
   <>
     <ImageGridLeftContent
-      src="/images/frog.jpg"
-      title="Red-Eyed Tree Frog"
+      src="web/costa_rican_frog.jpg"
+      mobileSrc="small/costa_rican_frog.jpg"
+      title="Red-Eyed Costa Rican Tree Frog"
       alt=""
     >
       <Figcaption>
