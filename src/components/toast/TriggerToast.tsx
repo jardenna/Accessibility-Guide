@@ -1,15 +1,12 @@
 import { FC, ReactNode } from 'react';
-import { FormValues } from '../../hooks/useFormValidation';
 import useToast from '../../hooks/useToast';
 import { BtnVariant, SizeVariant, ToastType } from '../../types/enums';
-import { isObjectEmpty } from '../../utils';
 import Button from '../Button';
 import Toast from './Toast';
 import './_toast.scss';
 
 export interface TriggerToastProps {
   children: ReactNode;
-  errors: FormValues;
   message: string;
   btnType?: any;
   btnVariant?: BtnVariant;
@@ -28,7 +25,6 @@ const TriggerToast: FC<TriggerToastProps> = ({
   toastType = ToastType.Success,
   toastSize,
   btnType,
-  errors,
 }) => {
   const { handleShowToast, handleDismissToast, sortedToasts } =
     useToast(onCallback);
@@ -42,14 +38,13 @@ const TriggerToast: FC<TriggerToastProps> = ({
       >
         {children}
       </Button>
-      {isObjectEmpty(errors) && (
-        <Toast
-          toasts={sortedToasts}
-          onDismissToast={handleDismissToast}
-          position={position}
-          toastSize={toastSize}
-        />
-      )}
+
+      <Toast
+        toasts={sortedToasts}
+        onDismissToast={handleDismissToast}
+        position={position}
+        toastSize={toastSize}
+      />
     </section>
   );
 };

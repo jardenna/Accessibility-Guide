@@ -30,7 +30,7 @@ const Input: FC<InputProps> = ({
   value,
   inputHasNoLabel,
   checked,
-  className,
+  className = '',
   errorText,
   onChange,
   onBlur,
@@ -48,6 +48,7 @@ const Input: FC<InputProps> = ({
         )}
         {errorText && <FormError errorText={errorText} ariaErrorId={id} />}
       </span>
+      {errorText && <span className="error-icon">i</span>}
       <input
         type={type || 'text'}
         name={name}

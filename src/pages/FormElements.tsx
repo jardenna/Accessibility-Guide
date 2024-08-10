@@ -53,7 +53,7 @@ const FormElements: FC = () => {
         </div>
       </details>
 
-      <Form onSubmit={onSubmit} labelText="Submit form" errors={errors}>
+      <Form onSubmit={onSubmit} labelText="Submit form">
         <fieldset>
           <legend>Personal information</legend>
           <Input

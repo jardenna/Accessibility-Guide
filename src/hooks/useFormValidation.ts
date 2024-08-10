@@ -39,7 +39,7 @@ function useFormValidation<T extends FormValues>({
   const [values, setValues] = useState<T>(initialState);
   const [errors, setErrors] = useState<ValidationErrors>({});
   const [touched, setTouched] = useState<string[]>([]);
-  const [isSubmitting, setSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (isSubmitting) {
@@ -49,7 +49,7 @@ function useFormValidation<T extends FormValues>({
         setTouched([]);
       }
 
-      setSubmitting(false);
+      setIsSubmitting(false);
     }
   }, [errors, isSubmitting]);
 
@@ -123,7 +123,7 @@ function useFormValidation<T extends FormValues>({
 
       setErrors(validationErrors);
       if (isObjectEmpty(validationErrors)) {
-        setSubmitting(true);
+        setIsSubmitting(true);
         callback(values);
       }
     }
