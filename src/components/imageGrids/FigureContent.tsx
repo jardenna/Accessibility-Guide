@@ -1,18 +1,14 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import Figcaption from '../figure/Figcaption';
 import Figure from '../figure/Figure';
-import { ImageGridLeftContentProps } from './ImageGridLeftContent';
 
-type FigureContentType = Omit<ImageGridLeftContentProps, 'href'>;
+interface FigureContentProps {
+  children: ReactNode;
+  title?: string;
+}
 
-const FigureContent: FC<FigureContentType> = ({
-  src,
-  alt,
-  title,
-  children,
-}) => (
+const FigureContent: FC<FigureContentProps> = ({ title, children }) => (
   <Figure>
-    <img src={src} alt={alt} />
     <Figcaption>
       {title && <h2>{title}</h2>}
       {children}

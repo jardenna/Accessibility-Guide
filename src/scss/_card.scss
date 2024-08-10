@@ -62,5 +62,9 @@
   img {
     min-width: rem(300px);
     margin-bottom: 4px;
+
+    @include mq-size($small) {
+      min-width: auto;
+    }
   }
 }
