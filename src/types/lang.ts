@@ -38,7 +38,7 @@ export enum CommonText {
   OperationalInefficienciesContent = 'Increase in operational costs due to higher customer service demands and inefficiencies from inaccessible system.',
   OtherCosts = 'Other Costs',
   OtherCostsContent = 'Maintenance costs and development costs for retrofitting accessibility.',
-  ProgressBar = 'progress bar',
+  PleaseEnter = 'Please enter',
   ReputationalDamage = 'Reputational Damage',
   ReputationalDamageContent = 'Potential loss in overall company valuation due to damage to brand reputation and customer loyalty.',
 }

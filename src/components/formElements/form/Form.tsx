@@ -13,7 +13,7 @@ interface FormProps {
 }
 
 const Form: FC<FormProps> = ({ children, onSubmit, labelText, errors }) => (
-  <form onSubmit={onSubmit}>
+  <form onSubmit={onSubmit} noValidate>
     {children}
     <TriggerToast
       toastType={ToastType.Success}

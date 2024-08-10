@@ -5,6 +5,7 @@ import {
   ChangeInputType,
   FormEventType,
 } from '../types/types';
+import { isObjectEmpty } from '../utils';
 
 export type ValidationErrors = {
   [key: string]: string;
@@ -42,10 +43,12 @@ function useFormValidation<T extends FormValues>({
 
   useEffect(() => {
     if (isSubmitting) {
-      const noErrors = Object.keys(errors).length === 0;
+      const noErrors = isObjectEmpty(errors);
+
       if (noErrors) {
         setTouched([]);
       }
+
       setSubmitting(false);
     }
   }, [errors, isSubmitting]);
@@ -117,11 +120,13 @@ function useFormValidation<T extends FormValues>({
 
     if (validate) {
       const validationErrors = validate(values);
-      setErrors(validationErrors);
-    }
 
-    setSubmitting(true);
-    callback(values);
+      setErrors(validationErrors);
+      if (isObjectEmpty(validationErrors)) {
+        setSubmitting(true);
+        callback(values);
+      }
+    }
   };
 
   return {

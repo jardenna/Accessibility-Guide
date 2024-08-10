@@ -9,7 +9,6 @@ export interface InputProps {
   name: string;
   onChange: (e?: any) => void;
   value: string | number;
-  ariaErrormessage?: string;
   checked?: boolean;
   className?: string;
   errorText?: string;
@@ -37,7 +36,6 @@ const Input: FC<InputProps> = ({
   onBlur,
   min,
   max,
-  ariaErrormessage,
   placeholder,
 }) => {
   const inputClassName = `${type === 'checkbox' || type === 'radio' ? 'checkbox-radio-container' : 'input-container'}`;
@@ -60,7 +58,7 @@ const Input: FC<InputProps> = ({
         id={id}
         aria-invalid={errorText ? true : undefined}
         aria-required={required || undefined}
-        aria-errormessage={ariaErrormessage || undefined}
+        aria-errormessage={errorText ? id : undefined}
         aria-label={inputHasNoLabel ? labelText : undefined}
         onBlur={onBlur}
         placeholder={placeholder}

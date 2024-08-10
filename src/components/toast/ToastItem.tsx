@@ -35,7 +35,7 @@ const ToastItem: FC<ToastItemProps> = ({
         ariaLabel={CommonText.CloseToast}
         className="dismiss-btn"
       />
-      <ProgressBar ariaValueText={CommonText.ProgressBar} />
+      <ProgressBar ariaValueText="progress bar" />
     </div>
   );
 };

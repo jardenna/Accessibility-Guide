@@ -57,8 +57,9 @@ input[type='number'] {
     }
   }
 
-  .text-danger {
+  .error-message {
     font-family: $font-primary-bold;
+    color: $color-danger;
   }
 
   input[aria-invalid='true'] {
@@ -127,4 +128,5 @@ legend {
 .form-label-container {
   display: flex;
   gap: 12px;
+  align-items: baseline;
 }
