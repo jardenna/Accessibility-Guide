@@ -1,11 +1,8 @@
 import { FC } from 'react';
 import { ToastItems } from '../../hooks/useToast';
 import { SizeVariant, ToastRole } from '../../types/enums';
-import { CommonText } from '../../types/lang';
-import BtnClose from '../BtnClose';
 import Portal from '../Portal';
-import ProgressBar from '../progressbar/ProgressBar';
-import ToastIcon from './ToastIcon';
+import ToastItem from './ToastItem';
 
 interface ToastProps {
   onDismissToast: (id: number) => void;
@@ -24,7 +21,11 @@ const Toast: FC<ToastProps> = ({
     <Portal portalId="toast">
       <article className={`toasts-container ${position}`}>
         {toasts.map((toast) => (
-          <div
+          <ToastItem
+            message={toast.content}
+            type={toast.type}
+            onClick={() => onDismissToast(toast.id)}
+            id={toast.id}
             key={toast.id}
             role={
               toast.type === 'success' || toast.type === 'info'
@@ -32,17 +33,7 @@ const Toast: FC<ToastProps> = ({
                 : ToastRole.Alert
             }
             className={`toast transition toast-${toast.type} ${toastSize} ${toast.closing ? 'dismissed' : ''}`}
-          >
-            {toast.type && <ToastIcon name={toast.type} />}
-            <p className="toast-message">{toast.content}</p>
-            <BtnClose
-              onClick={() => onDismissToast(toast.id)}
-              ariaLabel={CommonText.CloseToast}
-              className="dismiss-btn"
-              autoFocus
-            />
-            <ProgressBar ariaValueText={CommonText.ProgressBar} />
-          </div>
+          />
         ))}
       </article>
     </Portal>
