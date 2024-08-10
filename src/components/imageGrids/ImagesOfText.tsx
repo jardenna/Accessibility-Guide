@@ -6,7 +6,7 @@ import ImageGridRightContent from './ImageGridRightContent';
 const ImagesOfText: FC = () => (
   <>
     <ImageGridLeftContent
-      src="web/hedy_lamarr.jpg"
+      src="hedy_lamarr.jpg"
       mobileSrc="small/hedy_lamarr.jpg"
       alt="Hedy Lamarr: Hollywood actress behind the invention of WIFI."
     >

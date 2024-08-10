@@ -7,7 +7,7 @@ const ImageAsLink: FC = () => (
   <>
     <ImageGridLeftContent
       href="https://en.wikipedia.org/wiki/Zebra"
-      src="web/zebra.jpg"
+      src="zebra.jpg"
       mobileSrc="small/zebra.jpg"
       alt=""
     >

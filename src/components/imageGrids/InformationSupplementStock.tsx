@@ -6,7 +6,7 @@ import ImageGridRightContent from './ImageGridRightContent';
 const InformationSupplementStock: FC = () => (
   <>
     <ImageGridLeftContent
-      src="web/happy_child.jpg"
+      src="happy_child.jpg"
       mobileSrc="small/happy_child.jpg"
       alt="We offer books for readers of all ages."
     >

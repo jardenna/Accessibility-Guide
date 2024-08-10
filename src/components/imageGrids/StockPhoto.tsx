@@ -6,7 +6,7 @@ import ImageGridRightContent from './ImageGridRightContent';
 const StockPhoto: FC = () => (
   <>
     <ImageGridLeftContent
-      src="web/smoking_old_person.jpg"
+      src="smoking_old_person.jpg"
       alt=""
       mobileSrc="small/smoking_old_person.jpg"
     >

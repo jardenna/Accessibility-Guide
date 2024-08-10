@@ -6,8 +6,8 @@ import ImageGridRightContent from './ImageGridRightContent';
 const InformationSupplement: FC = () => (
   <>
     <ImageGridLeftContent
-      src="web/annie_easley1.jpg"
-      mobileSrc="small/annie_easley1.jpg"
+      src="annie_easley.jpg"
+      mobileSrc="small/annie_easley.jpg"
       alt="Annie Easley sitting behind her desk."
     >
       <Figcaption>
