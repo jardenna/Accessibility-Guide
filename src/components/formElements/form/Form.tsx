@@ -15,7 +15,7 @@ const Form: FC<FormProps> = ({ children, onSubmit, labelText }) => (
     {children}
     <TriggerToast
       toastType={ToastType.Success}
-      message="Form submitted"
+      message="Thank you for submitting your order."
       btnType="submit"
     >
       {labelText}
