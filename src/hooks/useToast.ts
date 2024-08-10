@@ -7,7 +7,7 @@ export interface ToastItems {
   content: string;
   id: number;
   closing?: boolean;
-  type?: string;
+  type?: ToastType;
 }
 
 const useToast = (onCallback?: () => void) => {

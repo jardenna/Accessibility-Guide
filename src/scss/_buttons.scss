@@ -52,8 +52,6 @@ a[class^='btn-'],
 
   &.btn {
     &:hover {
-      @include outline($color-primary);
-
       background-color: $color-white;
     }
 
@@ -112,10 +110,6 @@ a[class^='btn-'],
 }
 
 .btn-close {
-  &:focus {
-    @include outline($color-primary);
-  }
-
   &:hover {
     color: $color-secondary;
   }

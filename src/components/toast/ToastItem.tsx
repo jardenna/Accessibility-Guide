@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import useKeyPress from '../../hooks/useKeyPress';
-import { KeyCode } from '../../types/enums';
+import { KeyCode, ToastType } from '../../types/enums';
 import { CommonText } from '../../types/lang';
 import BtnClose from '../BtnClose';
 import ProgressBar from '../progressbar/ProgressBar';
@@ -12,7 +12,7 @@ interface ToastItemProps {
   message: string;
   onClick: (id: number) => void;
   role: string;
-  type: any;
+  type?: ToastType;
 }
 
 const ToastItem: FC<ToastItemProps> = ({
