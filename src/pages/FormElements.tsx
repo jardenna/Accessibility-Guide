@@ -65,12 +65,14 @@ const FormElements: FC = () => {
             formInfoText="Understanding the gender distribution of our users, helps us to promote diversity and ensure that no group is left out. All data collected is used in accordance with our Privacy Policy."
           />
         </fieldset>
-
-        <Checkbox
-          onChange={onChange}
-          values={values.selectedItems}
-          checkBoxList={selectedItems}
-        />
+        <fieldset>
+          <legend>Choose an option</legend>
+          <Checkbox
+            onChange={onChange}
+            values={values.selectedItems}
+            checkBoxList={selectedItems}
+          />
+        </fieldset>
 
         <NumberStep
           onChange={onChange}
