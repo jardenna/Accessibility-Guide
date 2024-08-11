@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef } from 'react';
+import { FC } from 'react';
 import Checkbox from '../components/formElements/checkbox/Checkbox';
 import Form from '../components/formElements/form/Form';
 import {
@@ -26,19 +26,8 @@ const FormElements: FC = () => {
     email: '',
     address: '',
   };
-  const refs: any = {
-    phone: useRef<HTMLInputElement>(null),
-    fullName: useRef<HTMLInputElement>(null),
-    email: useRef<HTMLInputElement>(null),
-  };
 
-  //   {
-  //     "phone": "Please enter Your phone no.",
-  //     "fullName": "Please enter Your name",
-  //     "email": "Please enter Your email"
-  // }
-
-  const { onChange, onSubmit, values, handleClick, errors, onBlur } =
+  const { onChange, onSubmit, values, handleClick, errors, onBlur, inputRefs } =
     useFormValidation({
       callback: (values) => {
         console.log('Form submitted with values', values);
@@ -46,16 +35,6 @@ const FormElements: FC = () => {
       initialState: initialFormValues,
       validate: validatePrice,
     });
-
-  useEffect(() => {
-    const errorFields = Object.keys(errors);
-
-    if (errorFields.length > 0) {
-      const firstErrorField = errorFields[0];
-
-      refs[firstErrorField]?.current?.focus();
-    }
-  }, [errors]);
 
   return (
     <>
@@ -86,7 +65,7 @@ const FormElements: FC = () => {
             required
             errorText={errors.fullName}
             onBlur={onBlur}
-            inputRef={refs.fullName}
+            inputRef={inputRefs.fullName}
           />
           <Input
             value={values.age}
@@ -119,7 +98,7 @@ const FormElements: FC = () => {
             required
             errorText={errors.email}
             onBlur={onBlur}
-            inputRef={refs.email}
+            inputRef={inputRefs.email}
           />
           <Input
             value={values.address}
@@ -138,7 +117,7 @@ const FormElements: FC = () => {
             required
             errorText={errors.phone}
             onBlur={onBlur}
-            inputRef={refs.phone}
+            inputRef={inputRefs.phone}
           />
         </fieldset>
         <fieldset>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   BlurEventType,
   ButtonEventType,
@@ -28,6 +28,7 @@ interface UseFormValidationReturn<T extends FormValues> {
   onClearAll: () => void;
   onSubmit: (event: FormEventType) => void;
   values: T;
+  inputRefs?: any;
   onBlur?: (event?: any) => void;
 }
 
@@ -93,6 +94,11 @@ function useFormValidation<T extends FormValues>({
       });
     }
   }
+  const inputRefs: any = {
+    phone: useRef<HTMLInputElement>(null),
+    fullName: useRef<HTMLInputElement>(null),
+    email: useRef<HTMLInputElement>(null),
+  };
 
   // Special case for number step
   const handleClick = (event: ButtonEventType, amount: number) => {
@@ -114,6 +120,16 @@ function useFormValidation<T extends FormValues>({
       setTouched([...touched, name]);
     }
   };
+
+  useEffect(() => {
+    const errorFields = Object.keys(errors);
+
+    if (errorFields.length > 0) {
+      const firstErrorField = errorFields[0];
+
+      inputRefs[firstErrorField]?.current?.focus();
+    }
+  }, [errors, inputRefs]);
 
   const onSubmit = (event: FormEventType) => {
     event.preventDefault();
@@ -137,6 +153,7 @@ function useFormValidation<T extends FormValues>({
     errors,
     onClearAll,
     handleClick,
+    inputRefs,
   };
 }
 
