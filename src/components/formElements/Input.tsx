@@ -13,6 +13,7 @@ export interface InputProps {
   className?: string;
   errorText?: string;
   inputHasNoLabel?: boolean;
+  inputRef?: any;
   max?: string;
   min?: string;
   onBlur?: (event?: BlurEventType) => void;
@@ -29,6 +30,7 @@ const Input: FC<InputProps> = ({
   name,
   value,
   inputHasNoLabel,
+  inputRef,
   checked,
   className = '',
   errorText,
@@ -50,6 +52,7 @@ const Input: FC<InputProps> = ({
       </span>
       {errorText && <span className="error-icon">i</span>}
       <input
+        ref={inputRef}
         type={type || 'text'}
         name={name}
         checked={checked}

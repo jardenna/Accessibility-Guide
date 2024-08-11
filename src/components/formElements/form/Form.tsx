@@ -1,7 +1,6 @@
 import { FC, ReactNode } from 'react';
-import { ToastType } from '../../../types/enums';
 import { FormEventType } from '../../../types/types';
-import TriggerToast from '../../toast/TriggerToast';
+import Button from '../../Button';
 import './_form.scss';
 
 interface FormProps {
@@ -13,13 +12,15 @@ interface FormProps {
 const Form: FC<FormProps> = ({ children, onSubmit, labelText }) => (
   <form onSubmit={onSubmit} noValidate>
     {children}
-    <TriggerToast
+
+    <Button type="submit">{labelText}</Button>
+    {/* <TriggerToast
       toastType={ToastType.Success}
       message="Thank you for submitting your order."
       btnType="submit"
     >
       {labelText}
-    </TriggerToast>
+    </TriggerToast> */}
   </form>
 );
 
