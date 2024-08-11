@@ -94,6 +94,7 @@ function useFormValidation<T extends FormValues>({
       });
     }
   }
+
   const inputRefs: any = {
     phone: useRef<HTMLInputElement>(null),
     fullName: useRef<HTMLInputElement>(null),
