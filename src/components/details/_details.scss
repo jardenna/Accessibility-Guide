@@ -7,16 +7,23 @@ summary {
   list-style: none;
   display: flex; /* also removes the list marker */
   align-items: center;
-  padding: 10px;
   font-family: $font-primary-bold;
   gap: 8px;
   cursor: pointer;
+
+  &:focus-visible {
+    @include outline($color-hilight);
+  }
+
+  &::after {
+    content: '';
+
+    @include chevron($dir: down);
+  }
 }
 
-summary::after {
-  content: '';
-
-  @include chevron($dir: down);
+details {
+  margin-top: 4px;
 }
 
 details[open] > summary::after {

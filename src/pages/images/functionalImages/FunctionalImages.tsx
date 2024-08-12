@@ -24,7 +24,9 @@ const FunctionalImages: FC = () => (
       indicate actions, or provide essential content that users need to
       understand or interact with the website effectively.
     </PageBanner>
-    <ActionInfo />
+    <ActionInfo summary="Additional Information">
+      <SourceLinks />
+    </ActionInfo>
     <article>
       <Figure>
         <Picture
@@ -45,7 +47,6 @@ const FunctionalImages: FC = () => (
               />
             }
           />
-          <SourceLinks />
         </Figcaption>
       </Figure>
     </article>

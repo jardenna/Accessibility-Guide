@@ -57,7 +57,7 @@ a[class^='btn-'],
     }
 
     &:focus-visible {
-      @include outline($color-hilight, 4px);
+      @include outline($color-hilight);
     }
   }
 }
