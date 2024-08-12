@@ -24,9 +24,16 @@
     gap: 12px;
     margin-bottom: 8px;
     align-items: center;
+    position: relative;
 
     .banner-title {
       flex-grow: 1;
+    }
+
+    .btn-ghost {
+      position: absolute;
+      right: -26px;
+      top: -20px;
     }
   }
 

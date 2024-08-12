@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Accordion from '../../../components/accordion/Accordion';
-import ActionInfo from '../../../components/actionInfo/ActionInfo';
+import ActionInfo from '../../../components/ActionInfo';
 import BottomLinks from '../../../components/BottomLinks';
 import Figcaption from '../../../components/figure/Figcaption';
 import Figure from '../../../components/figure/Figure';

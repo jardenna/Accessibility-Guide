@@ -4,7 +4,6 @@
 @import '../../scss/mixins';
 
 summary {
-  list-style: none;
   display: flex; /* also removes the list marker */
   align-items: center;
   font-family: $font-primary-bold;
