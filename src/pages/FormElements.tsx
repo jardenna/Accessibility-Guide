@@ -40,19 +40,6 @@ const FormElements: FC = () => {
     <>
       <PageTitle title={Title.FormElements} />
 
-      <details className="govuk-details">
-        <summary className="govuk-details__summary">
-          <span className="govuk-details__summary-text">
-            Help with nationality
-          </span>
-        </summary>
-        <div className="govuk-details__text">
-          We need to know your nationality so we can work out which elections
-          you’re entitled to vote in. If you cannot provide your nationality,
-          you’ll have to send copies of identity documents through the post.
-        </div>
-      </details>
-
       <Form onSubmit={onSubmit} labelText="Submit form">
         <fieldset>
           <legend>Personal information</legend>

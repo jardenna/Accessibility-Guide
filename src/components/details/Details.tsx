@@ -1,8 +1,10 @@
 import { FC, ReactNode } from 'react';
 
+import './_details.scss';
+
 interface DetailsProps {
   children: ReactNode;
-  summary: string;
+  summary?: string;
 }
 const Details: FC<DetailsProps> = ({ summary, children }) => (
   <details>
