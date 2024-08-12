@@ -4,7 +4,7 @@
 
 .banner {
   padding: 30px 40px;
-  margin-bottom: 30px;
+  margin-bottom: 8px;
 
   @include mq-size($medium) {
     padding: 16px;
@@ -24,20 +24,6 @@
     gap: 12px;
     margin-bottom: 8px;
     align-items: center;
-
-    .banner-icon-container {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      position: relative;
-      top: -22px;
-      right: -24px;
-
-      @include mq-size($medium) {
-        top: -4px;
-        right: 2px;
-      }
-    }
 
     .banner-title {
       flex-grow: 1;

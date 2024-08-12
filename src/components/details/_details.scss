@@ -1,24 +1,24 @@
+@import '../../scss/colors';
+@import '../../scss/fonts';
+@import '../../scss/functions';
+@import '../../scss/mixins';
+
 summary {
   list-style: none;
   display: flex; /* also removes the list marker */
   align-items: center;
   padding: 10px;
-  font-weight: bold;
-  color: #30353b;
-  border-radius: 5px;
+  font-family: $font-primary-bold;
+  gap: 8px;
+  cursor: pointer;
 }
 
 summary::after {
   content: '';
-  width: 18px;
-  height: 10px;
-  background: url('https://uploads.sitepoint.com/wp-content/uploads/2023/10/1697699669arrow.svg')
-    no-repeat;
-  background-size: cover;
-  margin-left: 0.75em;
-  transition: 0.2s;
+
+  @include chevron($dir: down);
 }
 
 details[open] > summary::after {
-  transform: rotate(180deg);
+  @include rotate(-135deg);
 }

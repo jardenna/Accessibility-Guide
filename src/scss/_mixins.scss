@@ -52,8 +52,8 @@
   }
 }
 
-@mixin outline($color: $color-hilight) {
-  outline: 2px solid $color;
+@mixin outline($color: $color-hilight, $size: 2px) {
+  outline: $size solid $color;
 }
 
 @mixin animation($name, $duration: $animation-duration, $timing: ease-in-out) {
