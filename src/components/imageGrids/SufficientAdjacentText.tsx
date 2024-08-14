@@ -3,6 +3,14 @@ import Figcaption from '../figure/Figcaption';
 import ImageGridLeftContent from './ImageGridLeftContent';
 import ImageGridRightContent from './ImageGridRightContent';
 
+// const x = [
+//   {
+//     text: 'adjacent',
+//     description: 'This is a popup',
+//   },
+//   { text: 'rainforests of Central America', description: 'this is another' },
+// ];
+
 const SufficientAdjacentText: FC = () => (
   <>
     <ImageGridLeftContent

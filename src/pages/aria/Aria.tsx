@@ -30,7 +30,7 @@ const Aria: FC = () => (
     <TextContainer
       heading="5 rules of ARIA"
       subHeading="Some of ARIA is like a cloak; it covers up, or overrides, the original
-      semantics or content. semantics. On the other hand, some uses of ARIA
+      semantics or content. On the other hand, some uses of ARIA
       are more like suspenders or belts; they add meaning that provides
       essential support to the original content. (WC3)"
     >

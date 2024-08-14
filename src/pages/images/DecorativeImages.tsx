@@ -10,17 +10,17 @@ import { Title } from '../../types/lang';
 const tabsConfig: TabItem[] = [
   {
     id: 1,
-    label: 'Image',
+    label: 'Adjacent Text',
     content: <SufficientAdjacentText />,
   },
   {
     id: 2,
-    label: 'Image 1',
+    label: 'Image Link',
     content: <ImageAsLink />,
   },
   {
     id: 3,
-    label: 'Image 2',
+    label: 'Stock Image',
     content: <StockPhoto />,
   },
 ];
