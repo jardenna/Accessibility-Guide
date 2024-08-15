@@ -8,7 +8,7 @@ const InformationSupplement: FC = () => (
     <ImageGridLeftContent
       src="annie_easley.jpg"
       mobileSrc="small/annie_easley.jpg"
-      alt="Annie Easley sitting behind her desk."
+      alt="Annie Easley, seated at her desk, smiling."
     >
       <Figcaption>
         <h2>Annie Easley</h2>

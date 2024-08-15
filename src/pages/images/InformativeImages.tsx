@@ -11,17 +11,17 @@ interface FuntionalImagesProps {}
 const tabsConfig: TabItem[] = [
   {
     id: 1,
-    label: 'Image',
+    label: 'Known person',
     content: <InformationSupplement />,
   },
   {
     id: 2,
-    label: 'Image 1',
+    label: 'Impression',
     content: <InformationSupplementStock />,
   },
   {
     id: 3,
-    label: 'Image 2',
+    label: 'Images of text',
     content: <ImagesOfText />,
   },
 ];

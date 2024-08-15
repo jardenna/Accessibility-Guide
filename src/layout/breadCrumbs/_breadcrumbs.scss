@@ -10,6 +10,11 @@
 
   @include color-scheme($scheme-dark...);
 
+  @media (prefers-color-scheme: dark) {
+    background-color: #2d2d2d;
+    color: #e4e8eb;
+  }
+
   li {
     display: flex;
     align-items: center;

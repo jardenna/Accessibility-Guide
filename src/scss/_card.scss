@@ -10,10 +10,6 @@
     flex-direction: column;
   }
 
-  @media (prefers-color-scheme: dark) {
-    @include color-scheme($scheme-dark...);
-  }
-
   .card-info {
     padding: 20px 50px;
     display: flex;
@@ -21,6 +17,11 @@
     justify-content: center;
     position: relative;
     flex: 2;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: #161618;
+      color: #e4e8eb;
+    }
 
     @include color-scheme($scheme-light...);
 
@@ -51,6 +52,10 @@
   font-size: rem(12px);
   line-height: rem(18px);
   flex: 1;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #2d2d2d;
+  }
 
   @include color-scheme($scheme-dark...);
 

@@ -4,7 +4,7 @@
 
 .banner {
   padding: 30px 40px;
-  margin-bottom: 8px;
+  margin-bottom: 30px;
 
   @include mq-size($medium) {
     padding: 16px;
@@ -13,10 +13,8 @@
   @include color-scheme($scheme-medium...);
 
   @media (prefers-color-scheme: dark) {
-    background-color: rgb(17 53 75 / 50%);
-    color: #f8f8f8;
-
-    // @include color-scheme($scheme-dark...);
+    background-color: #161618;
+    color: #e4e8eb;
   }
 
   .banner-header {
@@ -25,16 +23,6 @@
     margin-bottom: 8px;
     align-items: center;
     position: relative;
-
-    .banner-title {
-      flex-grow: 1;
-    }
-
-    .btn-ghost {
-      position: absolute;
-      right: -26px;
-      top: -20px;
-    }
   }
 
   .banner-content {

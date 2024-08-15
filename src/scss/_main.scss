@@ -41,16 +41,13 @@ body {
   color: $color-primary;
   font-size: rem(14px);
 
+  @media (prefers-color-scheme: dark) {
+    background-color: #0a0a0a;
+    color: #e4e8eb;
+  }
+
   @include mq-size($medium) {
     height: auto;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    color-scheme: dark;
-    background-color: #121212;
-    color: $color-gray-light;
   }
 }
 

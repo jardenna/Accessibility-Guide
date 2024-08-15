@@ -3,26 +3,17 @@ import Figcaption from '../figure/Figcaption';
 import ImageGridLeftContent from './ImageGridLeftContent';
 import ImageGridRightContent from './ImageGridRightContent';
 
-// const x = [
-//   {
-//     text: 'adjacent',
-//     description: 'This is a popup',
-//   },
-//   { text: 'rainforests of Central America', description: 'this is another' },
-// ];
-
 const SufficientAdjacentText: FC = () => (
   <>
     <ImageGridLeftContent
       src="costa_rican_frog.jpg"
       mobileSrc="small/costa_rican_frog.jpg"
-      title="Red-Eyed Costa Rican Tree Frog"
       alt=""
     >
       <Figcaption>
         <p>
-          The Red-Eyed Tree Frog (Agalychnis callidryas) is a small arboreal
-          frog native to the rainforests of Central America.
+          The Red-Eyed Tree Frog is a small arboreal frog native to the
+          rainforests of Central America.
         </p>
       </Figcaption>
     </ImageGridLeftContent>
