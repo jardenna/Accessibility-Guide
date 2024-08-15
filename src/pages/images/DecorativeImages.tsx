@@ -15,7 +15,7 @@ const tabsConfig: TabItem[] = [
   },
   {
     id: 2,
-    label: 'Image Link',
+    label: 'Link',
     content: <ImageAsLink />,
   },
   {

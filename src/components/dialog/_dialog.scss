@@ -27,13 +27,12 @@ dialog {
 .dialog {
   border: 0;
   overflow-x: hidden;
-
-  @include mq-size($large) {
-    min-width: 100%;
-  }
-
   border-radius: 4px;
   min-width: rem(300px);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #25333c;
+  }
 
   &.dialog-sm {
     width: 24%;
@@ -45,6 +44,10 @@ dialog {
 
   &.dialog-lg {
     width: 90%;
+
+    @include mq-size($large) {
+      min-width: 100%;
+    }
   }
 
   .dialog-header {

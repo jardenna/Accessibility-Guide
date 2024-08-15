@@ -14,7 +14,6 @@
 
   .tab {
     &.btn {
-      border-bottom: 4px solid $color-white;
       overflow: hidden;
       white-space: nowrap;
 
@@ -28,6 +27,11 @@
       border-top: 1px solid transparent;
       border-left: 1px solid transparent;
       border-right: 1px solid transparent;
+
+      @media (prefers-color-scheme: dark) {
+        color: #f8f8f8;
+        background-color: #105e60;
+      }
 
       &:hover,
       &.active {

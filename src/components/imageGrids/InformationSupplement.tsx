@@ -12,7 +12,7 @@ const InformationSupplement: FC = () => (
     >
       <Figcaption>
         <h2>Annie Easley</h2>
-        Annie Easley was an American computer and rocket scientist. She made
+        ie Easley was an American computer and rocket scientist. She made
         significant contributions to the fields of computer science.
       </Figcaption>
     </ImageGridLeftContent>

@@ -7,19 +7,21 @@ interface BottomLinksProps {
   dialogHeaderText: string;
   picture: ReactNode;
   textVersionContent: ReactNode;
+  dialogVariant?: SizeVariant;
 }
 
 const BottomLinks: FC<BottomLinksProps> = ({
   dialogHeaderText,
   textVersionContent,
   picture,
+  dialogVariant = SizeVariant.Lg,
 }) => (
   <div className="bottom-links">
     <TriggerDialog
       dialogHeaderText={dialogHeaderText}
       openDialogBtnLabel="View text version"
       openDialogBtnVariant={BtnVariant.Link}
-      dialogVariant={SizeVariant.Lg}
+      dialogVariant={dialogVariant}
       secondaryActionText={CommonText.Close}
     >
       {textVersionContent}
@@ -28,7 +30,7 @@ const BottomLinks: FC<BottomLinksProps> = ({
       dialogHeaderText={dialogHeaderText}
       openDialogBtnLabel="View large image"
       openDialogBtnVariant={BtnVariant.Link}
-      dialogVariant={SizeVariant.Lg}
+      dialogVariant={dialogVariant}
       secondaryActionText={CommonText.Close}
       showCloseIcon
     >

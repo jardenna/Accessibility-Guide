@@ -30,7 +30,7 @@
     }
   }
 
-  .card-info-content {
+  .info-content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -48,7 +48,7 @@
 }
 
 .card-img {
-  padding: 40px;
+  padding: 32px;
   font-size: rem(12px);
   line-height: rem(18px);
   flex: 1;

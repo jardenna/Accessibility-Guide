@@ -16,12 +16,12 @@ const tabsConfig: TabItem[] = [
   },
   {
     id: 2,
-    label: 'Impression',
+    label: 'Impressions',
     content: <InformationSupplementStock />,
   },
   {
     id: 3,
-    label: 'Images of text',
+    label: 'Text',
     content: <ImagesOfText />,
   },
 ];

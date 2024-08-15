@@ -11,6 +11,7 @@ import {
   finacialRisksImagesDialog,
 } from '../../../components/pictureUtils';
 import PageBanner from '../../../layout/pageBanner/PageBanner';
+import { SizeVariant } from '../../../types/enums';
 import { CommonText, Title } from '../../../types/lang';
 import accordionList from './accordionList';
 import SourceLinks from './SourceLinks';
@@ -37,6 +38,7 @@ const FunctionalImages: FC = () => (
 
         <Figcaption>
           <BottomLinks
+            dialogVariant={SizeVariant.Md}
             dialogHeaderText="Financial risks"
             textVersionContent={<Accordion accordionList={accordionList} />}
             picture={
