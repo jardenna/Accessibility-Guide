@@ -8,7 +8,7 @@ type DialogType = Omit<DialogProps, 'onToggleDialog' | 'dialogRef'>;
 
 interface TriggerDialogProps extends DialogType {
   openDialogBtnLabel: string;
-  dialogVariant?: SizeVariant;
+  dialogSize?: SizeVariant;
   openDialogBtnVariant?: BtnVariant;
 }
 
@@ -21,7 +21,7 @@ const TriggerDialog: FC<TriggerDialogProps> = ({
   secondaryActionText,
   primaryActionBtn,
   className,
-  dialogVariant,
+  dialogSize,
 }) => {
   const { handleToggleDialog, handleCallBack, dialogRef } =
     useDialog(primaryActionBtn);
@@ -40,7 +40,7 @@ const TriggerDialog: FC<TriggerDialogProps> = ({
         secondaryActionText={secondaryActionText}
         primaryActionBtn={primaryActionBtn}
         onCallback={handleCallBack}
-        variant={dialogVariant}
+        variant={dialogSize}
       >
         {children}
       </Dialog>

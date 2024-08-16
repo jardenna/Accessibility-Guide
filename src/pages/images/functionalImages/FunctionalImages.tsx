@@ -38,7 +38,7 @@ const FunctionalImages: FC = () => (
 
         <Figcaption>
           <BottomLinks
-            dialogVariant={SizeVariant.Md}
+            dialogSize={SizeVariant.Md}
             dialogHeaderText="Financial risks"
             textVersionContent={<Accordion accordionList={accordionList} />}
             picture={

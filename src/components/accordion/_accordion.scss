@@ -64,6 +64,10 @@
   .chevron {
     @include chevron($dir: down);
 
+    @media (prefers-color-scheme: dark) {
+      @include chevron($dir: down, $color: #e4e8eb);
+    }
+
     position: absolute;
     right: 20px;
     transition: all 0.3s;

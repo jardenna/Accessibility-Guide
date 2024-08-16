@@ -78,8 +78,8 @@ a[class^='btn-'],
 
   @media (prefers-color-scheme: dark) {
     background-color: #563457;
-    border: 1px solid #ec8cef;
-    color: #414b52;
+    border: 1px solid #563457;
+    color: #e4e8eb;
   }
 
   border: 1px solid $color-secondary-dark;
@@ -92,6 +92,10 @@ a[class^='btn-'],
 
   &.btn {
     &:hover {
+      @media (prefers-color-scheme: dark) {
+        background-color: #811a71;
+      }
+
       background-color: $color-secondary;
       color: $color-gray-light;
     }
