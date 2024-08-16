@@ -20,7 +20,7 @@ const tabsConfig: TabItem[] = [
   },
   {
     id: 3,
-    label: 'Stock Image',
+    label: 'Stock Photos',
     content: <StockPhoto />,
   },
 ];

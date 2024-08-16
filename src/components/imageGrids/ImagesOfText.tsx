@@ -15,11 +15,11 @@ const ImagesOfText: FC = () => (
       </Figcaption>
     </ImageGridLeftContent>
     <ImageGridRightContent
-      title="Images of text"
-      linkText="More about image as link"
-      href="https://www.w3.org/WAI/tutorials/images/decorative/#example-2-decorative-image-as-part-of-a-text-link"
+      title="Image of text"
+      linkText="More about Image of text"
+      href="https://www.w3.org/WAI/WCAG21/Understanding/images-of-text.html"
     >
-      Whenever possible, avoid using images of text. Visually impaired users
+      Whenever possible, avoid using image of text. Visually impaired users
       cannot access information like this, and zooming in will pixelate images.
       If using text in images is necessary, ensure the alt text accurately
       transcribes the text within the image.

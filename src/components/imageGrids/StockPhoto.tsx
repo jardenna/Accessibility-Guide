@@ -14,8 +14,8 @@ const StockPhoto: FC = () => (
     </ImageGridLeftContent>
     <ImageGridRightContent
       title="Stock photos"
-      linkText="More about image as link"
-      href="https://www.w3.org/WAI/tutorials/images/decorative/#example-2-decorative-image-as-part-of-a-text-link"
+      linkText="More about Stock photos"
+      href="https://www.w3.org/WAI/tutorials/images/decorative/#example-4-image-used-for-ambiance-eye-candy"
     >
       The stock photo of an old man smoking gives no information and has no
       function. It is strictly eye candy.

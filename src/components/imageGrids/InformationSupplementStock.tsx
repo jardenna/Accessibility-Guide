@@ -15,11 +15,11 @@ const InformationSupplementStock: FC = () => (
       </Figcaption>
     </ImageGridLeftContent>
     <ImageGridRightContent
-      title="Photo of unknown persons"
-      linkText="More about image as link"
-      href="https://www.w3.org/WAI/tutorials/images/decorative/#example-2-decorative-image-as-part-of-a-text-link"
+      title="Photo to to convey a mood"
+      linkText="More about conveying a mood"
+      href="https://www.w3.org/WAI/tutorials/images/informative/#example-4-images-conveying-an-impression-or-emotion"
     >
-      This photograph is used to convey a mood, rather than to identify the
+      This photo is used to convey a mood, rather than to identify the
       individual depicted. As it is a stock image, the individuals should not be
       identified and the alt text should focus on describing the intended
       impression.

@@ -19,7 +19,7 @@ const SufficientAdjacentText: FC = () => (
     </ImageGridLeftContent>
     <ImageGridRightContent
       title="Image with sufficient adjacent text"
-      linkText=" More about decorative images"
+      linkText=" More about image with adjacent text"
       href="https://www.w3.org/WAI/tutorials/images/decorative/#example-3-image-with-adjacent-text-alternative"
     >
       The adjacent text already provides a sufficient description of this

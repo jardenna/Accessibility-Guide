@@ -41,6 +41,19 @@ const AltText: FC = () => (
       </p>
     </TextContainer>
     <TextContainer
+      heading="Gender and race"
+      subHeading="Mentioning gender and race in alt text highlights diversity, offering a more nuanced understanding of the image. It ensures recognition and respect for different identities, promoting equality and representation."
+    >
+      <p>
+        Use appropriate, neutral, or polite terms for appearance. Is someone's
+        weight, clothing, race, gender identity, hairstyle, or expression
+        relevant to your use of their image? How do they prefer to be described?
+        The best practice is to verify personal information or have direct
+        access to individuals. When discussing someone, decide if these details
+        are necessary or if referring to them by name and pronoun is sufficient.
+      </p>
+    </TextContainer>
+    <TextContainer
       heading="Include Punctuation"
       subHeading="While end punctuation is not strictly required for compliance, using it enhances the experience for users of screen readers by ensuring the text is announced clearly."
     >
