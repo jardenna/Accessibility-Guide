@@ -11,6 +11,7 @@ export enum LeftNavPath {
   AltText = 'altText',
   Aria = 'aria',
   Buttons = 'buttons',
+  ComplexImages = 'compleximages',
   Contact = 'contact',
   DecorativeImages = 'decorativeimages',
   FormElements = 'formelements',

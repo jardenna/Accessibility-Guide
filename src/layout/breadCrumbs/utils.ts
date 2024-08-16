@@ -10,6 +10,7 @@ const LeftNavPathDisplayNames = {
   [LeftNavPath.DecorativeImages]: Title.DecorativeImages,
   [LeftNavPath.FormElements]: Title.FormElements,
   [LeftNavPath.FuncitionalImages]: Title.FuncitionalImages,
+  [LeftNavPath.ComplexImages]: Title.ComplexImages,
   [LeftNavPath.Headings]: Title.Headings,
   [LeftNavPath.Home]: Title.Home,
   [LeftNavPath.Images]: Title.Images,

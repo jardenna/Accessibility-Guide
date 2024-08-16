@@ -12,6 +12,7 @@ import ErrorPage from '../pages/errorPage/ErrorPage';
 import FormElements from '../pages/FormElements';
 import AltText from '../pages/images/AltText';
 import DecorativeImages from '../pages/images/DecorativeImages';
+import ComplexImages from '../pages/images/functionalImages/ComplexImages';
 import FuncitionalImages from '../pages/images/functionalImages/FunctionalImages';
 import Images from '../pages/images/Images';
 import InformativeImages from '../pages/images/InformativeImages';
@@ -47,6 +48,10 @@ const routeConfig = createBrowserRouter([
       {
         path: LeftNavPath.FuncitionalImages,
         element: <FuncitionalImages />,
+      },
+      {
+        path: LeftNavPath.ComplexImages,
+        element: <ComplexImages />,
       },
       {
         path: LeftNavPath.AltText,

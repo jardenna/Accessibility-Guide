@@ -103,6 +103,7 @@ a[class^='btn-'],
 }
 
 .btn-link {
+  font-family: $font-primary-bold;
   background-color: transparent;
   border: 0;
   color: $color-link;

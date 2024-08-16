@@ -14,14 +14,16 @@ import { SizeVariant } from '../../../types/enums';
 import { CommonText, Title } from '../../../types/lang';
 import accordionList from './accordionList';
 
-const FunctionalImages: FC = () => (
+const ComplexImages: FC = () => (
   <>
-    <PageTitle title={Title.FuncitionalImages} />
-    <PageBanner title={Title.FuncitionalImages}>
-      Functional images refer to images that serve a specific purpose or
-      function beyond just being decorative. These images convey information,
-      indicate actions, or provide essential content that users need to
-      understand or interact with the website effectively.
+    <PageTitle title={Title.ComplexImages} />
+
+    <PageBanner title={Title.ComplexImages}>
+      Complex images like charts, graphs, infographics, and detailed diagrams
+      convey more information than simple images. They need comprehensive text
+      alternatives that describe their content, function, and purpose. This
+      includes a short summary, a detailed description (often in text or table
+      form), and the location of the detailed description.
     </PageBanner>
 
     <article>
@@ -51,4 +53,4 @@ const FunctionalImages: FC = () => (
   </>
 );
 
-export default FunctionalImages;
+export default ComplexImages;

@@ -20,15 +20,16 @@ const leftNavItemsList: NavListItem[] = [
         title: Title.FuncitionalImages,
       },
       {
+        path: LeftNavPath.ComplexImages,
+        title: Title.ComplexImages,
+      },
+      {
         path: LeftNavPath.AltText,
         title: Title.AltText,
       },
     ],
   },
-  {
-    path: LeftNavPath.Buttons,
-    title: Title.Buttons,
-  },
+
   {
     path: LeftNavPath.FormElements,
     title: Title.FormElements,
