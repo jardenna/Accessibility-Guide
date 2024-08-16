@@ -16,7 +16,7 @@ const BottomLinks: FC<BottomLinksProps> = ({
   picture,
   dialogSize = SizeVariant.Lg,
 }) => (
-  <div className="bottom-links">
+  <div className="flex-baseline">
     <TriggerDialog
       dialogHeaderText={dialogHeaderText}
       openDialogBtnLabel="View text version"

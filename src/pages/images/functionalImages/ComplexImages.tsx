@@ -13,6 +13,7 @@ import PageBanner from '../../../layout/pageBanner/PageBanner';
 import { SizeVariant } from '../../../types/enums';
 import { CommonText, Title } from '../../../types/lang';
 import accordionList from './accordionList';
+import SourceLinks from './SourceLinks';
 
 const ComplexImages: FC = () => (
   <>
@@ -38,7 +39,12 @@ const ComplexImages: FC = () => (
           <BottomLinks
             dialogSize={SizeVariant.Md}
             dialogHeaderText="Financial risks"
-            textVersionContent={<Accordion accordionList={accordionList} />}
+            textVersionContent={
+              <div>
+                <Accordion accordionList={accordionList} />
+                <SourceLinks />
+              </div>
+            }
             picture={
               <Picture
                 altText={CommonText.InclusiveActivityAltText}

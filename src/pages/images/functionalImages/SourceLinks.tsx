@@ -4,7 +4,7 @@ import Link from '../../../components/Link';
 interface SourceProps {}
 
 const SourceLinks: FC<SourceProps> = () => (
-  <div className="bottom-links">
+  <div className="flex-baseline">
     Source:
     <Link
       linkText="W3C"
