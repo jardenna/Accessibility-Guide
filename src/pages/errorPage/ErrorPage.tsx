@@ -14,22 +14,20 @@ const ErrorPage: FC = () => {
   const isWrongUrl = error.data.includes('No route matches URL');
 
   return (
-    <article>
-      <main className={`error-page ${isWrongUrl ? 'error-url' : ''}`}>
-        <PageTitle title={Title.Error} />
-        <header aria-label="Error page">
-          <img
-            className="emoji"
-            src="/images/sad_smiley.png"
-            alt="Really guilty emoji"
-          />
+    <main className={`error-page ${isWrongUrl ? 'error-url' : ''}`}>
+      <PageTitle title={Title.Error} />
+      <header aria-label="Error page">
+        <img
+          className="emoji"
+          src="/images/sad_smiley.png"
+          alt="Really guilty emoji"
+        />
 
-          <h1>Something went wrong</h1>
-        </header>
+        <h1>Something went wrong</h1>
+      </header>
 
-        <h2>{error.data}</h2>
-      </main>
-    </article>
+      <h2>{error.data}</h2>
+    </main>
   );
 };
 

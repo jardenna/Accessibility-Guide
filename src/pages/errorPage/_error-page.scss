@@ -12,6 +12,7 @@
 
   &.error-url {
     min-height: 100dvh;
+    padding: 20px;
 
     .emoji {
       max-width: rem(100px);
@@ -19,7 +20,7 @@
 
     h1 {
       font-size: rem(64px);
-      line-height: rem(16px);
+      line-height: rem(50px);
       margin-bottom: 60px;
     }
 
