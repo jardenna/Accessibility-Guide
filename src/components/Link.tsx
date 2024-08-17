@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { IconName } from '../types/enums';
 import Icon from './Icon';
 
-interface LinkProps {
+export interface LinkProps {
   href: string;
   linkText: string;
   className?: string;
