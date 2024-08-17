@@ -4,7 +4,7 @@ import Form from '../components/formElements/form/Form';
 import {
   checkboxItems,
   radioButtonGenderList,
-} from '../components/formElements/formLists/formList';
+} from '../components/formElements/form/formList';
 import Input from '../components/formElements/Input';
 import { phoneMask } from '../components/formElements/masks';
 import NumberStep from '../components/formElements/numberStep/NumberStep';

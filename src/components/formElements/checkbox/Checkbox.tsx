@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { ChangeInputType } from '../../../types/types';
-import { CheckboxItems } from '../formLists/formList';
+import { CheckboxItems } from '../form/formList';
 import Input from '../Input';
 import './_checkbox.scss';
 

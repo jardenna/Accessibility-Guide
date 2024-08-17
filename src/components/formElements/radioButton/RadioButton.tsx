@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { ChangeInputType } from '../../../types/types';
-import { RadioListItem } from '../formLists/formList';
+import { RadioListItem } from '../form/formList';
 import Input from '../Input';
 import './_radio-button.scss';
 
