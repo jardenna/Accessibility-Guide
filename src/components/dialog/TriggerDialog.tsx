@@ -22,6 +22,7 @@ const TriggerDialog: FC<TriggerDialogProps> = ({
   primaryActionBtn,
   className,
   dialogSize,
+  isAlert,
 }) => {
   const { handleToggleDialog, handleCallBack, dialogRef } =
     useDialog(primaryActionBtn);
@@ -40,7 +41,8 @@ const TriggerDialog: FC<TriggerDialogProps> = ({
         secondaryActionText={secondaryActionText}
         primaryActionBtn={primaryActionBtn}
         onCallback={handleCallBack}
-        variant={dialogSize}
+        dialogSize={dialogSize}
+        isAlert={isAlert}
       >
         {children}
       </Dialog>

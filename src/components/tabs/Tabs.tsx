@@ -22,6 +22,7 @@ const Tabs: FC<TabsProps> = ({ tabsConfig, defaultIndex, className }) => {
 
   const handleActivateTab = (index: number) => {
     setSelectedTabIndex(index);
+    // Use arrowUp & arrowDown
     tabsRefs.current[index]?.focus();
   };
 

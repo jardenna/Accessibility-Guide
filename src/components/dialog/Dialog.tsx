@@ -16,12 +16,13 @@ export interface DialogProps {
   dialogHeaderText: string;
   dialogRef: MutableRefObject<HTMLDialogElement | null>;
   className?: string;
+  dialogSize?: SizeVariant;
+  isAlert?: boolean;
   onCallback?: () => void;
   onToggleDialog?: () => void;
   primaryActionBtn?: PrimaryActionBtnProps;
   secondaryActionText?: CommonText.Close | CommonText.Cancel;
   showCloseIcon?: boolean;
-  variant?: SizeVariant;
 }
 
 const Dialog: FC<DialogProps> = ({
@@ -32,19 +33,16 @@ const Dialog: FC<DialogProps> = ({
   showCloseIcon,
   secondaryActionText = CommonText.Cancel,
   primaryActionBtn,
-  variant = 'sm',
+  dialogSize = 'sm',
   onCallback,
   className = '',
+  isAlert,
 }) => (
-  <section
-    aria-labelledby="dialog-title"
-    aria-describedby="dialog-description"
-    className=""
-  >
+  <section>
     <dialog
+      role={isAlert ? 'alert' : undefined}
       ref={dialogRef}
-      className={`dialog dialog-${variant} ${className}`}
-      id="dialog-description"
+      className={`dialog dialog-${dialogSize} ${className}`}
     >
       <DialogHeader
         dialogHeadertext={dialogHeadertext}

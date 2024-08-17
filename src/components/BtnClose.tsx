@@ -21,7 +21,7 @@ const BtnClose: FC<BtnCloseProps> = ({
     onClick={onClick}
     ariaLabel={ariaLabel}
     autoFocus={autoFocus}
-    className={`btn-close ${className}`}
+    className={`btn-focus ${className}`}
   >
     <Icon name={IconName.Close} title={ariaLabel} />
   </Button>

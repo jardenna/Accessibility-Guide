@@ -18,7 +18,11 @@ const DialogHeader: FC<DialogHeaderProps> = ({
       {dialogHeadertext}
     </h2>
     {showCloseIcon && (
-      <BtnClose onClick={onCloseDialog} ariaLabel={CommonText.CloseDialog} />
+      <BtnClose
+        onClick={onCloseDialog}
+        ariaLabel={CommonText.CloseDialog}
+        className="btn-close"
+      />
     )}
   </header>
 );

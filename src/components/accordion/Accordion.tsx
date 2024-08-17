@@ -31,6 +31,7 @@ const Accordion: FC<AccordionProps> = ({ accordionList }) => {
     }));
   };
 
+  // Use arrowUp & arrowDown
   useKeyboardEvents({
     lengthOfListItem: accordionList.length,
     tabsRefs,
@@ -47,7 +48,7 @@ const Accordion: FC<AccordionProps> = ({ accordionList }) => {
               }}
               variant={BtnVariant.Ghost}
               ariaExpanded={activeSections[index]}
-              className="accordion-open-btn"
+              className={`accordion-open-btn ${list.className}`}
               ariaControls={`sect${list.id}`}
               id={`accordionid${list.id}`}
               onClick={() => handleActivateTab(index)}

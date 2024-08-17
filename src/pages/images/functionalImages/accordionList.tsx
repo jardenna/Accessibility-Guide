@@ -8,6 +8,7 @@ const accordionItemList: AccordionListItemsProps[] = [
     label: `${CommonText.LostRevenue} 15% - 30%`,
     content: <AccordionItem content={CommonText.LostRevenueContent} />,
     indicatorColor: '#475C6A',
+    className: 'btn-focus',
   },
   {
     id: 2,
