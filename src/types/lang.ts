@@ -9,7 +9,6 @@ export enum Title {
   DecorativeImages = 'Decorative Images',
   Error = 'Error',
   FormElements = 'Form elements',
-  FuncitionalImages = 'Functional Images',
   Headings = 'Headings',
   Home = 'Home',
   Images = 'Images',

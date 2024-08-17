@@ -16,10 +16,6 @@ const leftNavItemsList: NavListItem[] = [
         title: Title.InformativeImages,
       },
       {
-        path: LeftNavPath.FuncitionalImages,
-        title: Title.FuncitionalImages,
-      },
-      {
         path: LeftNavPath.ComplexImages,
         title: Title.ComplexImages,
       },

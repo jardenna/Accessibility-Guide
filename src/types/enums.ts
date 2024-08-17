@@ -15,7 +15,6 @@ export enum LeftNavPath {
   Contact = 'contact',
   DecorativeImages = 'decorativeimages',
   FormElements = 'formelements',
-  FuncitionalImages = 'funcitionalimages',
   Headings = 'headings',
   Home = 'home',
   Images = 'images',

@@ -13,7 +13,6 @@ import FormElements from '../pages/FormElements';
 import AltText from '../pages/images/AltText';
 import ComplexImages from '../pages/images/complexImages/ComplexImages';
 import DecorativeImages from '../pages/images/DecorativeImages';
-import FuncitionalImages from '../pages/images/FunctionalImages';
 import Images from '../pages/images/Images';
 import InformativeImages from '../pages/images/InformativeImages';
 import Legislation from '../pages/Legislation';
@@ -44,10 +43,6 @@ const routeConfig = createBrowserRouter([
       {
         path: LeftNavPath.InformativeImages,
         element: <InformativeImages />,
-      },
-      {
-        path: LeftNavPath.FuncitionalImages,
-        element: <FuncitionalImages />,
       },
       {
         path: LeftNavPath.ComplexImages,
