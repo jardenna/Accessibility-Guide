@@ -15,6 +15,10 @@ input[type='radio'] {
     @include transition($time: 0.12s);
 
     box-shadow: inset 16px 0 $color-blue-dark;
+
+    @media (prefers-color-scheme: dark) {
+      box-shadow: inset 16px 0 $color-gray-medium;
+    }
   }
 
   &:checked {

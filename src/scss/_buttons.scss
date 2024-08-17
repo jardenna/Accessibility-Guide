@@ -38,9 +38,19 @@ a[class^='btn-'],
     color: $color-blue3;
     border-color: $color-gray-light;
 
+    @media (prefers-color-scheme: dark) {
+      background-color: $color-primary;
+      border-color: $color-primary;
+      color: $color-blue-dark;
+    }
+
     /* stylelint-disable-next-line no-descending-specificity */
     svg {
       fill: $color-blue3;
+
+      @media (prefers-color-scheme: dark) {
+        fill: $color-blue-dark;
+      }
     }
   }
 }

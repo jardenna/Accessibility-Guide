@@ -12,6 +12,16 @@
     0 0 0 1000px #fff inset;
 }
 
+@media (prefers-color-scheme: dark) {
+  :-webkit-autofill,
+  :-webkit-autofill:hover,
+  :-webkit-autofill:focus {
+    box-shadow:
+      0 0 0 1000px rgb(255 255 255 / 20%) inset,
+      0 0 0 1000px $color-primary-dark inset;
+  }
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -27,6 +37,10 @@ input[type='number'] {
 ::placeholder {
   color: $color-primary-medium;
   opacity: 1;
+
+  @media (prefers-color-scheme: dark) {
+    color: $color-gray-subtle;
+  }
 }
 
 .input-container {
@@ -53,6 +67,7 @@ input[type='number'] {
 
     @media (prefers-color-scheme: dark) {
       background-color: #424b52;
+      color: #e4e8eb;
     }
 
     &:focus-visible {
@@ -64,6 +79,10 @@ input[type='number'] {
   .error-message {
     font-family: $font-primary-bold;
     color: $color-danger;
+
+    @media (prefers-color-scheme: dark) {
+      color: #f41b0b;
+    }
   }
 
   input[aria-invalid='true'] {
@@ -120,6 +139,10 @@ input[type='number'] {
     position: relative;
     align-items: center;
     justify-content: center;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: #424b52;
+    }
 
     @include transition($time: 0.22s);
 
