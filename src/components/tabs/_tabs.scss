@@ -24,9 +24,7 @@
     }
 
     &.btn-secondary {
-      border-top: 1px solid transparent;
-      border-left: 1px solid transparent;
-      border-right: 1px solid transparent;
+      border: 1px solid transparent;
 
       @media (prefers-color-scheme: dark) {
         color: #f8f8f8;

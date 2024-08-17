@@ -72,6 +72,10 @@ a {
   font-family: $font-primary-bold;
   color: $color-link;
 
+  @media (prefers-color-scheme: dark) {
+    color: #e4e8eb;
+  }
+
   &:focus-visible {
     @include outline;
 

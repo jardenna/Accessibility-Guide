@@ -54,6 +54,10 @@
 
 @mixin outline($color: $color-hilight, $size: 2px) {
   outline: $size solid $color;
+
+  @media (prefers-color-scheme: dark) {
+    outline: $size solid #105e60;
+  }
 }
 
 @mixin animation($name, $duration: $animation-duration, $timing: ease-in-out) {

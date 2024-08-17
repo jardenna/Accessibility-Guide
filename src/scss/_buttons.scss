@@ -1,6 +1,9 @@
-a {
-  &.btn {
-    text-decoration: none;
+.btn {
+  @at-root {
+    a#{&} {
+      text-decoration: none;
+      font-family: $font-primary;
+    }
   }
 }
 
@@ -58,8 +61,8 @@ a[class^='btn-'],
   @include color-scheme($scheme-btn-secondary...);
 
   @media (prefers-color-scheme: dark) {
-    background-color: #563457;
-    border: 1px solid #563457;
+    background-color: #105e60;
+    border: 1px solid #105e60;
     color: #e4e8eb;
   }
 
@@ -73,10 +76,6 @@ a[class^='btn-'],
 
   &.btn {
     &:hover {
-      @media (prefers-color-scheme: dark) {
-        background-color: #811a71;
-      }
-
       background-color: $color-secondary;
       color: $color-gray-light;
     }
@@ -113,6 +112,10 @@ a[class^='btn-'],
   &:hover {
     text-decoration: none;
     background-color: transparent;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: #e4e8eb;
   }
 
   &:focus-visible {
