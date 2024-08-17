@@ -11,6 +11,7 @@ import {
 import Table from '../../components/table/Table';
 import inclusiveActivityTableData from '../../components/table/tableUtils';
 import PageBanner from '../../layout/pageBanner/PageBanner';
+import { SizeVariant } from '../../types/enums';
 import { BannerTitle, CommonText, Title } from '../../types/lang';
 
 const Home: FC = () => (
@@ -30,9 +31,9 @@ const Home: FC = () => (
           lightImages={inclusiveActivityImages.lightImages}
           darkImages={inclusiveActivityImages.darkImages}
         />
-
         <Figcaption>
           <BottomLinks
+            imgDialogSize={SizeVariant.Md}
             picture={
               <Picture
                 altText={CommonText.InclusiveActivityAltText}

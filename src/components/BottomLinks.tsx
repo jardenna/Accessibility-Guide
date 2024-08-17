@@ -8,13 +8,15 @@ interface BottomLinksProps {
   picture: ReactNode;
   textVersionContent: ReactNode;
   dialogSize?: SizeVariant;
+  imgDialogSize?: SizeVariant;
 }
 
 const BottomLinks: FC<BottomLinksProps> = ({
   dialogHeaderText,
   textVersionContent,
   picture,
-  dialogSize = SizeVariant.Lg,
+  dialogSize = SizeVariant.Md,
+  imgDialogSize = SizeVariant.Lg,
 }) => (
   <div className="flex-baseline">
     <TriggerDialog
@@ -30,7 +32,7 @@ const BottomLinks: FC<BottomLinksProps> = ({
       dialogHeaderText={dialogHeaderText}
       openDialogBtnLabel="View large image"
       openDialogBtnVariant={BtnVariant.Link}
-      dialogSize={SizeVariant.Lg}
+      dialogSize={imgDialogSize}
       secondaryActionText={CommonText.Close}
       showCloseIcon
     >
