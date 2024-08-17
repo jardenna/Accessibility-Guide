@@ -4,7 +4,7 @@ import { BtnVariant, KeyCode } from '../../types/enums';
 import Button from '../Button';
 import './_tabs.scss';
 
-export interface TabItem {
+export interface TabItemList {
   content: React.ReactNode | string;
   id: number;
   label: string;
@@ -12,11 +12,11 @@ export interface TabItem {
 
 interface TabsProps {
   className: string;
-  tabsConfig: TabItem[];
+  tabItemList: TabItemList[];
   defaultIndex?: number;
 }
 
-const Tabs: FC<TabsProps> = ({ tabsConfig, defaultIndex, className }) => {
+const Tabs: FC<TabsProps> = ({ tabItemList, defaultIndex, className }) => {
   const [selectedTabIndex, setSelectedTabIndex] = useState(defaultIndex ?? 0);
   const tabsRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -27,12 +27,12 @@ const Tabs: FC<TabsProps> = ({ tabsConfig, defaultIndex, className }) => {
   };
 
   const handleNextTab = () => {
-    handleActivateTab((selectedTabIndex + 1) % tabsConfig.length);
+    handleActivateTab((selectedTabIndex + 1) % tabItemList.length);
   };
 
   const handlePrevTab = () => {
     handleActivateTab(
-      (selectedTabIndex - 1 + tabsConfig.length) % tabsConfig.length,
+      (selectedTabIndex - 1 + tabItemList.length) % tabItemList.length,
     );
   };
 
@@ -41,7 +41,7 @@ const Tabs: FC<TabsProps> = ({ tabsConfig, defaultIndex, className }) => {
   };
 
   const handleGotoLastTab = () => {
-    handleActivateTab(tabsConfig.length - 1);
+    handleActivateTab(tabItemList.length - 1);
   };
 
   useKeyPress(handleNextTab, [KeyCode.ArrowRight]);
@@ -54,7 +54,7 @@ const Tabs: FC<TabsProps> = ({ tabsConfig, defaultIndex, className }) => {
   return (
     <article className="tab-navigation-list">
       <ul className="tab-navigation" role="tablist">
-        {tabsConfig.map((tab, index) => (
+        {tabItemList.map((tab, index) => (
           <li key={tab.id}>
             <Button
               variant={BtnVariant.Secondary}
@@ -77,11 +77,11 @@ const Tabs: FC<TabsProps> = ({ tabsConfig, defaultIndex, className }) => {
       </ul>
       <section
         className={`tab-panel ${className}`}
-        id={`tabpanel-${tabsConfig[selectedTabIndex].id}`}
+        id={`tabpanel-${tabItemList[selectedTabIndex].id}`}
         role="tabpanel"
-        aria-labelledby={`tab-${tabsConfig[selectedTabIndex].id}`}
+        aria-labelledby={`tab-${tabItemList[selectedTabIndex].id}`}
       >
-        {tabsConfig[selectedTabIndex].content}
+        {tabItemList[selectedTabIndex].content}
       </section>
     </article>
   );

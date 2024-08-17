@@ -3,11 +3,11 @@ import PageTitle from '../../components/PageTitle';
 import ImageAsLink from '../../components/imageGrids/ImageAsLink';
 import StockPhoto from '../../components/imageGrids/StockPhoto';
 import SufficientAdjacentText from '../../components/imageGrids/SufficientAdjacentText';
-import Tabs, { TabItem } from '../../components/tabs/Tabs';
+import Tabs, { TabItemList } from '../../components/tabs/Tabs';
 import PageBanner from '../../layout/pageBanner/PageBanner';
 import { Title } from '../../types/lang';
 
-const tabsConfig: TabItem[] = [
+const tabsConfig: TabItemList[] = [
   {
     id: 1,
     label: 'Adjacent Text',
@@ -36,7 +36,7 @@ const DecorativeImages: FC = () => (
       images.
     </PageBanner>
 
-    <Tabs tabsConfig={tabsConfig} className="card" />
+    <Tabs tabItemList={tabsConfig} className="card" />
   </>
 );
 

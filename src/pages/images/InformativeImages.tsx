@@ -3,12 +3,12 @@ import PageTitle from '../../components/PageTitle';
 import ImagesOfText from '../../components/imageGrids/ImagesOfText';
 import InformationSupplement from '../../components/imageGrids/InformationSupplement';
 import InformationSupplementStock from '../../components/imageGrids/InformationSupplementStock';
-import Tabs, { TabItem } from '../../components/tabs/Tabs';
+import Tabs, { TabItemList } from '../../components/tabs/Tabs';
 import PageBanner from '../../layout/pageBanner/PageBanner';
 import { Title } from '../../types/lang';
 
 interface FuntionalImagesProps {}
-const tabsConfig: TabItem[] = [
+const tabItemList: TabItemList[] = [
   {
     id: 1,
     label: 'Known person',
@@ -34,7 +34,7 @@ const FuntionalImages: FC<FuntionalImagesProps> = () => (
       understanding the content of a document or webpage.
     </PageBanner>
 
-    <Tabs tabsConfig={tabsConfig} className="card" />
+    <Tabs tabItemList={tabItemList} className="card" />
   </article>
 );
 
