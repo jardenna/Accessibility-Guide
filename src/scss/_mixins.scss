@@ -25,6 +25,10 @@
   border: $weight solid $color;
   display: flex;
 
+  @media (prefers-color-scheme: dark) {
+    border-color: #e4e8eb;
+  }
+
   @include rotate;
 
   transform-origin: 70%;

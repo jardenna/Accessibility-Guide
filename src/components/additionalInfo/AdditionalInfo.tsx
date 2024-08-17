@@ -9,21 +9,19 @@ interface AdditionalInfoProps {
 }
 
 const AdditionalInfo: FC<AdditionalInfoProps> = ({ infoList }) => (
-  <ul className="additional-info-container">
-    <Details summary="Additional Information">
-      <ul className="additional-info-container">
-        {infoList.map((infoListItem) => (
-          <li className="additional-info-item" key={infoListItem.linkText}>
-            <Link
-              href={infoListItem.href}
-              linkText={infoListItem.linkText}
-              target="blank"
-            />
-          </li>
-        ))}
-      </ul>
-    </Details>
-  </ul>
+  <Details summary="Additional Information">
+    <ul className="additional-info-container">
+      {infoList.map((infoListItem) => (
+        <li className="additional-info-item" key={infoListItem.linkText}>
+          <Link
+            href={infoListItem.href}
+            linkText={infoListItem.linkText}
+            target="blank"
+          />
+        </li>
+      ))}
+    </ul>
+  </Details>
 );
 
 export default AdditionalInfo;
