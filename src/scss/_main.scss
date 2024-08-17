@@ -42,8 +42,8 @@ body {
   font-size: rem(14px);
 
   @media (prefers-color-scheme: dark) {
-    background-color: #0a0a0a;
-    color: #e4e8eb;
+    background-color: $color-primary-dark;
+    color: $color-primary-light;
   }
 
   @include mq-size($medium) {
@@ -73,7 +73,7 @@ a {
   color: $color-link;
 
   @media (prefers-color-scheme: dark) {
-    color: #e4e8eb;
+    color: $color-primary-light;
   }
 
   &:focus-visible {

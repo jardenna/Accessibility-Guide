@@ -8,8 +8,8 @@
 :-webkit-autofill:hover,
 :-webkit-autofill:focus {
   box-shadow:
-    0 0 0 1000px rgb(255 255 255 / 50%) inset,
-    0 0 0 1000px #fff inset;
+    0 0 0 1000px rgba($color-white, 50%) inset,
+    0 0 0 1000px $color-white inset;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,7 +17,7 @@
   :-webkit-autofill:hover,
   :-webkit-autofill:focus {
     box-shadow:
-      0 0 0 1000px rgb(255 255 255 / 20%) inset,
+      0 0 0 1000px rgba($color-white, 20%) inset,
       0 0 0 1000px $color-primary-dark inset;
   }
 }
@@ -35,11 +35,11 @@ input[type='number'] {
 }
 
 ::placeholder {
-  color: $color-primary-medium;
+  color: $color-placeholder;
   opacity: 1;
 
   @media (prefers-color-scheme: dark) {
-    color: $color-gray-subtle;
+    color: $color-gray-medium;
   }
 }
 
@@ -66,8 +66,8 @@ input[type='number'] {
     outline: transparent;
 
     @media (prefers-color-scheme: dark) {
-      background-color: #424b52;
-      color: #e4e8eb;
+      background-color: $color-primary;
+      color: $color-primary-light;
     }
 
     &:focus-visible {
@@ -81,7 +81,7 @@ input[type='number'] {
     color: $color-danger;
 
     @media (prefers-color-scheme: dark) {
-      color: #f41b0b;
+      color: $color-error-light;
     }
   }
 
@@ -89,7 +89,7 @@ input[type='number'] {
     @include outline($color-danger);
 
     &:focus-visible {
-      background: linear-gradient($color-danger, $color-danger-dark) bottom -12px
+      background: linear-gradient($color-danger, $color-error-light) bottom -12px
         left 0 / 100% 3px content-box padding-box repeat-x;
     }
   }
@@ -141,7 +141,7 @@ input[type='number'] {
     justify-content: center;
 
     @media (prefers-color-scheme: dark) {
-      background-color: #424b52;
+      background-color: $color-primary;
     }
 
     @include transition($time: 0.22s);

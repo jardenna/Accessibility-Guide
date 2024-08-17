@@ -71,9 +71,9 @@ a[class^='btn-'],
   @include color-scheme($scheme-btn-secondary...);
 
   @media (prefers-color-scheme: dark) {
-    background-color: #105e60;
-    border: 1px solid #105e60;
-    color: #e4e8eb;
+    background-color: $color-secondary-dark;
+    border: 1px solid $color-secondary-dark;
+    color: $color-primary-light;
   }
 
   border: 1px solid $color-secondary-dark;
@@ -125,7 +125,7 @@ a[class^='btn-'],
   }
 
   @media (prefers-color-scheme: dark) {
-    color: #e4e8eb;
+    color: $color-primary-light;
   }
 
   &:focus-visible {

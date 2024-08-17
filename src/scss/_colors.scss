@@ -1,22 +1,19 @@
 $color-white: #fff;
 $color-black: #000;
 $color-primary: #414b52;
-$color-primary-dark: #121212;
-$color-primary-medium: #595959;
+$color-primary-dark: #0a0a0a;
+$color-primary-light: #e4e8eb;
 
 // $color-secondary
 $color-secondary: #009688;
 $color-secondary-dark: #156060;
 $color-secondary-light: #17bab2;
 
-// Maybe for dark theme links
-// $color-secondary-light: #03dac6;
-
 // Gray
 $color-gray-dark: #c0bcbc;
 $color-gray-medium: #d2d0d0;
 $color-gray-subtle: #f4f6f7;
-$color-gray-light: #f8f8f8;
+$color-gray-light: #e4e8eb;
 
 // Blue
 $color-blue-dark: #617886;
@@ -28,29 +25,29 @@ $color-blue3: #bcc9d1;
 // $color-mics
 $color-hilight: #d96500;
 $color-link: #922f55;
-
-// $color-1: #3700b3;
-// $color-1: #bb86fc;
-// $color-1: #03dac5;
-// $color-1: #465461;
-// $color-1: #08c2af;
-// $color-1: #0eacac;
-// $color-1: #3700b3;
+$color-placeholder: #737373;
+$color-danger: #9d2f2f;
+$color-error: $color-danger;
+$color-error-light: #f41b0b;
 
 // Toast colors
 $color-success: #32618a;
 $color-success-light: #8fb3d2;
-$color-danger: #9d2f2f;
-$color-danger-dark: #7e1010;
+$color-danger: $color-danger;
 $color-danger-light: #f3a4a4;
 $color-info: #429444;
 $color-info-light: #a4daa6;
 $color-warning: #eab947;
 $color-warning-light: #fae5a6;
 
+// Prefer dark
+
+$color-dark-bg: #25333c;
+$color-card-info-bg: #161618;
+
 // Scheme colors
 $scheme-dark: $color-primary, $color-gray-light;
-$scheme-medium: $color-gray-light, $color-primary;
+$scheme-medium: #f8f8f8, $color-primary;
 $scheme-light: $color-gray-subtle, $color-primary;
 
 // Scheme Btn colors

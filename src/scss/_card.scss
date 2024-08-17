@@ -19,8 +19,8 @@
     flex: 2;
 
     @media (prefers-color-scheme: dark) {
-      background-color: #161618;
-      color: #e4e8eb;
+      background-color: $color-card-info-bg;
+      color: $color-primary-light;
     }
 
     @include color-scheme($scheme-light...);
@@ -54,7 +54,7 @@
   flex: 1;
 
   @media (prefers-color-scheme: dark) {
-    background-color: #2d2d2d;
+    background-color: $color-dark-bg;
   }
 
   @include color-scheme($scheme-dark...);

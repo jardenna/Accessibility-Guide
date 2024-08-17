@@ -13,8 +13,8 @@
   @include color-scheme($scheme-medium...);
 
   @media (prefers-color-scheme: dark) {
-    background-color: #2d2d2d;
-    color: #e4e8eb;
+    background-color: $color-dark-bg;
+    color: $color-primary-light;
   }
 
   .banner-header {

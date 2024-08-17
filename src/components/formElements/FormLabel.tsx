@@ -10,7 +10,7 @@ const FormLabel: FC<FormLabelProps> = ({ inputLabel, id, required }) => (
   <label className="form-label" htmlFor={id}>
     {inputLabel}
     {required && (
-      <span className="text-danger" aria-hidden="true">
+      <span className="text-error" aria-hidden="true">
         *
       </span>
     )}

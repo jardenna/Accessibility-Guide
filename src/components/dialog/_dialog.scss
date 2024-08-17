@@ -31,7 +31,7 @@ dialog {
   min-width: rem(300px);
 
   @media (prefers-color-scheme: dark) {
-    background-color: #25333c;
+    background-color: $color-dark-bg;
   }
 
   &.dialog-sm {

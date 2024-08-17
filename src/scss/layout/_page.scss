@@ -61,10 +61,10 @@
   margin-bottom: 30px;
 }
 
-.text-danger {
-  color: $color-danger;
+.text-error {
+  color: $color-error;
 
   @media (prefers-color-scheme: dark) {
-    color: #f41b0b;
+    color: $color-error-light;
   }
 }
