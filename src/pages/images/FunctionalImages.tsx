@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import PageTitle from '../../../components/PageTitle';
-import PageBanner from '../../../layout/pageBanner/PageBanner';
-import { Title } from '../../../types/lang';
+import PageTitle from '../../components/PageTitle';
+import PageBanner from '../../layout/pageBanner/PageBanner';
+import { Title } from '../../types/lang';
 
 const FunctionalImages: FC = () => (
   <>
