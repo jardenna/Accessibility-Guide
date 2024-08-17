@@ -1,5 +1,7 @@
 import { FC } from 'react';
+import AdditionalInfo from '../../components/AdditionalInfo';
 import InfoTextList from '../../components/infoTextList/InfoTextList';
+import Link from '../../components/Link';
 import PageTitle from '../../components/PageTitle';
 import Quote from '../../components/quote/Quote';
 import TextContainer from '../../components/textContainer/TextContainer';
@@ -10,6 +12,38 @@ import altTextList from './altTextList';
 const AltText: FC = () => (
   <>
     <PageTitle title={Title.AltText} />
+    <AdditionalInfo>
+      <ul className="additional-info-container">
+        <li className="additional-info-item">
+          <Link
+            href="https://www.a11yproject.com/checklist/#images"
+            linkText="The A11Y Project: Checklist"
+            target="blank"
+          />
+        </li>
+        <li className="additional-info-item">
+          <Link
+            href="https://a11y-101.com/development/the-alt-attribute"
+            linkText="A11Y-101: Examples with screen readers"
+            target="blank"
+          />
+        </li>
+        <li className="additional-info-item">
+          <Link
+            href="https://help.siteimprove.com/support/solutions/articles/80000863904-accessibility-image-alt-text-best-practices"
+            linkText=" SiteImprove: Image Alt text best practices"
+            target="blank"
+          />
+        </li>
+        <li className="additional-info-item">
+          <Link
+            href="https://www.makethingsaccessible.com/guides/alternative-text-race-gender-and-physical-descriptions/"
+            linkText="Race, gender, and physical descriptions"
+            target="blank"
+          />
+        </li>
+      </ul>
+    </AdditionalInfo>
     <PageBanner title="Writing Effective Alt Text">
       To ensure that screen reader users receive the same meaning as sighted
       users, alt text should concisely and accurately describe all important

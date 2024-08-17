@@ -24,7 +24,7 @@ const BreadCrumbs: FC<BreadCrumbsProps> = ({ className = '' }) => {
           return !lastItem ? (
             <li key={breadcrumb}>
               <NavLink to={`/${breadcrumb}`}>{breadcrumb}</NavLink>
-              <span className="chevron" />
+              <span className="chevron" aria-hidden="true" />
             </li>
           ) : (
             <li key={breadcrumb}>

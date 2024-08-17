@@ -1,18 +1,7 @@
 import { FC } from 'react';
-import Accordion from '../../../components/accordion/Accordion';
-import BottomLinks from '../../../components/BottomLinks';
-import Figcaption from '../../../components/figure/Figcaption';
-import Figure from '../../../components/figure/Figure';
 import PageTitle from '../../../components/PageTitle';
-import Picture from '../../../components/Picture';
-import {
-  finacialRisksImages,
-  finacialRisksImagesDialog,
-} from '../../../components/pictureUtils';
 import PageBanner from '../../../layout/pageBanner/PageBanner';
-import { SizeVariant } from '../../../types/enums';
-import { CommonText, Title } from '../../../types/lang';
-import accordionList from './accordionList';
+import { Title } from '../../../types/lang';
 
 const FunctionalImages: FC = () => (
   <>
@@ -24,30 +13,7 @@ const FunctionalImages: FC = () => (
       understand or interact with the website effectively.
     </PageBanner>
 
-    <article>
-      <Figure>
-        <Picture
-          altText={CommonText.InclusiveActivityAltText}
-          lightImages={finacialRisksImages.lightImages}
-          darkImages={finacialRisksImages.darkImages}
-        />
-
-        <Figcaption>
-          <BottomLinks
-            dialogSize={SizeVariant.Md}
-            dialogHeaderText="Financial risks"
-            textVersionContent={<Accordion accordionList={accordionList} />}
-            picture={
-              <Picture
-                altText={CommonText.InclusiveActivityAltText}
-                lightImages={finacialRisksImagesDialog.lightImages}
-                darkImages={finacialRisksImagesDialog.darkImages}
-              />
-            }
-          />
-        </Figcaption>
-      </Figure>
-    </article>
+    <article>hello</article>
   </>
 );
 

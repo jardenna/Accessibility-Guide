@@ -60,6 +60,7 @@ const Accordion: FC<AccordionProps> = ({ accordionList }) => {
               )}
               <span className="accordion-label">{list.label}</span>
               <span
+                aria-hidden="true"
                 className={`chevron ${activeSections[index] ? 'up' : 'down'}`}
               />
             </Button>

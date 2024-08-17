@@ -74,3 +74,14 @@
 .text-danger {
   color: $color-danger;
 }
+
+.additional-info-container {
+  background: #f8f8f852;
+  padding: 32px;
+  border-radius: 4px;
+  border-left: 6px solid $color-hilight;
+
+  .additional-info-item {
+    margin-bottom: 12px;
+  }
+}

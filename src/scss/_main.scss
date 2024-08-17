@@ -69,6 +69,7 @@ img {
 }
 
 a {
+  font-family: $font-primary-bold;
   color: $color-link;
 
   &:focus-visible {

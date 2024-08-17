@@ -6,24 +6,6 @@ import useKeyPress from './useKeyPress';
 const useDialog = (primaryActionBtn?: PrimaryActionBtnProps) => {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
 
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  const handleTouchStart = (e: any) => {
-    touchStartX = e.changedTouches[0].screenX;
-  };
-
-  const handleTouchMove = (e: any) => {
-    touchEndX = e.changedTouches[0].screenX;
-  };
-
-  const handleTouchEnd = () => {
-    if (touchEndX - touchStartX > 100) {
-      // Adjust the threshold value as needed
-      handleCloseModal();
-    }
-  };
-
   const handleToggleDialog = () => {
     if (!dialogRef.current) {
       return;
@@ -85,24 +67,6 @@ const useDialog = (primaryActionBtn?: PrimaryActionBtnProps) => {
       };
     }
   }, [dialogRef.current]);
-
-  useEffect(() => {
-    const dialog = dialogRef.current;
-    if (dialog) {
-      dialog.addEventListener('touchstart', handleTouchStart);
-      dialog.addEventListener('touchmove', handleTouchMove);
-      dialog.addEventListener('touchend', handleTouchEnd);
-    }
-
-    // Clean up event listeners on component unmount
-    return () => {
-      if (dialog) {
-        dialog.removeEventListener('touchstart', handleTouchStart);
-        dialog.removeEventListener('touchmove', handleTouchMove);
-        dialog.removeEventListener('touchend', handleTouchEnd);
-      }
-    };
-  }, []);
 
   return { handleToggleDialog, handleCallBack, dialogRef };
 };

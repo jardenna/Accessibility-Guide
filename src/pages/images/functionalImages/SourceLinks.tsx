@@ -1,9 +1,7 @@
 import { FC } from 'react';
 import Link from '../../../components/Link';
 
-interface SourceProps {}
-
-const SourceLinks: FC<SourceProps> = () => (
+const SourceLinks: FC = () => (
   <div className="flex-baseline">
     Source:
     <Link
