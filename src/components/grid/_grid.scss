@@ -30,6 +30,10 @@
     margin-bottom: 16px;
     text-transform: uppercase;
     padding: 12px;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: #424b52;
+    }
   }
 
   .col-title {

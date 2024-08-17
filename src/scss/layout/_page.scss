@@ -33,28 +33,18 @@
   }
 }
 
+.wcag-future {
+  li {
+    margin-bottom: 20px;
+  }
+}
+
 .list-square {
   list-style: square;
 
   li::marker {
     color: $color-blue-dark;
     font-size: rem(24px);
-  }
-}
-
-.border-info-content {
-  border: 1px solid $color-border;
-  padding: 20px;
-  margin: 30px 0;
-
-  .border-sub-title {
-    font-style: italic;
-  }
-
-  .border-content-heading {
-    font-size: rem(24px);
-    font-weight: normal;
-    margin-top: 0;
   }
 }
 

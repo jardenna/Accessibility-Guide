@@ -27,6 +27,7 @@ const WcagFuture: FC<WcagFutureProps> = () => (
     </Quote>
 
     <TextContainer
+      className="wcag-future"
       heading="20??: WCAG 3.0"
       subHeading="This significant update aims to improve the accessibility of digital
         content while accommodating evolving technological landscapes and user

@@ -13,7 +13,7 @@
     {
       "title": "AAA",
       "subtitle": "Nice to have",
-      "content": "The AAA level includes the most stringent requirements. According to W3C, it is not recommended to mandate Level AAA conformance as a general policy for entire sites."
+      "content": "The AAA level includes the most stringent requirements. W3C don’t recommend to mandate Level AAA conformance for entire sites as a general policy. Instead, consider it optional for the best user experience."
     }
   ]
 }
