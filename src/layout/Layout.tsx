@@ -43,6 +43,8 @@ function Layout() {
     };
   }, []);
 
+  console.log(isLeftMenuHidden);
+
   return (
     <article className="main-container">
       <Header
