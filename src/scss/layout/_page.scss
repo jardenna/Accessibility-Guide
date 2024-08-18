@@ -19,6 +19,11 @@
 
 .main-content {
   gap: 70px;
+  margin-top: 28px;
+
+  @include max-size($medium) {
+    margin-top: 12px;
+  }
 }
 
 .content-container {

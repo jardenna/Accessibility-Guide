@@ -1,5 +1,6 @@
 @import '../../scss/colors';
 @import '../../scss/mixins';
+@import '../../scss/mq-size';
 
 .tab-navigation-list {
   ul {
@@ -11,6 +12,11 @@
 .tab-navigation {
   display: flex;
   gap: 4px;
+
+  @include max-size($small) {
+    overflow: auto;
+    max-width: 342px;
+  }
 
   .tab {
     &.btn {

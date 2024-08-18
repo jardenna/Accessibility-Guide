@@ -23,6 +23,7 @@
   @include max-size($medium) {
     flex-direction: column;
     gap: 0;
+    padding: 12px;
   }
 
   .quote-icon {
