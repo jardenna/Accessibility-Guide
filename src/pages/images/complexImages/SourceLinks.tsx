@@ -2,7 +2,7 @@ import { FC } from 'react';
 import Link from '../../../components/Link';
 
 const SourceLinks: FC = () => (
-  <div className="flex-baseline">
+  <div className="flex-baseline source-links">
     Source:
     <Link
       linkText="W3C"

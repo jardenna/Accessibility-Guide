@@ -36,10 +36,18 @@ dialog {
 
   &.dialog-sm {
     width: 24%;
+
+    @include mq-size($medium) {
+      min-width: 90%;
+    }
   }
 
   &.dialog-md {
     width: 50%;
+
+    @include mq-size($medium) {
+      min-width: 90%;
+    }
   }
 
   &.dialog-lg {
@@ -68,6 +76,10 @@ dialog {
     line-height: rem(21px);
     display: flex;
     justify-content: center;
+
+    @include mq-size($medium) {
+      padding: 20px 0;
+    }
   }
 
   .dialog-footer {

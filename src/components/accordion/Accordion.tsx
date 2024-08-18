@@ -1,12 +1,13 @@
-import { FC, ReactNode, useRef, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import useKeyboardEvents from '../../hooks/useKeyboardEvents';
 
 import { BtnVariant } from '../../types/enums';
 import Button from '../Button';
 import './_accordion.scss';
+import AccordionBody from './AccordionBody';
 
 export interface AccordionListItemsProps {
-  content: string | ReactNode;
+  content: string;
   id: number;
   label: string;
   className?: string;
@@ -71,7 +72,7 @@ const Accordion: FC<AccordionProps> = ({ accordionList }) => {
             aria-labelledby={`accordionid${list.id}`}
             className={`accordion-panel ${activeSections[index] ? 'visible' : ''}`}
           >
-            <div className="accordion-body">{list.content}</div>
+            <AccordionBody>{list.content}</AccordionBody>
           </section>
         </li>
       ))}

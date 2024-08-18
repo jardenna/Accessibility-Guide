@@ -61,6 +61,18 @@
   margin-bottom: 30px;
 }
 
+.source-links {
+  margin-top: 8px;
+
+  @include mq-size($small) {
+    flex-direction: column;
+
+    &.flex-baseline {
+      gap: 0;
+    }
+  }
+}
+
 .text-error {
   color: $color-error;
 
