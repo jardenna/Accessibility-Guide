@@ -6,7 +6,7 @@
   font-size: rem(14px);
   line-height: rem(24px);
 
-  @include mq-size($medium) {
+  @include max-size($medium) {
     flex-direction: column;
   }
 
@@ -25,7 +25,7 @@
 
     @include color-scheme($scheme-light...);
 
-    @include mq-size($medium) {
+    @include max-size($medium) {
       padding: 20px;
     }
   }
@@ -68,7 +68,7 @@
     min-width: rem(300px);
     margin-bottom: 4px;
 
-    @include mq-size($small) {
+    @include max-size($small) {
       min-width: auto;
     }
   }

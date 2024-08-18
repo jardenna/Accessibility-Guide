@@ -8,7 +8,7 @@
   align-items: flex-start;
   margin-bottom: 30px;
 
-  @include mq-size($large) {
+  @include max-size($large) {
     flex-direction: column;
   }
 

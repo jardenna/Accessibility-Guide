@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: flex-end;
 
-  @include mq-size($medium) {
+  @include max-size($medium) {
     background-color: $color-white;
 
     @media (prefers-color-scheme: dark) {
@@ -17,7 +17,7 @@
   .logo {
     margin-bottom: 20px;
 
-    @include mq-size($medium) {
+    @include max-size($medium) {
       padding-bottom: 0;
     }
   }
@@ -31,7 +31,7 @@
       }
     }
 
-    @include mq-size($medium) {
+    @include max-size($medium) {
       min-width: rem(260px);
     }
   }
@@ -40,19 +40,19 @@
     padding-top: 20px;
     flex-direction: row;
 
-    @include mq-size($medium) {
+    @include max-size($medium) {
       align-items: flex-start;
     }
   }
 
-  @include mq-size($medium) {
+  @include max-size($medium) {
     position: sticky;
     top: 0;
     z-index: 20;
   }
 
   .main-nav {
-    @include mq-size($medium) {
+    @include max-size($medium) {
       display: none;
     }
   }

@@ -3,24 +3,26 @@
   font-family: $font-primary;
   overscroll-behavior: contain;
 
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
+  @include min-size($medium) {
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
 
-  ::-webkit-scrollbar-track {
-    background-color: $color-primary-light;
-    border-radius: 2px;
-  }
+    ::-webkit-scrollbar-track {
+      background-color: $color-primary-light;
+      border-radius: 2px;
+    }
 
-  ::-webkit-scrollbar-thumb {
-    background-color: $color-gray-dark;
-    border-radius: 2px;
-  }
+    ::-webkit-scrollbar-thumb {
+      background-color: $color-gray-dark;
+      border-radius: 2px;
+    }
 
-  @supports not selector(::-webkit-scrollbar) {
-    scrollbar-width: thin;
-    scrollbar-color: $color-gray-dark $color-primary-light;
+    @supports not selector(::-webkit-scrollbar) {
+      scrollbar-width: thin;
+      scrollbar-color: $color-gray-dark $color-primary-light;
+    }
   }
 }
 
@@ -46,7 +48,7 @@ body {
     color: $color-primary-light;
   }
 
-  @include mq-size($medium) {
+  @include max-size($medium) {
     height: auto;
   }
 }

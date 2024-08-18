@@ -35,7 +35,7 @@
 }
 
 .left-nav-container {
-  @include mq-size($medium) {
+  @include max-size($medium) {
     overflow: auto;
     position: fixed;
     left: -100%;

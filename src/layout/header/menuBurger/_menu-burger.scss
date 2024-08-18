@@ -15,7 +15,7 @@ $burger-placement: -8px;
   &.btn {
     display: none;
 
-    @include mq-size($medium) {
+    @include max-size($medium) {
       display: flex;
     }
   }

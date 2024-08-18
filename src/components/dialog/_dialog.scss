@@ -11,7 +11,7 @@ dialog::backdrop {
 dialog[open] {
   @include animation(slide-in-top-center);
 
-  @include mq-size($medium) {
+  @include max-size($medium) {
     @include animation(slide-in-right);
   }
 }
@@ -19,7 +19,7 @@ dialog[open] {
 dialog {
   @include animation(slide-out-top-center);
 
-  @include mq-size($medium) {
+  @include max-size($medium) {
     @include animation(slide-out-right);
   }
 }
@@ -37,7 +37,7 @@ dialog {
   &.dialog-sm {
     width: 24%;
 
-    @include mq-size($medium) {
+    @include max-size($medium) {
       min-width: 90%;
     }
   }
@@ -45,7 +45,7 @@ dialog {
   &.dialog-md {
     width: 50%;
 
-    @include mq-size($medium) {
+    @include max-size($medium) {
       min-width: 90%;
     }
   }
@@ -53,7 +53,7 @@ dialog {
   &.dialog-lg {
     width: 90%;
 
-    @include mq-size($large) {
+    @include max-size($large) {
       min-width: 100%;
     }
   }
@@ -77,7 +77,7 @@ dialog {
     display: flex;
     justify-content: center;
 
-    @include mq-size($medium) {
+    @include max-size($medium) {
       padding: 20px 0;
     }
   }

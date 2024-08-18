@@ -11,7 +11,7 @@
 
   @include color-scheme($scheme-dark...);
 
-  @include mq-size($small) {
+  @include max-size($small) {
     display: none;
   }
 

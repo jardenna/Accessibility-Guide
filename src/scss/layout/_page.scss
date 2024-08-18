@@ -5,7 +5,7 @@
   display: flex;
   padding: 0 16px;
 
-  @include mq-size($medium) {
+  @include max-size($medium) {
     flex-direction: column;
   }
 }
@@ -64,7 +64,7 @@
 .source-links {
   margin-top: 8px;
 
-  @include mq-size($small) {
+  @include max-size($small) {
     flex-direction: column;
 
     &.flex-baseline {

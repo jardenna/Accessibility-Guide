@@ -20,7 +20,7 @@
   max-width: rem(700px);
   border-bottom: 1px solid $color-border;
 
-  @include mq-size($medium) {
+  @include max-size($medium) {
     flex-direction: column;
     gap: 0;
   }
