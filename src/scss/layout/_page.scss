@@ -22,7 +22,7 @@
   margin-top: 28px;
 
   @include max-size($medium) {
-    margin-top: 12px;
+    margin-top: 0;
   }
 }
 
