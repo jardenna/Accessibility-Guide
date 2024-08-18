@@ -49,25 +49,21 @@ function Layout() {
         onClick={handleToggleMenuHidden}
         isLeftMenuHidden={isLeftMenuHidden}
       />
-      <main className="main-content container">
-        <article
-          className={`left-nav-container ${isLeftMenuHidden ? '' : 'is-active'}`}
-          aria-hidden={isLeftMenuHidden}
-        >
-          <Nav
-            navItemsList={leftNavItemsList}
-            className="left-nav"
-            ariaLabel="Main"
-            isLeftMenuHidden={isLeftMenuHidden}
-          />
-        </article>
-        <article className="content-container">
+      <article className="main-content container">
+        <Nav
+          navItemsList={leftNavItemsList}
+          className="left-nav"
+          ariaLabel="Main"
+          isLeftMenuHidden={isLeftMenuHidden}
+        />
+
+        <main className="content-container">
           <BreadCrumbs />
           <div id="main">
             <Outlet />
           </div>
-        </article>
-      </main>
+        </main>
+      </article>
       <footer className="main-footer container" aria-label="Main">
         <span className="copyright-container">
           <span className="copyright">Copyright 2024</span>

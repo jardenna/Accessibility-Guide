@@ -53,6 +53,7 @@ const FormElements: FC = () => {
             errorText={errors.fullName}
             onBlur={onBlur}
             inputRef={inputRefs.fullName}
+            autoComplete="name"
           />
           <Input
             value={values.age}
@@ -61,6 +62,7 @@ const FormElements: FC = () => {
             name="age"
             labelText="Age"
             type="number"
+            autoComplete="age"
           />
         </fieldset>
         <fieldset>
@@ -105,6 +107,7 @@ const FormElements: FC = () => {
             errorText={errors.phone}
             onBlur={onBlur}
             inputRef={inputRefs.phone}
+            autoComplete="phone"
           />
         </fieldset>
         <fieldset>

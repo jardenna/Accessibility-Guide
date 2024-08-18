@@ -22,31 +22,36 @@ const Nav: FC<NavProps> = ({
   className,
   ariaLabel = 'primary',
 }) => (
-  <nav className={`nav ${className || 'main-nav'}`} aria-label={ariaLabel}>
-    <ul className="nav-item-container">
-      {navItemsList.map((navItem) => (
-        <li key={navItem.title} className="nav-item">
-          <NavLink to={navItem.path} tabIndex={isLeftMenuHidden ? -1 : 0}>
-            {navItem.title}
-          </NavLink>
-          {navItem.subPath && (
-            <ul className="sub-nav">
-              {navItem.subPath.map((subPath) => (
-                <li className="sub-nav-item" key={subPath.title}>
-                  <NavLink
-                    to={subPath.path}
-                    tabIndex={isLeftMenuHidden ? -1 : 0}
-                  >
-                    {subPath.title}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          )}
-        </li>
-      ))}
-    </ul>
-  </nav>
+  <div
+    className={`left-nav-container ${isLeftMenuHidden ? '' : 'is-active'}`}
+    aria-hidden={isLeftMenuHidden}
+  >
+    <nav className={`nav ${className || 'main-nav'}`} aria-label={ariaLabel}>
+      <ul className="nav-item-container">
+        {navItemsList.map((navItem) => (
+          <li key={navItem.title} className="nav-item">
+            <NavLink to={navItem.path} tabIndex={isLeftMenuHidden ? -1 : 0}>
+              {navItem.title}
+            </NavLink>
+            {navItem.subPath && (
+              <ul className="sub-nav">
+                {navItem.subPath.map((subPath) => (
+                  <li className="sub-nav-item" key={subPath.title}>
+                    <NavLink
+                      to={subPath.path}
+                      tabIndex={isLeftMenuHidden ? -1 : 0}
+                    >
+                      {subPath.title}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
 );
 
 export default Nav;

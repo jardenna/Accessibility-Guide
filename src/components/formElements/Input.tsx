@@ -9,6 +9,7 @@ export interface InputProps {
   name: string;
   onChange: (e?: any) => void;
   value: string | number;
+  autoComplete?: string;
   checked?: boolean;
   className?: string;
   errorText?: string;
@@ -39,6 +40,7 @@ const Input: FC<InputProps> = ({
   min,
   max,
   placeholder,
+  autoComplete = 'off',
 }) => {
   const inputClassName = `${type === 'checkbox' || type === 'radio' ? 'checkbox-radio-container' : 'input-container'}`;
 
@@ -72,6 +74,7 @@ const Input: FC<InputProps> = ({
         placeholder={placeholder}
         min={min}
         max={max}
+        autoComplete={autoComplete}
       />
     </div>
   );
