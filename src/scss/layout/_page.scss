@@ -43,7 +43,7 @@
   list-style: square;
 
   li::marker {
-    color: $color-blue-dark;
+    color: $color-blue-dark-medium;
     font-size: rem(24px);
   }
 }

@@ -10,15 +10,13 @@ $color-secondary-dark: #156060;
 $color-secondary-light: #17bab2;
 
 // Gray
-$color-gray-medium: #d2d0d0;
-$color-gray-subtle: #f4f6f7;
+$color-gray-dark: #d2d0d0;
+$color-gray-medium: #f4f6f7;
 $color-gray-light: #f8f8f8;
 
 // Blue
-$color-blue-dark: #617886;
-$color-blue: #475c6a;
-$color-blue2: #617c8d;
-$color-blue3: #bcc9d1;
+$color-blue-dark-medium: #617886;
+$color-blue-dark: #475c6a;
 
 // $color-mics
 $color-hilight: #d96500;
@@ -45,11 +43,11 @@ $color-card-info-bg: #161618;
 // Scheme colors
 $scheme-dark: $color-primary, $color-primary-light;
 $scheme-medium: $color-gray-light, $color-primary;
-$scheme-light: $color-gray-subtle, $color-primary;
+$scheme-light: $color-gray-medium, $color-primary;
 
 // Scheme Btn colors
 $scheme-btn-secondary: $color-gray-light, $color-secondary-dark;
 $scheme-btn-dark: $color-secondary-dark, $color-primary-light;
 
 // Border
-$color-border: $color-gray-medium;
+$color-border: $color-gray-dark;

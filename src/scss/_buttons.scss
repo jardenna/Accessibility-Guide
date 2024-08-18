@@ -35,21 +35,21 @@ a[class^='btn-'],
   &:disabled {
     pointer-events: none;
     background-color: $color-primary-light;
-    color: $color-blue3;
+    color: $color-gray-dark;
     border-color: $color-primary-light;
 
     @media (prefers-color-scheme: dark) {
       background-color: $color-primary;
       border-color: $color-primary;
-      color: $color-blue-dark;
+      color: $color-blue-dark-medium;
     }
 
     /* stylelint-disable-next-line no-descending-specificity */
     svg {
-      fill: $color-blue3;
+      fill: $color-gray-dark;
 
       @media (prefers-color-scheme: dark) {
-        fill: $color-blue-dark;
+        fill: $color-blue-dark-medium;
       }
     }
   }

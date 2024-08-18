@@ -39,7 +39,7 @@ input[type='number'] {
   opacity: 1;
 
   @media (prefers-color-scheme: dark) {
-    color: $color-gray-medium;
+    color: $color-gray-dark;
   }
 }
 
@@ -71,8 +71,8 @@ input[type='number'] {
     }
 
     &:focus-visible {
-      background: linear-gradient($color-blue-dark, $color-blue2) bottom -12px left
-        0 / 100% 3px content-box padding-box repeat-x;
+      background: linear-gradient($color-blue-dark-medium, $color-blue-dark)
+        bottom -12px left 0 / 100% 3px content-box padding-box repeat-x;
     }
   }
 
@@ -133,7 +133,7 @@ input[type='number'] {
     color: currentcolor;
     width: rem(24px);
     height: rem(24px);
-    border: 2px solid $color-blue-dark;
+    border: 2px solid $color-blue-dark-medium;
     transform: translateY(-1.2px);
     display: flex;
     position: relative;
@@ -152,7 +152,7 @@ input[type='number'] {
   }
 
   &:focus-within {
-    outline: 2px solid rgba($color-blue-dark, 70%);
+    outline: 2px solid rgba($color-blue-dark-medium, 70%);
   }
 
   .form-label-container {
