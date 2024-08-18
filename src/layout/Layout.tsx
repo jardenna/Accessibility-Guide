@@ -26,8 +26,7 @@ function Layout() {
   }, [location]);
 
   const handleResize = () => {
-    if (window.innerWidth > 768) {
-      // Adjust based on your breakpoint
+    if (window.innerWidth > 1024) {
       setIsLeftMenuHidden(false);
     } else {
       setIsLeftMenuHidden(true);
@@ -42,8 +41,6 @@ function Layout() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-  console.log(isLeftMenuHidden);
 
   return (
     <article className="main-container">

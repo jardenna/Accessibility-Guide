@@ -27,7 +27,9 @@ const Nav: FC<NavProps> = ({
       <ul className="nav-item-container">
         {navItemsList.map((navItem) => (
           <li key={navItem.title} className="nav-item">
-            <NavLink to={navItem.path}>{navItem.title}</NavLink>
+            <NavLink to={navItem.path} tabIndex={isLeftMenuHidden ? -1 : 0}>
+              {navItem.title}
+            </NavLink>
             {navItem.subPath && (
               <ul className="sub-nav">
                 {navItem.subPath.map((subPath) => (
