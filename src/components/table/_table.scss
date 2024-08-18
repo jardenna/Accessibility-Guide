@@ -7,7 +7,7 @@
   overflow: auto;
   width: 300px;
   min-width: 100%;
-  border: 1px solid $color-border-light;
+  border: 1px solid $color-border;
 }
 
 table {
@@ -33,21 +33,21 @@ table {
 
   thead {
     th {
-      background-color: $color-gray-subtle;
+      background-color: $color-gray-light;
       position: sticky;
       top: 0;
 
       &:first-child {
         z-index: 5;
-        border-right: 1px solid $color-border-medium;
-        background-color: $color-gray-subtle;
+        border-right: 1px solid $color-border;
+        background-color: $color-gray-light;
       }
     }
   }
 
   tbody {
     th {
-      border-right: 1px solid $color-border-medium;
+      border-right: 1px solid $color-border;
     }
 
     tr:nth-child(even) {

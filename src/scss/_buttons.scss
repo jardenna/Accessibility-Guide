@@ -34,9 +34,9 @@ a[class^='btn-'],
 
   &:disabled {
     pointer-events: none;
-    background-color: $color-gray-light;
+    background-color: $color-primary-light;
     color: $color-blue3;
-    border-color: $color-gray-light;
+    border-color: $color-primary-light;
 
     @media (prefers-color-scheme: dark) {
       background-color: $color-primary;
@@ -87,7 +87,7 @@ a[class^='btn-'],
   &.btn {
     &:hover {
       background-color: $color-secondary;
-      color: $color-gray-light;
+      color: $color-primary-light;
     }
   }
 }

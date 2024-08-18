@@ -17,16 +17,16 @@
   }
 
   .chevron {
-    @include chevron($color: $color-gray-light, $dir: right);
+    @include chevron($color: $color-primary-light, $dir: right);
   }
 
   a {
-    color: $color-gray-light;
+    color: $color-primary-light;
     font-weight: normal;
     text-decoration: none;
 
     &:focus-visible {
-      @include outline($color-gray-light);
+      @include outline($color-primary-light);
     }
   }
 }

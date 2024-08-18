@@ -9,7 +9,7 @@
   }
 
   ::-webkit-scrollbar-track {
-    background-color: $color-gray-light;
+    background-color: $color-primary-light;
     border-radius: 2px;
   }
 
@@ -20,7 +20,7 @@
 
   @supports not selector(::-webkit-scrollbar) {
     scrollbar-width: thin;
-    scrollbar-color: $color-gray-medium $color-gray-light;
+    scrollbar-color: $color-gray-medium $color-primary-light;
   }
 }
 
