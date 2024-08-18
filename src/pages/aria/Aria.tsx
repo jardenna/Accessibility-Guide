@@ -1,4 +1,6 @@
 import { FC } from 'react';
+import AdditionalInfo from '../../components/additionalInfo/AdditionalInfo';
+import { ariaInfoList } from '../../components/additionalInfo/additionalInfoLists';
 import InfoTextList from '../../components/infoTextList/InfoTextList';
 import PageTitle from '../../components/PageTitle';
 import Quote from '../../components/quote/Quote';
@@ -10,6 +12,7 @@ import ariaRuleList from './ariaRuleList';
 const Aria: FC = () => (
   <>
     <PageTitle title={Title.Aria} />
+    <AdditionalInfo infoList={ariaInfoList} />
     <PageBanner title="ARIA to the Rescue">
       Accessible Rich Internet Applications (ARIA) is a set of HTML attributes
       designed to enhance the accessibility of web content and applications.

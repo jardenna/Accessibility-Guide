@@ -25,6 +25,24 @@ function Layout() {
     setIsLeftMenuHidden(true);
   }, [location]);
 
+  const handleResize = () => {
+    if (window.innerWidth > 768) {
+      // Adjust based on your breakpoint
+      setIsLeftMenuHidden(false);
+    } else {
+      setIsLeftMenuHidden(true);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial call to set the correct state
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <article className="main-container">
       <Header
@@ -34,7 +52,7 @@ function Layout() {
       <main className="main-content container">
         <article
           className={`left-nav-container ${isLeftMenuHidden ? '' : 'is-active'}`}
-          aria-hidden={!!isLeftMenuHidden}
+          aria-hidden={isLeftMenuHidden}
         >
           <Nav
             navItemsList={leftNavItemsList}

@@ -18,10 +18,17 @@ export const altInfoList: LinkProps[] = [
 export const complexImagesInfoList: LinkProps[] = [
   {
     href: 'https://accessibility.asu.edu/articles/complex-images',
-    linkText: 'Arizona State  University: Complex image guidelines',
+    linkText: 'Arizona State University: Complex image guidelines',
   },
   {
     href: 'https://www.w3.org/WAI/tutorials/images/complex/',
     linkText: ' W3C: Complex image',
+  },
+];
+
+export const ariaInfoList: LinkProps[] = [
+  {
+    href: 'https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes',
+    linkText: 'MDN: ARIA overview',
   },
 ];
