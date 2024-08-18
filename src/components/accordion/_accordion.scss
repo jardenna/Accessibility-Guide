@@ -2,6 +2,7 @@
 @import '../../scss/fonts';
 @import '../../scss/functions';
 @import '../../scss/mixins';
+@import '../../scss/mq-size';
 
 .accordion {
   margin: 0;
@@ -38,6 +39,10 @@
       &::after {
         width: auto;
         height: auto;
+      }
+
+      @include max-size($small) {
+        padding: 8px;
       }
     }
   }

@@ -18,7 +18,9 @@ a[class^='btn-'],
   cursor: pointer;
 
   &:hover {
-    background-color: $color-secondary;
+    @include min-size($medium) {
+      background-color: $color-secondary;
+    }
   }
 
   @include transition;
@@ -86,8 +88,10 @@ a[class^='btn-'],
 
   &.btn {
     &:hover {
-      background-color: $color-secondary;
-      color: $color-primary-light;
+      @include min-size($medium) {
+        background-color: $color-secondary;
+        color: $color-primary-light;
+      }
     }
   }
 }
@@ -101,8 +105,10 @@ a[class^='btn-'],
 
   &.btn {
     &:hover {
-      background-color: inherit;
-      opacity: 0.5;
+      @include min-size($medium) {
+        background-color: inherit;
+        opacity: 0.5;
+      }
     }
 
     &:focus-visible {
@@ -120,8 +126,10 @@ a[class^='btn-'],
   padding: 0;
 
   &:hover {
-    text-decoration: none;
-    background-color: transparent;
+    @include min-size($medium) {
+      text-decoration: none;
+      background-color: transparent;
+    }
   }
 
   @media (prefers-color-scheme: dark) {

@@ -1,21 +1,26 @@
 @import '../../scss/colors';
 @import '../../scss/functions';
 @import '../../scss/mixins';
+@import '../../scss/mq-size';
 
 .grid {
-  @include grid($gap: 16px);
+  @include grid;
 
-  .grid-col-2 {
-    grid-template-columns: repeat(3, 1fr);
+  @include max-size($small) {
+    grid-template-columns: 1fr;
   }
 
-  .grid-col-3 {
+  &.grid-col-2 {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .col {
     border-right: 1px solid $color-border;
     padding-right: 12px;
+
+    @include max-size($small) {
+      border: 0;
+    }
 
     &:last-child {
       border: 0;

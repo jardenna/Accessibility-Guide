@@ -19,7 +19,7 @@
   transform: rotate($deg);
 }
 
-@mixin grid($amount: 2, $gap: 12px) {
+@mixin grid($amount: 3, $gap: 16px) {
   display: grid;
   grid-template-columns: repeat($amount, 1fr);
   gap: $gap;

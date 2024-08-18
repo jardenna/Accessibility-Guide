@@ -30,7 +30,12 @@
 
     @include transition;
 
-    &:hover,
+    &:hover {
+      @include min-size($medium) {
+        color: $color-hilight;
+      }
+    }
+
     &.active {
       color: $color-hilight;
     }
@@ -95,8 +100,10 @@
       }
     }
 
-    &:has(a.active, a:hover) {
-      border-color: $color-hilight;
+    @include max-size($medium) {
+      &:has(a.active, a:hover) {
+        border-color: $color-hilight;
+      }
     }
   }
 }

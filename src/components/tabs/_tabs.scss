@@ -37,7 +37,14 @@
         color: $color-primary-light;
       }
 
-      &:hover,
+      &:hover {
+        @include min-size($medium) {
+          background-color: $color-primary;
+          border-bottom: 4px solid $color-secondary;
+          color: $color-primary-light;
+        }
+      }
+
       &.active {
         background-color: $color-primary;
         border-bottom: 4px solid $color-secondary;

@@ -8,10 +8,7 @@ interface GridProps {
 }
 
 const Grid: FC<GridProps> = ({ gridContent }) => (
-  <article
-    className="grid"
-    style={{ gridTemplateColumns: `repeat(${gridContent.length}, 1fr)` }}
-  >
+  <article className="grid">
     {gridContent.map((grid) => (
       <GridCol
         key={grid.title}
