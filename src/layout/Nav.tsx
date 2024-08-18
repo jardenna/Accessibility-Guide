@@ -10,12 +10,14 @@ export interface NavListItem {
 }
 
 interface NavProps {
+  isLeftMenuHidden: boolean;
   navItemsList: NavListItem[];
   ariaLabel?: string;
   className?: string;
 }
 
 const Nav: FC<NavProps> = ({
+  isLeftMenuHidden,
   navItemsList,
   className,
   ariaLabel = 'primary',
@@ -24,12 +26,19 @@ const Nav: FC<NavProps> = ({
     <ul className="nav-item-container">
       {navItemsList.map((navItem) => (
         <li key={navItem.title} className="nav-item">
-          <NavLink to={navItem.path}>{navItem.title}</NavLink>
+          <NavLink to={navItem.path} tabIndex={isLeftMenuHidden ? -1 : 0}>
+            {navItem.title}
+          </NavLink>
           {navItem.subPath && (
             <ul className="sub-nav">
               {navItem.subPath.map((subPath) => (
                 <li className="sub-nav-item" key={subPath.title}>
-                  <NavLink to={subPath.path}>{subPath.title}</NavLink>
+                  <NavLink
+                    to={subPath.path}
+                    tabIndex={isLeftMenuHidden ? -1 : 0}
+                  >
+                    {subPath.title}
+                  </NavLink>
                 </li>
               ))}
             </ul>

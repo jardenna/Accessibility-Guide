@@ -50,7 +50,11 @@ const Input: FC<InputProps> = ({
         )}
         {errorText && <FormError errorText={errorText} ariaErrorId={id} />}
       </span>
-      {errorText && <span className="error-icon">i</span>}
+      {errorText && (
+        <span className="error-icon" aria-hidden="true">
+          i
+        </span>
+      )}
       <input
         ref={inputRef}
         type={type || 'text'}

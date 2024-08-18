@@ -34,11 +34,13 @@ function Layout() {
       <main className="main-content container">
         <article
           className={`left-nav-container ${isLeftMenuHidden ? '' : 'is-active'}`}
+          aria-hidden={!!isLeftMenuHidden}
         >
           <Nav
             navItemsList={leftNavItemsList}
             className="left-nav"
             ariaLabel="Main"
+            isLeftMenuHidden={isLeftMenuHidden}
           />
         </article>
         <article className="content-container">
