@@ -2,7 +2,7 @@
   "name": "accessibility",
   "type": "module",
   "version": "1.0.0",
-  "description": "A Vite config including esLint/Prettier/airbnbEslint",
+  "description": "Project demonstrates accessibility",
   "main": "src/index.js",
   "scripts": {
     "start": "vite",
