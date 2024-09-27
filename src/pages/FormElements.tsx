@@ -9,7 +9,7 @@ import Input from '../components/formElements/Input';
 import { phoneMask } from '../components/formElements/masks';
 import NumberStep from '../components/formElements/numberStep/NumberStep';
 import RadioButton from '../components/formElements/radioButton/RadioButton';
-import validatePrice from '../components/formElements/validation/priceValidation';
+import validationFormElements from '../components/formElements/validation/validationFormElements';
 import PageTitle from '../components/PageTitle';
 import useFormValidation from '../hooks/useFormValidation';
 import { Title } from '../types/lang';
@@ -27,13 +27,13 @@ const FormElements: FC = () => {
     address: '',
   };
 
-  const { onChange, onSubmit, values, handleClick, errors, onBlur, inputRefs } =
+  const { onChange, onSubmit, values, handleClick, errors, onBlur } =
     useFormValidation({
       callback: (values) => {
         console.log('Form submitted with values', values);
       },
       initialState: initialFormValues,
-      validate: validatePrice,
+      validate: validationFormElements,
     });
 
   return (
@@ -52,7 +52,6 @@ const FormElements: FC = () => {
             required
             errorText={errors.fullName}
             onBlur={onBlur}
-            inputRef={inputRefs.fullName}
             autoComplete="name"
           />
           <Input
@@ -87,7 +86,6 @@ const FormElements: FC = () => {
             required
             errorText={errors.email}
             onBlur={onBlur}
-            inputRef={inputRefs.email}
           />
           <Input
             value={values.address}
@@ -106,7 +104,6 @@ const FormElements: FC = () => {
             required
             errorText={errors.phone}
             onBlur={onBlur}
-            inputRef={inputRefs.phone}
             autoComplete="phone"
           />
         </fieldset>
