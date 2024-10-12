@@ -1,11 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   BlurEventType,
   ButtonEventType,
   ChangeInputType,
   FormEventType,
 } from '../types/types';
-import { isObjectEmpty } from '../utils';
 
 export type ValidationErrors = {
   [key: string]: string;
@@ -28,7 +27,6 @@ interface UseFormValidationReturn<T extends FormValues> {
   onClearAll: () => void;
   onSubmit: (event: FormEventType) => void;
   values: T;
-  inputRefs?: any;
   onBlur?: (event?: any) => void;
 }
 
@@ -44,22 +42,20 @@ function useFormValidation<T extends FormValues>({
 
   useEffect(() => {
     if (isSubmitting) {
-      const noErrors = isObjectEmpty(errors);
-
+      const noErrors = Object.keys(errors).length === 0;
       if (noErrors) {
         setTouched([]);
       }
-
       setIsSubmitting(false);
     }
-  }, [errors, isSubmitting]);
+  }, [errors]);
 
   useEffect(() => {
     if (validate) {
-      const validationErrors = validate(values);
+      const validationErrors = validate && validate(values);
       const touchedErrors = Object.keys(validationErrors)
-        .filter((key) => touched.includes(key))
-        .reduce((acc: ValidationErrors, key) => {
+        .filter((key) => touched.includes(key)) // get all touched keys
+        .reduce((acc: { [key: string]: string }, key) => {
           if (!acc[key]) {
             // eslint-disable-next-line no-param-reassign
             acc[key] = validationErrors[key];
@@ -68,7 +64,7 @@ function useFormValidation<T extends FormValues>({
         }, {});
       setErrors(touchedErrors);
     }
-  }, [touched, values, validate]);
+  }, [touched, values]);
 
   function onChange(event: ChangeInputType) {
     const { name, value, type, checked } = event.target;
@@ -95,12 +91,6 @@ function useFormValidation<T extends FormValues>({
     }
   }
 
-  const inputRefs: any = {
-    phone: useRef<HTMLInputElement>(null),
-    fullName: useRef<HTMLInputElement>(null),
-    email: useRef<HTMLInputElement>(null),
-  };
-
   // Special case for number step
   const handleClick = (event: ButtonEventType, amount: number) => {
     const { name } = event.currentTarget;
@@ -122,28 +112,16 @@ function useFormValidation<T extends FormValues>({
     }
   };
 
-  useEffect(() => {
-    const errorFields = Object.keys(errors);
-
-    if (errorFields.length > 0) {
-      const firstErrorField = errorFields[0];
-
-      inputRefs[firstErrorField]?.current?.focus();
-    }
-  }, [errors, inputRefs]);
-
   const onSubmit = (event: FormEventType) => {
     event.preventDefault();
 
     if (validate) {
       const validationErrors = validate(values);
-
       setErrors(validationErrors);
-      if (isObjectEmpty(validationErrors)) {
-        setIsSubmitting(true);
-        callback(values);
-      }
     }
+
+    setIsSubmitting(true);
+    callback(values);
   };
 
   return {
@@ -154,7 +132,6 @@ function useFormValidation<T extends FormValues>({
     errors,
     onClearAll,
     handleClick,
-    inputRefs,
   };
 }
 
