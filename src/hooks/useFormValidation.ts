@@ -6,6 +6,10 @@ import {
   FormEventType,
 } from '../types/types';
 
+export interface KeyValuePair<T> {
+  [key: string]: T;
+}
+
 export type ValidationErrors = {
   [key: string]: string;
 };
@@ -14,7 +18,7 @@ export type FormValues = {
   [key: string]: string | number | string[];
 };
 
-interface UseFormValidationProps<T extends FormValues> {
+interface FormValidationProps<T extends KeyValuePair<any>> {
   callback: (values: T) => void;
   initialState: T;
   validate?: (values: T) => ValidationErrors;
@@ -30,13 +34,13 @@ interface UseFormValidationReturn<T extends FormValues> {
   onBlur?: (event?: BlurEventType) => void;
 }
 
-function useFormValidation<T extends FormValues>({
+function useFormValidation<T extends KeyValuePair<any>>({
   initialState,
   callback,
   validate,
-}: UseFormValidationProps<T>): UseFormValidationReturn<T> {
+}: FormValidationProps<T>): UseFormValidationReturn<T> {
   const [values, setValues] = useState<T>(initialState);
-  const [errors, setErrors] = useState<ValidationErrors>({});
+  const [errors, setErrors] = useState<KeyValuePair<string>>({});
   const [touched, setTouched] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
