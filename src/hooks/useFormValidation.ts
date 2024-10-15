@@ -27,7 +27,7 @@ interface UseFormValidationReturn<T extends FormValues> {
   onClearAll: () => void;
   onSubmit: (event: FormEventType) => void;
   values: T;
-  onBlur?: (event?: any) => void;
+  onBlur?: (event?: BlurEventType) => void;
 }
 
 function useFormValidation<T extends FormValues>({
@@ -105,7 +105,11 @@ function useFormValidation<T extends FormValues>({
     setValues(initialState);
   };
 
-  const onBlur = (event: BlurEventType) => {
+  const onBlur = (event?: BlurEventType) => {
+    if (!event) {
+      return;
+    }
+
     const { name } = event.target;
     if (!touched.includes(name)) {
       setTouched([...touched, name]);
@@ -115,13 +119,20 @@ function useFormValidation<T extends FormValues>({
   const onSubmit = (event: FormEventType) => {
     event.preventDefault();
 
-    if (validate) {
-      const validationErrors = validate(values);
-      setErrors(validationErrors);
+    // If validate function exists, execute it, otherwise skip validation
+    const validationErrors = validate ? validate(values) : {};
+    const formHasNoErrors = !Object.keys(validationErrors).length;
+
+    if (formHasNoErrors) {
+      setValues(initialState);
+      setIsSubmitting(true);
+      callback(values);
     }
 
-    setIsSubmitting(true);
-    callback(values);
+    // If validate exists, set the errors (otherwise it will be an empty object)
+    if (validate) {
+      setErrors(validationErrors);
+    }
   };
 
   return {

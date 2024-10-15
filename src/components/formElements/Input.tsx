@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { BlurEventType, InputType } from '../../types/types';
+import { BlurEventType, ChangeInputType, InputType } from '../../types/types';
 import FormError from './FormError';
 import FormLabel from './FormLabel';
 
@@ -7,14 +7,13 @@ export interface InputProps {
   id: string;
   labelText: string;
   name: string;
-  onChange: (e?: any) => void;
+  onChange: (event: ChangeInputType) => void;
   value: string | number;
   autoComplete?: string;
   checked?: boolean;
   className?: string;
   errorText?: string;
   inputHasNoLabel?: boolean;
-  inputRef?: any;
   max?: string;
   min?: string;
   onBlur?: (event?: BlurEventType) => void;
@@ -31,7 +30,6 @@ const Input: FC<InputProps> = ({
   name,
   value,
   inputHasNoLabel,
-  inputRef,
   checked,
   className = '',
   errorText,
@@ -58,7 +56,6 @@ const Input: FC<InputProps> = ({
         </span>
       )}
       <input
-        ref={inputRef}
         type={type || 'text'}
         name={name}
         checked={checked}
