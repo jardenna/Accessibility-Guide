@@ -21,24 +21,14 @@ export type FormValues = {
 interface FormValidationProps<T extends KeyValuePair<any>> {
   callback: (values: T) => void;
   initialState: T;
-  validate?: (values: T) => ValidationErrors;
-}
-
-interface UseFormValidationReturn<T extends FormValues> {
-  errors: ValidationErrors;
-  handleClick: (event: ButtonEventType, id: number) => void;
-  onChange: (event: ChangeInputType) => void;
-  onClearAll: () => void;
-  onSubmit: (event: FormEventType) => void;
-  values: T;
-  onBlur?: (event?: BlurEventType) => void;
+  validate?: (values: KeyValuePair<string>) => KeyValuePair<string>;
 }
 
 function useFormValidation<T extends KeyValuePair<any>>({
   initialState,
   callback,
   validate,
-}: FormValidationProps<T>): UseFormValidationReturn<T> {
+}: FormValidationProps<T>) {
   const [values, setValues] = useState<T>(initialState);
   const [errors, setErrors] = useState<KeyValuePair<string>>({});
   const [touched, setTouched] = useState<string[]>([]);
@@ -54,21 +44,15 @@ function useFormValidation<T extends KeyValuePair<any>>({
     }
   }, [errors]);
 
-  useEffect(() => {
-    if (validate) {
-      const validationErrors = validate && validate(values);
-      const touchedErrors = Object.keys(validationErrors)
-        .filter((key) => touched.includes(key)) // get all touched keys
-        .reduce((acc: { [key: string]: string }, key) => {
-          if (!acc[key]) {
-            // eslint-disable-next-line no-param-reassign
-            acc[key] = validationErrors[key];
-          }
-          return acc;
-        }, {});
-      setErrors(touchedErrors);
-    }
-  }, [touched, values]);
+  // Special case for number step
+  const handleClick = (event: ButtonEventType, amount: number) => {
+    const { name } = event.currentTarget;
+
+    setValues({
+      ...values,
+      [name]: (values[name] as number) + amount,
+    });
+  };
 
   function onChange(event: ChangeInputType) {
     const { name, value, type, checked } = event.target;
@@ -93,30 +77,35 @@ function useFormValidation<T extends KeyValuePair<any>>({
         };
       });
     }
-  }
 
-  // Special case for number step
-  const handleClick = (event: ButtonEventType, amount: number) => {
-    const { name } = event.currentTarget;
+    if (!touched.includes(name)) {
+      setTouched([...touched, name]);
+    }
 
-    setValues({
-      ...values,
-      [name]: (values[name] as number) + amount,
+    // Clear the error message when typing
+    setErrors((prevErrors) => {
+      const updatedErrors = { ...prevErrors };
+      delete updatedErrors[name];
+      return updatedErrors;
     });
-  };
-
+  }
   const onClearAll = () => {
     setValues(initialState);
   };
 
-  const onBlur = (event?: BlurEventType) => {
-    if (!event) {
-      return;
-    }
-
+  const onBlur = (event: BlurEventType) => {
     const { name } = event.target;
     if (!touched.includes(name)) {
       setTouched([...touched, name]);
+    }
+
+    // Validate the specific field on blur
+    if (validate) {
+      const validationErrors = validate(values);
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: validationErrors[name],
+      }));
     }
   };
 

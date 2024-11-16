@@ -16,7 +16,7 @@ export interface InputProps {
   inputHasNoLabel?: boolean;
   max?: string;
   min?: string;
-  onBlur?: (event?: BlurEventType) => void;
+  onBlur?: (event: BlurEventType) => void;
   placeholder?: string;
   required?: boolean;
   type?: InputType;
