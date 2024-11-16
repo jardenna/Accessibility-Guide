@@ -45,7 +45,7 @@ function useFormValidation<T extends KeyValuePair<any>>({
   }, [errors]);
 
   // Special case for number step
-  const handleClick = (event: ButtonEventType, amount: number) => {
+  const onNumberStepChange = (event: ButtonEventType, amount: number) => {
     const { name } = event.currentTarget;
 
     setValues({
@@ -135,7 +135,7 @@ function useFormValidation<T extends KeyValuePair<any>>({
     values,
     errors,
     onClearAll,
-    handleClick,
+    onNumberStepChange,
   };
 }
 

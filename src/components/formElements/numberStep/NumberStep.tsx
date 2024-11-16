@@ -7,11 +7,11 @@ import Input from '../Input';
 import './_number-step.scss';
 
 interface NumberStepProps {
-  handleClick: (event: any, count: number) => void;
   id: string;
   labelText: string;
   name: string;
   onChange: (event?: any) => void;
+  onNumberStepChange: (event: any, count: number) => void;
   value: number;
   initCount?: number;
   max?: string;
@@ -20,7 +20,7 @@ interface NumberStepProps {
 
 const NumberStep: FC<NumberStepProps> = ({
   onChange,
-  handleClick,
+  onNumberStepChange,
   value,
   initCount = 1,
   min = '0',
@@ -38,7 +38,7 @@ const NumberStep: FC<NumberStepProps> = ({
         ariaLabel={`Subtract ${initCount} `}
         disabled={value === Number(min)}
         onClick={(event?: ButtonEventType) =>
-          handleClick(event, value !== Number(min) ? -initCount : 0)
+          onNumberStepChange(event, value !== Number(min) ? -initCount : 0)
         }
       >
         <Icon name={IconName.Subtract} title="Subtract" />
@@ -56,7 +56,7 @@ const NumberStep: FC<NumberStepProps> = ({
       />
       <Button
         onClick={(event?: ButtonEventType) =>
-          handleClick(event, value !== Number(max) ? initCount : 0)
+          onNumberStepChange(event, value !== Number(max) ? initCount : 0)
         }
         ariaLabel={`Add ${initCount} `}
         disabled={value === Number(max)}

@@ -27,7 +27,7 @@ const FormElements: FC = () => {
     address: '',
   };
 
-  const { onChange, onSubmit, values, handleClick, errors, onBlur } =
+  const { onChange, onSubmit, values, onNumberStepChange, errors, onBlur } =
     useFormValidation({
       callback: (values) => {
         console.log('Form submitted with values', values);
@@ -118,7 +118,7 @@ const FormElements: FC = () => {
 
         <NumberStep
           onChange={onChange}
-          handleClick={handleClick}
+          onNumberStepChange={onNumberStepChange}
           value={values.tickets}
           min="1"
           labelText="Buy Tickets"
