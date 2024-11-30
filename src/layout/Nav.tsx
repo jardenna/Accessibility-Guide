@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router';
 import { LeftNavPath, MainPath } from '../types/enums';
 import { Title } from '../types/lang';
 

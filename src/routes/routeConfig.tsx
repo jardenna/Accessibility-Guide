@@ -1,5 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
-
+import { createBrowserRouter } from 'react-router';
 import Headings from '../components/Headings';
 import Layout from '../layout/Layout';
 import AccessibilityGuidelines from '../pages/AccessibilityGuidelines';

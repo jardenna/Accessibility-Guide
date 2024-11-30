@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router';
 import { MainPath } from '../../types/enums';
 import './_breadcrumbs.scss';
 import { breadcrumbList, getNameFromPath } from './utils';
