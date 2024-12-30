@@ -1,5 +1,4 @@
-@import '../../scss/colors';
-@import '../../scss/functions';
+@use '../globals' as *;
 
 .main-footer {
   justify-content: flex-end;

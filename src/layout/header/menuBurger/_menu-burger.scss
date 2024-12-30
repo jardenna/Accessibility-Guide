@@ -1,6 +1,4 @@
-@import '../../../scss/colors';
-@import '../../../scss/mixins';
-@import '../../../scss/mq-size';
+@use '../../../scss/globals' as *;
 
 $burger-placement: -8px;
 

@@ -1,7 +1,4 @@
-@import '../../../scss/colors';
-@import '../../../scss/fonts';
-@import '../../../scss/functions';
-@import '../../../scss/mixins';
+@use '../../../scss/globals' as *;
 
 // Remove autofill
 :-webkit-autofill,
@@ -89,8 +86,8 @@ input[type='number'] {
     @include outline($color-danger);
 
     &:focus-visible {
-      background: linear-gradient($color-danger, $color-error-light) bottom -12px
-        left 0 / 100% 3px content-box padding-box repeat-x;
+      background: linear-gradient($color-danger, $color-error-light)
+        bottom -12px left 0 / 100% 3px content-box padding-box repeat-x;
     }
   }
 }

@@ -1,7 +1,4 @@
-@import '../../scss/colors';
-@import '../../scss/fonts';
-@import '../../scss/functions';
-@import '../../scss/mixins';
+@use '../../scss/globals' as *;
 
 summary {
   display: flex; /* also removes the list marker */

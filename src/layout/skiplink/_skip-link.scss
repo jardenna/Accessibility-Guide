@@ -1,7 +1,4 @@
-@import '../../scss/colors';
-@import '../../scss/mixins';
-@import '../../scss/mq-size';
-@import '../../scss/variables';
+@use '../../scss/globals' as *;
 
 .skip-link {
   position: fixed;

@@ -1,6 +1,4 @@
-@import '../../scss/colors';
-@import '../../scss/mixins';
-@import '../../scss/mq-size';
+@use '../../scss/globals' as *;
 
 .banner {
   padding: 30px 40px;

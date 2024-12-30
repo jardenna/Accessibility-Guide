@@ -1,7 +1,4 @@
-@import '../../scss/colors';
-@import '../../scss/functions';
-@import '../../scss/mixins';
-@import '../../scss/mq-size';
+@use '../../scss/globals' as *;
 
 .grid {
   @include grid;

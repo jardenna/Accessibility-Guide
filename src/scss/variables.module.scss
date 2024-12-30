@@ -1,6 +1,5 @@
-@import './variables';
-@import './functions';
-@import './mq-size';
+@use './variables' as *;
+@use '../scss/globals' as *;
 
 :export {
   timeDuration: $animation-duration;

@@ -1,6 +1,4 @@
-@import '../../scss/colors';
-@import '../../scss/functions';
-@import '../../scss/mixins';
+@use '../../scss/globals' as *;
 
 .toasts-container {
   display: flex;

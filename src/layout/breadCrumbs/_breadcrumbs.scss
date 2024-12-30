@@ -1,5 +1,4 @@
-@import '../../scss/colors';
-@import '../../scss/mixins';
+@use '../../scss/globals' as *;
 
 .breadcrumbs {
   padding: 4px 20px;

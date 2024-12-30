@@ -1,6 +1,5 @@
 /* stylelint-disable no-descending-specificity */
-@import '../../scss/colors';
-@import '../../scss/functions';
+@use '../../scss/globals' as *;
 
 .table-container {
   position: relative;

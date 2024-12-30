@@ -1,3 +1,6 @@
+@use './colors' as *;
+@use '../variables' as *;
+
 @mixin max-size($width) {
   @media screen and (max-width: $width) {
     @content;

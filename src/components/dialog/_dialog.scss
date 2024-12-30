@@ -1,8 +1,5 @@
-@import '../../scss/colors';
-@import '../../scss/functions';
-@import '../../scss/mixins';
-@import '../../scss/variables';
-@import '../../scss/mq-size';
+@use '../../scss/variables';
+@use '../../scss/globals' as *;
 
 dialog::backdrop {
   background-color: rgba($color-black, 60%);
