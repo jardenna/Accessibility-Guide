@@ -16,7 +16,7 @@ interface TableProps {
 const Table: FC<TableProps> = ({ caption, data }) => (
   <div className="table-container">
     <table>
-      <caption className="visibility-hidden">{caption}</caption>
+      <caption className="visually-hidden">{caption}</caption>
       <thead>
         <tr>
           <th scope="col">Category</th>

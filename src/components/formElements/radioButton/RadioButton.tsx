@@ -14,7 +14,6 @@ interface RadioButtonProps {
 
 const RadioButton: FC<RadioButtonProps> = ({
   initialChecked,
-
   radioButtonList,
   onChange,
   name,
@@ -31,7 +30,7 @@ const RadioButton: FC<RadioButtonProps> = ({
         checked={initialChecked === radio.id}
         onChange={onChange}
         labelText={radio.labelText}
-        className="visibility-hidden"
+        className="visually-hidden"
       />
     ))}
 
