@@ -4,11 +4,9 @@ import Layout from '../layout/Layout';
 import AccessibilityGuidelines from '../pages/AccessibilityGuidelines';
 import AccessibilityMyths from '../pages/AccessibilityMyths';
 import Aria from '../pages/aria/Aria';
-import Buttons from '../pages/Buttons';
-import Contact from '../pages/commonPages/Contact';
-import Home from '../pages/commonPages/Home';
 import ErrorPage from '../pages/errorPage/ErrorPage';
 import FormElements from '../pages/FormElements';
+import Home from '../pages/Home';
 import AltText from '../pages/images/AltText';
 import ComplexImages from '../pages/images/complexImages/ComplexImages';
 import DecorativeImages from '../pages/images/DecorativeImages';
@@ -29,10 +27,6 @@ const routeConfig = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-      },
-      {
-        path: MainPath.Contact,
-        element: <Contact />,
       },
       { path: LeftNavPath.Images, element: <Images /> },
       {
@@ -56,14 +50,7 @@ const routeConfig = createBrowserRouter([
         path: LeftNavPath.FormElements,
         element: <FormElements />,
       },
-      {
-        path: LeftNavPath.Buttons,
-        element: <Buttons />,
-      },
-      {
-        path: LeftNavPath.Navigation,
-        element: <div>Nav</div>,
-      },
+
       {
         path: LeftNavPath.Headings,
         element: <Headings />,

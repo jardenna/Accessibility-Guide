@@ -1,18 +1,18 @@
 import { FC } from 'react';
-import BottomLinks from '../../components/BottomLinks';
-import Figcaption from '../../components/figure/Figcaption';
-import Figure from '../../components/figure/Figure';
-import PageTitle from '../../components/PageTitle';
-import Picture from '../../components/Picture';
+import BottomLinks from '../components/BottomLinks';
+import Figcaption from '../components/figure/Figcaption';
+import Figure from '../components/figure/Figure';
+import PageTitle from '../components/PageTitle';
+import Picture from '../components/Picture';
 import {
   inclusiveActivityImages,
   inclusiveActivityImagesDialog,
-} from '../../components/pictureUtils';
-import Table from '../../components/table/Table';
-import inclusiveActivityTableData from '../../components/table/tableUtils';
-import PageBanner from '../../layout/pageBanner/PageBanner';
-import { SizeVariant } from '../../types/enums';
-import { BannerTitle, CommonText, Title } from '../../types/lang';
+} from '../components/pictureUtils';
+import Table from '../components/table/Table';
+import inclusiveActivityTableData from '../components/table/tableUtils';
+import PageBanner from '../layout/pageBanner/PageBanner';
+import { SizeVariant } from '../types/enums';
+import { BannerTitle, CommonText, Title } from '../types/lang';
 
 const Home: FC = () => (
   <>
