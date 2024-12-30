@@ -1,8 +1,4 @@
-@import '../../scss/colors';
-@import '../../scss/fonts';
-@import '../../scss/functions';
-@import '../../scss/mixins';
-@import '../../scss/mq-size';
+@use '../../scss/globals' as *;
 
 .accordion {
   margin: 0;
