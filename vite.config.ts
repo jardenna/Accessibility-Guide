@@ -20,6 +20,11 @@ export default defineConfig({
     port: 3001,
   },
   css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      },
+    },
     devSourcemap: true,
   },
   build: {
