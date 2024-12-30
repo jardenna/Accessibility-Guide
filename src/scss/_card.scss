@@ -1,5 +1,4 @@
-@import '../scss/colors';
-@import '../scss/mixins';
+@use './globals' as *;
 
 .card {
   display: flex;
@@ -73,6 +72,7 @@
     background-color: $color-dark-bg;
   }
 
+  /* stylelint-disable-next-line no-descending-specificity */
   a {
     color: currentcolor;
     font-size: rem(14px);
