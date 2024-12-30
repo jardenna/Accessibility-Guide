@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { BlurEventType, ChangeInputType, InputType } from '../../types/types';
+import VisuallyHidden from '../VisuallyHidden';
 import FormError from './FormError';
 import FormLabel from './FormLabel';
 
@@ -15,6 +16,7 @@ export interface InputProps {
   errorText?: string;
   inputHasNoLabel?: boolean;
   max?: string;
+  maxLength?: number;
   min?: string;
   onBlur?: (event: BlurEventType) => void;
   placeholder?: string;
@@ -38,15 +40,26 @@ const Input: FC<InputProps> = ({
   min,
   max,
   placeholder,
-  autoComplete = 'off',
+  maxLength,
+  autoComplete = 'on',
 }) => {
   const inputClassName = `${type === 'checkbox' || type === 'radio' ? 'checkbox-radio-container' : 'input-container'}`;
-
+  const handleOnInput = (event: ChangeInputType) => {
+    const inputValue = event.target.value;
+    if (maxLength && inputValue.length > maxLength) {
+      // eslint-disable-next-line no-param-reassign
+      event.target.value = inputValue.slice(0, maxLength);
+    }
+  };
   return (
     <div className={inputClassName}>
       <span className="form-label-container">
-        {!inputHasNoLabel && (
+        {!inputHasNoLabel ? (
           <FormLabel required={required} inputLabel={labelText} id={id} />
+        ) : (
+          <VisuallyHidden as="label" htmlFor={id}>
+            {labelText}
+          </VisuallyHidden>
         )}
         {errorText && <FormError errorText={errorText} ariaErrorId={id} />}
       </span>
@@ -66,12 +79,12 @@ const Input: FC<InputProps> = ({
         aria-invalid={errorText ? true : undefined}
         aria-required={required || undefined}
         aria-errormessage={errorText ? id : undefined}
-        aria-label={inputHasNoLabel ? labelText : undefined}
         onBlur={onBlur}
         placeholder={placeholder}
         min={min}
         max={max}
         autoComplete={autoComplete}
+        onInput={handleOnInput}
       />
     </div>
   );
