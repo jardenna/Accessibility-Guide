@@ -15,7 +15,7 @@
 
   @include max-size($small) {
     overflow: auto;
-    max-width: 342px;
+    max-width: rem(342px);
   }
 
   .tab {

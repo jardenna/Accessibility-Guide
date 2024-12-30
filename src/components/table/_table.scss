@@ -1,18 +1,19 @@
 /* stylelint-disable no-descending-specificity */
 @import '../../scss/colors';
+@import '../../scss/functions';
 
 .table-container {
   position: relative;
   z-index: 1;
   overflow: auto;
-  width: 300px;
+  width: rem(300px);
   min-width: 100%;
   border: 1px solid $color-border;
 }
 
 table {
   width: 100%;
-  min-width: 380px;
+  min-width: rem(380px);
   border-spacing: 0;
 
   th,
