@@ -22,6 +22,8 @@ const Header: FC<HeaderProps> = ({
       <OpenPanelBtn
         onTogglePanel={onTogglePanel}
         isPanelHidden={isLeftMenuHidden}
+        ariaLabel="Open menu"
+        className="menu-burger"
       >
         <span className="menu-burger-item" />
       </OpenPanelBtn>

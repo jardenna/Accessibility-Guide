@@ -3,10 +3,11 @@ import { BtnVariant } from '../../types/enums';
 import Button from '../Button';
 
 interface OpenPanelBtnProps {
+  ariaLabel: string;
   children: ReactNode;
   isPanelHidden: boolean;
   onTogglePanel: () => void;
-  ariaLabel?: string;
+  className?: string;
 }
 
 const OpenPanelBtn: FC<OpenPanelBtnProps> = ({
@@ -14,13 +15,14 @@ const OpenPanelBtn: FC<OpenPanelBtnProps> = ({
   children,
   isPanelHidden,
   onTogglePanel,
+  className = '',
 }) => (
   <Button
     ariaLabel={ariaLabel}
     ariaExpanded={!isPanelHidden}
     variant={BtnVariant.Ghost}
     onClick={onTogglePanel}
-    className="menu-burger"
+    className={className}
   >
     {children}
   </Button>

@@ -23,7 +23,7 @@ const Nav: FC<NavProps> = ({
   className,
   ariaLabel = 'primary',
 }) => (
-  <Panel isPanelHidden={isLeftMenuHidden}>
+  <Panel isPanelHidden={isLeftMenuHidden} className="left-nav-container">
     <nav className={`nav ${className || 'main-nav'}`} aria-label={ariaLabel}>
       <ul className="nav-item-container">
         {navItemsList.map((navItem) => (
