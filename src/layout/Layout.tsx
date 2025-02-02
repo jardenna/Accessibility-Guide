@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Outlet, useLocation } from 'react-router';
+import { Outlet } from 'react-router';
+import usePanel from '../components/panel/usePanel';
 import useKeyPress from '../hooks/useKeyPress';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import { KeyCode } from '../types/enums';
@@ -9,29 +9,16 @@ import Header from './header/Header';
 import leftNavItemsList from './leftNavItemsList';
 
 function Layout() {
-  const location = useLocation();
   const { isTabletSize } = useWindowDimensions();
-  const [isLeftMenuHidden, setIsLeftMenuHidden] = useState(true);
+  const { isPanelHidden, onClick } = usePanel();
 
-  const handleToggleMenuHidden = () => {
-    setIsLeftMenuHidden(!isLeftMenuHidden);
-  };
-
-  const handleHideMenu = () => {
-    setIsLeftMenuHidden(true);
-  };
-
-  useKeyPress(handleHideMenu, [KeyCode.Esc]);
-
-  useEffect(() => {
-    setIsLeftMenuHidden(true);
-  }, [location]);
+  useKeyPress(onClick, [KeyCode.Esc]);
 
   return (
     <article className="main-container">
       <Header
-        onClick={handleToggleMenuHidden}
-        isLeftMenuHidden={isLeftMenuHidden}
+        onClick={onClick}
+        isLeftMenuHidden={isPanelHidden}
         isTabletSize={isTabletSize}
       />
       <article className="main-content container">
@@ -39,11 +26,10 @@ function Layout() {
           navItemsList={leftNavItemsList}
           className="left-nav"
           ariaLabel="Main"
-          isLeftMenuHidden={isLeftMenuHidden}
+          isLeftMenuHidden={isPanelHidden}
         />
-
         <main
-          className={`content-container ${!isLeftMenuHidden ? 'no-scroll' : ''}`}
+          className={`content-container ${!isPanelHidden ? 'no-scroll' : ''}`}
         >
           <BreadCrumbs />
           <div id="main">

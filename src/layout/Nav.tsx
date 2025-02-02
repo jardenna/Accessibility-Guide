@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router';
+import Panel from '../components/panel/Panel';
 import { LeftNavPath, MainPath } from '../types/enums';
 import { Title } from '../types/lang';
 
@@ -22,7 +23,7 @@ const Nav: FC<NavProps> = ({
   className,
   ariaLabel = 'primary',
 }) => (
-  <div className={`left-nav-container ${isLeftMenuHidden ? '' : 'is-active'}`}>
+  <Panel isPanelHidden={isLeftMenuHidden}>
     <nav className={`nav ${className || 'main-nav'}`} aria-label={ariaLabel}>
       <ul className="nav-item-container">
         {navItemsList.map((navItem) => (
@@ -48,7 +49,7 @@ const Nav: FC<NavProps> = ({
         ))}
       </ul>
     </nav>
-  </div>
+  </Panel>
 );
 
 export default Nav;
