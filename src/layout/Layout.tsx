@@ -11,7 +11,7 @@ import leftNavItemsList from './leftNavItemsList';
 function Layout() {
   const location = useLocation();
   const { isTabletSize } = useWindowDimensions();
-  const [isLeftMenuHidden, setIsLeftMenuHidden] = useState(false);
+  const [isLeftMenuHidden, setIsLeftMenuHidden] = useState(true);
 
   const handleToggleMenuHidden = () => {
     setIsLeftMenuHidden(!isLeftMenuHidden);
