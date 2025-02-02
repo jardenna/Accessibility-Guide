@@ -10,7 +10,9 @@ input[type='checkbox'] {
       content: '';
       position: relative;
       top: -2px;
-      transform: rotate(45deg);
+
+      @include rotate;
+
       width: rem(6px);
       height: rem(13px);
       border-bottom: 3px solid $color-white;

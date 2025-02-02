@@ -18,10 +18,6 @@
   background-color: $bg;
 }
 
-@mixin rotate($deg: 45deg) {
-  transform: rotate($deg);
-}
-
 @mixin grid($amount: 3, $gap: 16px) {
   display: grid;
   grid-template-columns: repeat($amount, 1fr);
@@ -75,6 +71,14 @@
 
 @mixin transition($what: all, $time: 0.3s, $how: ease-in-out) {
   transition: $what $time $how;
+
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
+}
+
+@mixin rotate($deg: 45deg) {
+  transform: rotate($deg);
 
   @media (prefers-reduced-motion) {
     transition: none;
