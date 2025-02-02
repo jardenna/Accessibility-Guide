@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router';
 import useKeyPress from '../hooks/useKeyPress';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 import { KeyCode } from '../types/enums';
 import Nav from './Nav';
 import BreadCrumbs from './breadCrumbs/BreadCrumbs';
@@ -9,6 +10,7 @@ import leftNavItemsList from './leftNavItemsList';
 
 function Layout() {
   const location = useLocation();
+  const { isTabletSize } = useWindowDimensions();
   const [isLeftMenuHidden, setIsLeftMenuHidden] = useState(false);
 
   const handleToggleMenuHidden = () => {
@@ -25,28 +27,12 @@ function Layout() {
     setIsLeftMenuHidden(true);
   }, [location]);
 
-  const handleResize = () => {
-    if (window.innerWidth > 1024) {
-      setIsLeftMenuHidden(false);
-    } else {
-      setIsLeftMenuHidden(true);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    handleResize(); // Initial call to set the correct state
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
     <article className="main-container">
       <Header
         onClick={handleToggleMenuHidden}
         isLeftMenuHidden={isLeftMenuHidden}
+        isTabletSize={isTabletSize}
       />
       <article className="main-content container">
         <Nav
@@ -56,7 +42,9 @@ function Layout() {
           isLeftMenuHidden={isLeftMenuHidden}
         />
 
-        <main className="content-container">
+        <main
+          className={`content-container ${!isLeftMenuHidden ? 'no-scroll' : ''}`}
+        >
           <BreadCrumbs />
           <div id="main">
             <Outlet />
