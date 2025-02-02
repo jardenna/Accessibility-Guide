@@ -22,10 +22,10 @@ const Header: FC<HeaderProps> = ({
       <OpenPanelBtn
         onTogglePanel={onTogglePanel}
         isPanelHidden={isLeftMenuHidden}
-        ariaLabel="Open menu"
+        ariaLabel={isLeftMenuHidden ? 'Open menu' : 'Close menu'}
         className="menu-burger"
       >
-        <span className="menu-burger-item" />
+        <span className="menu-burger-item" aria-hidden="true" />
       </OpenPanelBtn>
     )}
   </header>
