@@ -4,7 +4,7 @@ import Logo from './Logo';
 import './_header.scss';
 import MenuBurger from './menuBurger/MenuBurger';
 
-interface HeaderProps {
+export interface HeaderProps {
   isLeftMenuHidden: boolean;
   isTabletSize: boolean;
   onClick: () => void;
@@ -19,10 +19,7 @@ const Header: FC<HeaderProps> = ({
     <SkipLink />
     <Logo />
     {isTabletSize && (
-      <MenuBurger
-        onClick={onClick}
-        isActive={isLeftMenuHidden ? '' : 'is-active'}
-      />
+      <MenuBurger onClick={onClick} isLeftMenuHidden={isLeftMenuHidden} />
     )}
   </header>
 );

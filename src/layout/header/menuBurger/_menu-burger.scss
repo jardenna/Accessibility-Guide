@@ -38,7 +38,7 @@ $burger-placement: -8px;
     }
   }
 
-  &.is-active {
+  &[aria-expanded='true'] {
     .menu-burger-item {
       background-color: transparent;
       transform: rotateY(180deg);
