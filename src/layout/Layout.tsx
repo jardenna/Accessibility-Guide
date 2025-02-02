@@ -10,14 +10,14 @@ import leftNavItemsList from './leftNavItemsList';
 
 function Layout() {
   const { isTabletSize } = useWindowDimensions();
-  const { isPanelHidden, onClick } = usePanel();
+  const { isPanelHidden, onTogglePanel } = usePanel();
 
-  useKeyPress(onClick, [KeyCode.Esc]);
+  useKeyPress(onTogglePanel, [KeyCode.Esc]);
 
   return (
     <article className="main-container">
       <Header
-        onClick={onClick}
+        onTogglePanel={onTogglePanel}
         isLeftMenuHidden={isPanelHidden}
         isTabletSize={isTabletSize}
       />

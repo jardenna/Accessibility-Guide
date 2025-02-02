@@ -5,7 +5,7 @@ import Button from '../Button';
 interface OpenPanelBtnProps {
   children: ReactNode;
   isPanelHidden: boolean;
-  onClick: () => void;
+  onTogglePanel: () => void;
   ariaLabel?: string;
 }
 
@@ -13,13 +13,13 @@ const OpenPanelBtn: FC<OpenPanelBtnProps> = ({
   ariaLabel,
   children,
   isPanelHidden,
-  onClick,
+  onTogglePanel,
 }) => (
   <Button
     ariaLabel={ariaLabel}
     ariaExpanded={!isPanelHidden}
     variant={BtnVariant.Ghost}
-    onClick={onClick}
+    onClick={onTogglePanel}
     className="menu-burger"
   >
     {children}

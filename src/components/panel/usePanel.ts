@@ -5,7 +5,7 @@ const usePanel = () => {
   const location = useLocation();
   const [isPanelHidden, setIsPanelHidden] = useState(true);
 
-  const handleToggleMenuHidden = () => {
+  const handleTogglePanel = () => {
     setIsPanelHidden(!isPanelHidden);
   };
 
@@ -13,7 +13,7 @@ const usePanel = () => {
     setIsPanelHidden(true);
   }, [location]);
 
-  return { isPanelHidden, onClick: handleToggleMenuHidden };
+  return { isPanelHidden, onTogglePanel: handleTogglePanel };
 };
 
 export default usePanel;
