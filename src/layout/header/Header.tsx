@@ -5,6 +5,7 @@ import Logo from './Logo';
 import './_header.scss';
 
 export interface HeaderProps {
+  ariaControls: string;
   isLeftMenuHidden: boolean;
   isTabletSize: boolean;
   onTogglePanel: () => void;
@@ -14,6 +15,7 @@ const Header: FC<HeaderProps> = ({
   isLeftMenuHidden,
   onTogglePanel,
   isTabletSize,
+  ariaControls,
 }) => (
   <header className="main-header container" aria-label="Main">
     <SkipLink />
@@ -24,6 +26,7 @@ const Header: FC<HeaderProps> = ({
         isPanelHidden={isLeftMenuHidden}
         ariaLabel={isLeftMenuHidden ? 'Open menu' : 'Close menu'}
         className="menu-burger"
+        ariaControls={ariaControls}
       >
         <span className="menu-burger-item" aria-hidden="true" />
       </OpenPanelBtn>

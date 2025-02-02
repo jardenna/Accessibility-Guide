@@ -7,11 +7,13 @@ interface OpenPanelBtnProps {
   children: ReactNode;
   isPanelHidden: boolean;
   onTogglePanel: () => void;
+  ariaControls?: string;
   className?: string;
 }
 
 const OpenPanelBtn: FC<OpenPanelBtnProps> = ({
   ariaLabel,
+  ariaControls,
   children,
   isPanelHidden,
   onTogglePanel,
@@ -23,6 +25,7 @@ const OpenPanelBtn: FC<OpenPanelBtnProps> = ({
     variant={BtnVariant.Ghost}
     onClick={onTogglePanel}
     className={className}
+    ariaControls={ariaControls}
   >
     {children}
   </Button>

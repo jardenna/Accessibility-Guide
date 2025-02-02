@@ -3,6 +3,7 @@ import BtnClose from '../BtnClose';
 
 interface PanelProps {
   children: ReactNode;
+  id: string;
   isPanelHidden: boolean;
   className?: string;
   onClick?: () => void;
@@ -13,8 +14,9 @@ const Panel: FC<PanelProps> = ({
   isPanelHidden,
   onClick,
   className = '',
+  id,
 }) => (
-  <div className={`${className} ${isPanelHidden ? '' : 'is-active'}`}>
+  <div className={`${className} ${isPanelHidden ? '' : 'is-active'}`} id={id}>
     {onClick && <BtnClose onClick={onClick} ariaLabel="Close" />}
     {children}
   </div>

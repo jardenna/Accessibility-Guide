@@ -11,6 +11,7 @@ import leftNavItemsList from './leftNavItemsList';
 function Layout() {
   const { isTabletSize } = useWindowDimensions();
   const { isPanelHidden, onTogglePanel } = usePanel();
+  const ariaControls = 'menu';
 
   useKeyPress(onTogglePanel, [KeyCode.Esc]);
 
@@ -20,6 +21,7 @@ function Layout() {
         onTogglePanel={onTogglePanel}
         isLeftMenuHidden={isPanelHidden}
         isTabletSize={isTabletSize}
+        ariaControls={ariaControls}
       />
       <article className="main-content container">
         <Nav
@@ -27,6 +29,7 @@ function Layout() {
           className="left-nav"
           ariaLabel="Main"
           isLeftMenuHidden={isPanelHidden}
+          ariaControls={ariaControls}
         />
         <main
           className={`content-container ${!isPanelHidden ? 'no-scroll' : ''}`}

@@ -11,6 +11,7 @@ export interface NavListItem {
 }
 
 interface NavProps {
+  ariaControls: string;
   isLeftMenuHidden: boolean;
   navItemsList: NavListItem[];
   ariaLabel?: string;
@@ -18,12 +19,17 @@ interface NavProps {
 }
 
 const Nav: FC<NavProps> = ({
+  ariaControls,
   isLeftMenuHidden,
   navItemsList,
   className,
   ariaLabel = 'primary',
 }) => (
-  <Panel isPanelHidden={isLeftMenuHidden} className="left-nav-container">
+  <Panel
+    isPanelHidden={isLeftMenuHidden}
+    className="left-nav-container"
+    id={ariaControls}
+  >
     <nav className={`nav ${className || 'main-nav'}`} aria-label={ariaLabel}>
       <ul className="nav-item-container">
         {navItemsList.map((navItem) => (
