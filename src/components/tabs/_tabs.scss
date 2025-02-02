@@ -28,6 +28,7 @@
 
     &.btn-secondary {
       border: 1px solid $color-white;
+      border-bottom: 4px solid transparent;
       background-color: $color-gray-light;
 
       @media (prefers-color-scheme: dark) {
