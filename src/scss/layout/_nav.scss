@@ -1,4 +1,5 @@
 @use '../globals' as *;
+@use '../variables' as *;
 
 .nav-item-container {
   margin: 0;
@@ -47,6 +48,7 @@
     overflow: auto;
     position: fixed;
     left: -100%;
+    top: rem($header-height);
     z-index: 3;
     background-color: $color-white;
     width: 100%;

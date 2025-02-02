@@ -57,14 +57,6 @@
   }
 }
 
-@mixin transition($what: all, $time: 0.3s, $how: ease-in-out) {
-  transition: $what $time $how;
-
-  @media (prefers-reduced-motion) {
-    transition: none;
-  }
-}
-
 @mixin outline($color: $color-hilight, $size: 2px) {
   outline: $size solid $color;
 
@@ -78,5 +70,13 @@
 
   @media (prefers-reduced-motion) {
     animation-name: none;
+  }
+}
+
+@mixin transition($what: all, $time: 0.3s, $how: ease-in-out) {
+  transition: $what $time $how;
+
+  @media (prefers-reduced-motion) {
+    transition: none;
   }
 }
