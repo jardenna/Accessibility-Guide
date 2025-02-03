@@ -2,13 +2,15 @@ import { FC, ReactNode } from 'react';
 import BtnClose from '../BtnClose';
 import './_panel.scss';
 
+type Variant = 'left' | 'right' | 'top' | 'bottom';
+
 interface PanelProps {
   children: ReactNode;
   id: string;
   isPanelHidden: boolean;
   className?: string;
   onClick?: () => void;
-  variant?: string;
+  variant?: Variant;
 }
 
 const Panel: FC<PanelProps> = ({
@@ -17,7 +19,7 @@ const Panel: FC<PanelProps> = ({
   onClick,
   className = '',
   id,
-  variant = 'left',
+  variant = 'right',
 }) => (
   <div
     className={`panel ${variant} ${className} ${isPanelHidden ? '' : 'is-active'}`}

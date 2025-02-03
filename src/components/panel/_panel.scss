@@ -4,11 +4,12 @@
 .panel {
   overflow: auto;
   position: fixed;
-  top: 0;
   z-index: 3;
   background-color: $color-white;
   height: 100%;
   padding: 20px;
+
+  @include transition;
 
   &.left {
     left: -100%;
@@ -18,5 +19,28 @@
     }
   }
 
-  @include transition;
+  &.right {
+    right: -100%;
+
+    &.is-active {
+      right: 0;
+    }
+  }
+
+  &.top {
+    top: -100%;
+
+    &.is-active {
+      top: 0;
+    }
+  }
+
+  &.bottom {
+    bottom: -100%;
+    top: auto;
+
+    &.is-active {
+      bottom: 0;
+    }
+  }
 }
