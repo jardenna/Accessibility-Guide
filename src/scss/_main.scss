@@ -53,10 +53,6 @@ body {
     background-color: $color-primary-dark;
     color: $color-primary-light;
   }
-
-  @include max-size($medium) {
-    height: auto;
-  }
 }
 
 h1 {
