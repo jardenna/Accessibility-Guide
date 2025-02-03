@@ -1,9 +1,10 @@
 import { FC } from 'react';
-import Panel from '../components/panel/Panel';
-import useWindowDimensions from '../hooks/useWindowDimensions';
-import { LeftNavPath, MainPath } from '../types/enums';
-import { Title } from '../types/lang';
-import NavIist from './nav/NavIist';
+import Panel from '../../components/panel/Panel';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
+import { LeftNavPath, MainPath } from '../../types/enums';
+import { Title } from '../../types/lang';
+import NavIist from './NavIist';
+import './_nav.scss';
 
 export interface NavListItem {
   path: MainPath | LeftNavPath;

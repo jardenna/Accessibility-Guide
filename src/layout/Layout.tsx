@@ -3,10 +3,10 @@ import usePanel from '../components/panel/usePanel';
 import useKeyPress from '../hooks/useKeyPress';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import { KeyCode } from '../types/enums';
-import Nav from './Nav';
 import BreadCrumbs from './breadCrumbs/BreadCrumbs';
 import Header from './header/Header';
-import leftNavItemsList from './leftNavItemsList';
+import leftNavItemsList from './nav/leftNavItemsList';
+import Nav from './nav/Nav';
 
 function Layout() {
   const { isTabletSize } = useWindowDimensions();

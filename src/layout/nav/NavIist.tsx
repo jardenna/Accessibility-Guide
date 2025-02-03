@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { NavListItem } from '../Nav';
+import { NavListItem } from './Nav';
 import NavItem from './NavItem';
 
 export interface NavListProps {

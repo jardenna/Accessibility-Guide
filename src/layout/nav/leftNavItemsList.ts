@@ -1,5 +1,5 @@
-import { LeftNavPath } from '../types/enums';
-import { Title } from '../types/lang';
+import { LeftNavPath } from '../../types/enums';
+import { Title } from '../../types/lang';
 import { NavListItem } from './Nav';
 
 const leftNavItemsList: NavListItem[] = [
