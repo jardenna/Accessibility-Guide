@@ -8,6 +8,7 @@ interface PanelProps {
   isPanelHidden: boolean;
   className?: string;
   onClick?: () => void;
+  variant?: string;
 }
 
 const Panel: FC<PanelProps> = ({
@@ -16,9 +17,10 @@ const Panel: FC<PanelProps> = ({
   onClick,
   className = '',
   id,
+  variant = 'left',
 }) => (
   <div
-    className={`panel ${className} ${isPanelHidden ? '' : 'is-active'}`}
+    className={`panel ${variant} ${className} ${isPanelHidden ? '' : 'is-active'}`}
     id={id}
   >
     {onClick && <BtnClose onClick={onClick} ariaLabel="Close" />}

@@ -1,6 +1,13 @@
 @use '../globals' as *;
 @use '../variables' as *;
 
+.nav-container {
+  &.panel {
+    top: rem($header-height);
+    width: 100%;
+  }
+}
+
 .nav-item-container {
   margin: 0;
   padding: 0;

@@ -1,8 +1,9 @@
 import { FC } from 'react';
-import { NavLink } from 'react-router';
 import Panel from '../components/panel/Panel';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 import { LeftNavPath, MainPath } from '../types/enums';
 import { Title } from '../types/lang';
+import NavIist from './nav/NavIist';
 
 export interface NavListItem {
   path: MainPath | LeftNavPath;
@@ -24,34 +25,33 @@ const Nav: FC<NavProps> = ({
   navItemsList,
   className = '',
   ariaLabel = 'primary',
-}) => (
-  <Panel isPanelHidden={isLeftMenuHidden} id={ariaControls}>
+}) => {
+  const { isTabletSize } = useWindowDimensions();
+  const NavComp = (
     <nav className="nav" aria-label={ariaLabel}>
       <ul className={`${className} nav-item-container`}>
         {navItemsList.map((navItem) => (
-          <li key={navItem.title} className="nav-item">
-            <NavLink to={navItem.path} tabIndex={isLeftMenuHidden ? -1 : 0}>
-              {navItem.title}
-            </NavLink>
-            {navItem.subPath && (
-              <ul className="sub-nav">
-                {navItem.subPath.map((subPath) => (
-                  <li className="sub-nav-item" key={subPath.title}>
-                    <NavLink
-                      to={subPath.path}
-                      tabIndex={isLeftMenuHidden ? -1 : 0}
-                    >
-                      {subPath.title}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
+          <NavIist
+            key={navItem.title}
+            navItem={navItem}
+            tabIndex={isLeftMenuHidden ? -1 : 0}
+          />
         ))}
       </ul>
     </nav>
-  </Panel>
-);
+  );
+
+  return isTabletSize ? (
+    <Panel
+      className="nav-container"
+      isPanelHidden={isLeftMenuHidden}
+      id={ariaControls}
+    >
+      {NavComp}
+    </Panel>
+  ) : (
+    NavComp
+  );
+};
 
 export default Nav;
