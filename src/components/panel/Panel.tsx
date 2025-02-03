@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
 import BtnClose from '../BtnClose';
+import './_panel.scss';
 
 interface PanelProps {
   children: ReactNode;
@@ -16,7 +17,10 @@ const Panel: FC<PanelProps> = ({
   className = '',
   id,
 }) => (
-  <div className={`${className} ${isPanelHidden ? '' : 'is-active'}`} id={id}>
+  <div
+    className={`panel ${className} ${isPanelHidden ? '' : 'is-active'}`}
+    id={id}
+  >
     {onClick && <BtnClose onClick={onClick} ariaLabel="Close" />}
     {children}
   </div>
