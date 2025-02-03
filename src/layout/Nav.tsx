@@ -22,12 +22,12 @@ const Nav: FC<NavProps> = ({
   ariaControls,
   isLeftMenuHidden,
   navItemsList,
-  className,
+  className = '',
   ariaLabel = 'primary',
 }) => (
   <Panel isPanelHidden={isLeftMenuHidden} id={ariaControls}>
-    <nav className={`nav ${className || 'main-nav'}`} aria-label={ariaLabel}>
-      <ul className="nav-item-container">
+    <nav className="nav" aria-label={ariaLabel}>
+      <ul className={`${className} nav-item-container`}>
         {navItemsList.map((navItem) => (
           <li key={navItem.title} className="nav-item">
             <NavLink to={navItem.path} tabIndex={isLeftMenuHidden ? -1 : 0}>

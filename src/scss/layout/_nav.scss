@@ -9,14 +9,6 @@
   gap: 20px;
 }
 
-.main-nav {
-  .nav-item-container {
-    display: flex;
-    gap: 20px;
-    min-height: rem(30px);
-  }
-}
-
 .nav-item {
   a {
     font-family: $font-primary;
@@ -43,7 +35,7 @@
   }
 }
 
-.left-nav {
+.nav {
   min-width: rem(308px);
 
   .sub-nav {

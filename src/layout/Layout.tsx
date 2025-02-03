@@ -26,7 +26,6 @@ function Layout() {
       <article className="main-content container">
         <Nav
           navItemsList={leftNavItemsList}
-          className="left-nav"
           ariaLabel="Main"
           isLeftMenuHidden={isPanelHidden}
           ariaControls={ariaControls}
