@@ -13,7 +13,12 @@ const Quote: FC<QuoteProps> = ({ children, citeName, citeInfo }) => (
   <div className="quote-container">
     <article className="quote-content">
       <span className="quote-icon">
-        <Icon name={IconName.Cite} title="Quotation marks" size="50" />
+        <Icon
+          name={IconName.Cite}
+          title="Quotation marks"
+          size="50"
+          ariaHidden
+        />
       </span>
       <div>
         <blockquote className="block-quote">{children}</blockquote>

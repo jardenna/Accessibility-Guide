@@ -43,6 +43,8 @@ const Icon: FC<IconProps> = ({
   height,
   title,
   className = '',
+  ariaHidden,
+  ariaLabel,
 }) => {
   const IconComponent = iconMapping[name];
   return (
@@ -51,6 +53,8 @@ const Icon: FC<IconProps> = ({
       height={height}
       title={title}
       className={className}
+      ariaHidden={ariaHidden}
+      ariaLabel={ariaLabel}
     />
   );
 };

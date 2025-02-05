@@ -15,7 +15,12 @@ const ToastIcon: FC<ToastIconProps> = ({ name }) => {
     }[name] || IconName.Success;
 
   return (
-    <Icon name={iconNewName} className="toast-icon" title={`${name} icon`} />
+    <Icon
+      name={iconNewName}
+      className="toast-icon"
+      title={`${name} icon`}
+      ariaHidden
+    />
   );
 };
 
