@@ -4,10 +4,12 @@ import { FC, ReactNode } from 'react';
 import { BtnVariant } from '../types/enums';
 import { BtnType, ButtonEventType } from '../types/types';
 import VisuallyHidden from './VisuallyHidden';
+import Loader from './loader/Loader';
 
 interface ButtonProps {
   children: ReactNode;
   ariaControls?: string;
+  ariaDescribedby?: string;
   ariaExpanded?: boolean;
   ariaLabel?: string;
   ariaSelected?: boolean;
@@ -16,6 +18,7 @@ interface ButtonProps {
   className?: string;
   disabled?: boolean;
   id?: string;
+  isBtnSelected?: boolean;
   isLoading?: boolean;
   name?: string;
   onClick?: (event?: ButtonEventType) => void;
@@ -37,11 +40,13 @@ const Button: FC<ButtonProps> = ({
   ariaExpanded,
   ariaControls,
   ariaLabel,
+  isBtnSelected,
   role,
   className = '',
   autoFocus,
   disabled,
   name,
+  ariaDescribedby,
   isLoading,
 }) => (
   <button
@@ -55,13 +60,20 @@ const Button: FC<ButtonProps> = ({
     aria-expanded={ariaExpanded}
     aria-controls={ariaControls}
     autoFocus={autoFocus}
-    aria-disabled={disabled || undefined}
+    aria-disabled={disabled || isLoading}
     className={`btn btn-${variant} ${className}`}
-    disabled={disabled}
     name={name}
+    aria-describedby={isBtnSelected ? ariaDescribedby : undefined}
+    aria-label={isLoading ? 'Loading' : ''}
   >
     {ariaLabel && <VisuallyHidden>{ariaLabel}</VisuallyHidden>}
-    {!isLoading ? children : <span aria-busy="true">...Loading</span>}
+    {!isLoading ? (
+      children
+    ) : (
+      <span aria-hidden>
+        <Loader />
+      </span>
+    )}
   </button>
 );
 
