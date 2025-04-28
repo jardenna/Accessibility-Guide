@@ -9,6 +9,7 @@ interface CheckboxProps {
   onChange: (event: ChangeInputType) => void;
   values: string[];
   formInfoText?: string;
+  name: string;
 }
 
 const Checkbox: FC<CheckboxProps> = ({
@@ -16,13 +17,14 @@ const Checkbox: FC<CheckboxProps> = ({
   onChange,
   values,
   formInfoText,
+  name,
 }) => (
   <>
     {checkBoxList.map((checkbox) => (
       <Input
         key={checkbox.label}
         type="checkbox"
-        name="selectedItems"
+        name={name}
         value={checkbox.label}
         onChange={onChange}
         checked={values.includes(checkbox.label)}

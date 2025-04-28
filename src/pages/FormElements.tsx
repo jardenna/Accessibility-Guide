@@ -113,6 +113,7 @@ const FormElements: FC = () => {
             onChange={onChange}
             values={values.selectedItems}
             checkBoxList={checkboxItems}
+            name="selectedItems"
           />
         </fieldset>
 
