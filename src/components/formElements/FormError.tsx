@@ -6,7 +6,7 @@ interface FormErrorProps {
 }
 
 const FormError: FC<FormErrorProps> = ({ errorText, ariaErrorId }) => (
-  <span id={ariaErrorId} className="error-message">
+  <span id={`err-${ariaErrorId}`} className="error-message">
     {errorText}
   </span>
 );
