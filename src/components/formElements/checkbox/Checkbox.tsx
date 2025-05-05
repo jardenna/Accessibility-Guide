@@ -6,10 +6,10 @@ import './_checkbox.scss';
 
 interface CheckboxProps {
   checkBoxList: CheckboxItems[];
+  name: string;
   onChange: (event: ChangeInputType) => void;
   values: string[];
   formInfoText?: string;
-  name: string;
 }
 
 const Checkbox: FC<CheckboxProps> = ({
