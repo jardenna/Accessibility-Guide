@@ -10,13 +10,9 @@ export interface KeyValuePair<T> {
   [key: string]: T;
 }
 
-export type ValidationErrors = {
-  [key: string]: string;
-};
+export type ValidationErrors = { [key: string]: string };
 
-export type FormValues = {
-  [key: string]: string | number | string[];
-};
+export type FormValues = { [key: string]: string | number | string[] };
 
 interface FormValidationProps<T extends KeyValuePair<any>> {
   callback: (values: T) => void;
@@ -48,28 +44,19 @@ function useFormValidation<T extends KeyValuePair<any>>({
   const onNumberStepChange = (event: ButtonEventType, amount: number) => {
     const { name } = event.currentTarget;
 
-    setValues({
-      ...values,
-      [name]: (values[name] as number) + amount,
-    });
+    setValues({ ...values, [name]: (values[name] as number) + amount });
   };
 
   function onChange(event: ChangeInputType) {
     const { name, value, type, checked } = event.target;
 
-    setValues({
-      ...values,
-      [name]: type === 'number' ? Number(value) : value,
-    });
+    setValues({ ...values, [name]: type === 'number' ? Number(value) : value });
 
     if (type === 'checkbox') {
       setValues(() => {
         const currentValues = values[name] as string[];
         if (checked) {
-          return {
-            ...values,
-            [name]: [...currentValues, value],
-          };
+          return { ...values, [name]: [...currentValues, value] };
         }
         return {
           ...values,
@@ -109,6 +96,15 @@ function useFormValidation<T extends KeyValuePair<any>>({
     }
   };
 
+  const scrollToFirstError = (errors: KeyValuePair<string>) => {
+    const firstErrorField = Object.keys(errors)[0];
+    const errorElement = document.querySelector(`[name="${firstErrorField}"]`);
+    if (errorElement) {
+      errorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      (errorElement as HTMLElement).focus();
+    }
+  };
+
   const onSubmit = (event: FormEventType) => {
     event.preventDefault();
 
@@ -125,6 +121,7 @@ function useFormValidation<T extends KeyValuePair<any>>({
     // If validate exists, set the errors (otherwise it will be an empty object)
     if (validate) {
       setErrors(validationErrors);
+      scrollToFirstError(validationErrors);
     }
   };
 
